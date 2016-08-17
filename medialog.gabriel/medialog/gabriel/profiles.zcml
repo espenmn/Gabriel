@@ -1,0 +1,13 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="medialog.gabriel">
+
+  <genericsetup:registerProfile
+      name="default"
+      title="Gabriel Plotly Behavior"
+      directory="profiles/default"
+      description="Add Plotly Graphs from JSON data to your content"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+</configure>

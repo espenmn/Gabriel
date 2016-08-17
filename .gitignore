@@ -1,2 +1,6 @@
 .pyc
 egg-info
+*.pyc
+
+medialog.gabriel/medialog.gabriel.egg-info/not-zip-safe
+medialog.gabriel/medialog.gabriel.egg-*

@@ -1,0 +1,4 @@
+<layers>
+    <layer name="medialog.gabriel"
+           interface="medialog.gabriel.interfaces.IGabriel" />
+</layers>

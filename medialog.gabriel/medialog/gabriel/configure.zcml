@@ -1,0 +1,19 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="medialog.gabriel">
+
+ 	<include package=".browser" />
+    <include file="behaviors.zcml" />
+    <include file="profiles.zcml" />
+ 
+    <subscriber
+        for=".behaviors.IGabrielBehavior
+        zope.lifecycleevent.interfaces.IObjectAddedEvent"
+        handler=".events.make_html"
+        />
+
+</configure>
+

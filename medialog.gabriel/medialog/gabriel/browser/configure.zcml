@@ -1,0 +1,30 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="medialog.gabriel">
+          
+  <include package="plone.app.contentmenu" />
+
+    <browser:viewlet
+        name="plotly_javascript_viewlet"
+        for="medialog.gabriel.behaviors.IGabrielBehavior"
+        layer="medialog.gabriel.interfaces.IGabriel"
+        manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+        template="plotlyjavascript.pt"
+        permission="zope2.View"
+    />
+
+    <browser:viewlet
+        name="plotly_viewlet"
+        for="medialog.gabriel.behaviors.IGabrielBehavior"
+        layer="medialog.gabriel.interfaces.IGabriel"
+        class=".viewlets.PlotView"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+        template="plotlyviewlet.pt"
+        permission="zope2.View"
+    />
+    
+
+
+
+</configure>

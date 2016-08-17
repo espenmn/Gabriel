@@ -1,0 +1,1 @@
+<div tal:replace="structure  context/plotly_html" />  
