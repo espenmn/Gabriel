@@ -11,6 +11,7 @@ import pandas as pd
 import numpy as np
 import plotly.plotly as py
 import plotly.graph_objs as go
+import cufflinks as cf
 
 from Products.statusmessages.interfaces import IStatusMessage
 
@@ -33,16 +34,13 @@ def make_html(self, context):
     #ylabel = self.chart_description
 	#false = False
     #true = True
-    
+    #dont need login for offline
     #self.login()
     
     import pdb; pdb.set_trace()
     
     df = pd.read_json(self.json_url)
-    
-    import pdb; pdb.set_trace()
-    
-    fig = go.Figure(data=df)
+    fig = df.iplot(kind='bar', asFigure=True)
     
     #then make graph
     self.plotly_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')

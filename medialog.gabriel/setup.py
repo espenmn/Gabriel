@@ -32,6 +32,8 @@ setup(name='medialog.gabriel',
           'plotly',
           'pandas',
            'numpy',
+           'cufflinks',
+           'ipython'
           # -*- Extra requirements: -*-
       ],
       entry_points="""

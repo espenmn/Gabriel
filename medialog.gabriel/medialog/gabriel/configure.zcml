@@ -14,6 +14,13 @@
         zope.lifecycleevent.interfaces.IObjectAddedEvent"
         handler=".events.make_html"
         />
+        
+    <subscriber
+        for=".behaviors.IGabrielBehavior
+        zope.lifecycleevent.interfaces.IObjectModifiedEvent"
+        handler=".events.make_html"
+        />
+ 
 
 </configure>
 
