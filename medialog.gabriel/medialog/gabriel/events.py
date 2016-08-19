@@ -57,14 +57,14 @@ def make_html(self, context):
     
     #seven dives a day
     for i in range(1,len(xaxis)):
-        thisdive = df['divedata'][i-1].sort_index(by=['pressure(dBAR)']),
+        thisdive = df['divedata'][i-1],
         thisd = pd.DataFrame(thisdive)
         #todayframe.append(thisd[dtype])
         todayframe.append(thisd[dtype].tolist())
     
     yaxis = pd.DataFrame(todayframe)
     
-    for i in range(1,len(yaxis)):
+    for i in range(1,len(xaxis)):
         y = yaxis[i]
     
         # Create a trace
