@@ -48,7 +48,7 @@ def make_html(self, context):
     f = urllib.urlopen(json_url)   
     jsonfile=f.read()
     daydata=json.loads(jsonfile)
-    df = pd.DataFrame(daydata)
+    df = pd.DataFrame(daydata).T
     df.head()
     
     
