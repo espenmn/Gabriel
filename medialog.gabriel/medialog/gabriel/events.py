@@ -12,6 +12,7 @@ import numpy as np
 import plotly.plotly as py
 import plotly.graph_objs as go
 import cufflinks as cf
+import json
 
 from Products.statusmessages.interfaces import IStatusMessage
 
@@ -29,19 +30,53 @@ def make_html(self, context):
     """let plottly make the graph
     generating the html from plotly"""
     
-    #title = self.chart_title
-    #chart_type = self.chart_type
-    #ylabel = self.chart_description
-	#false = False
-    #true = True
     #dont need login for offline
     #self.login()
     
+    date = self.date.strftime("%Y%m%d")
+    dtype = str(self.dtype)
+    trace=[]
+    todayframe = []
+    
     import pdb; pdb.set_trace()
     
-    df = pd.read_json(self.json_url)
-    fig = df.iplot(kind='bar', asFigure=True)
+    day_url = 'http://146.185.167.10/resampledday/%s/' %dtype
     
-    #then make graph
+    #on its own line, in case of looping
+    json_url = day_url + date + '.json'
+    
+    f = urllib.urlopen(json_url)   
+    jsonfile=f.read()
+    daydata=json.loads(jsonfile)
+    df = pd.DataFrame(daydata)
+    df.head()
+    
+    
+    xaxis = df['ts']
+
+    
+    #seven dives a day
+    for i in range(1,len(xaxis)):
+        thisdive = df['divedata'][i-1].sort_index(by=['pressure(dBAR)']),
+        thisd = pd.DataFrame(thisdive)
+        #todayframe.append(thisd[dtype])
+        todayframe.append(thisd[dtype].tolist())
+    
+    yaxis = pd.DataFrame(todayframe)
+    
+    for i in range(1,len(yaxis)):
+        y = yaxis[i]
+    
+        # Create a trace
+        trace.append(go.Scatter(
+            x = xaxis,
+            y = y,
+            ))
+        
+    fig = go.Figure(data=trace)
     self.plotly_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
         
+    
+    
+def plot(self, data):
+    self.plotly_html = plotly.offline.plot(trace, show_link=False, include_plotlyjs = False, output_type='div')

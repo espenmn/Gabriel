@@ -16,7 +16,6 @@ class IGabrielBehavior(form.Schema):
         'plotly',
         label=_(u'Plotly'),
         fields=[
-              'json_url',
               'plotly_html'
         ],
      )
@@ -27,13 +26,6 @@ class IGabrielBehavior(form.Schema):
         default=u'You must reload the page to see the graph',
         required=False,
     )
-         
-    json_url = schema.URI(
-        title = _("label_json_url", default=u"URL to JSON data"),
-        description = _("help_json_url",
-                      default=""),
-        required = True,
-     )
     
 alsoProvides(IGabrielBehavior, IFormFieldProvider)
 
