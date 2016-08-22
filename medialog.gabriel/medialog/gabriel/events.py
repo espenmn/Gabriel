@@ -48,29 +48,20 @@ def make_html(self, context):
     f = urllib.urlopen(json_url)   
     jsonfile=f.read()
     daydata=json.loads(jsonfile)
-    df = pd.DataFrame(daydata).T
-    df.head()
-    
-    
+    df = pd.DataFrame(daydata)
     xaxis = df['ts']
-
+    df.head()
+    thisdive = pd.DataFrame(df['divedata'].values.tolist())
     
     #seven dives a day
     for i in range(1,len(xaxis)):
-        thisdive = df['divedata'][i-1],
-        thisd = pd.DataFrame(thisdive)
-        #todayframe.append(thisd[dtype])
-        todayframe.append(thisd[dtype].tolist())
-    
-    yaxis = pd.DataFrame(todayframe)
-    
-    for i in range(1,len(xaxis)):
-        y = yaxis[i]
-    
+        thispreassure = pd.DataFrame(thisdive[i-1].values.tolist())
+        
         # Create a trace
         trace.append(go.Scatter(
             x = xaxis,
-            y = y,
+            y = thispreassure[dtype],
+            name = thispreassure['pressure(dBAR)'][0],
             ))
         
     fig = go.Figure(data=trace)
