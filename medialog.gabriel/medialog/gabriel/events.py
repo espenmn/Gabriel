@@ -70,8 +70,8 @@ def make_html(self, context):
         ))
             
     layout = go.Layout(
-        height=500,
-        title = (figure_title)
+        height=1000,
+        title = figure_title,
     )
         
     fig = go.Figure(data=trace)
