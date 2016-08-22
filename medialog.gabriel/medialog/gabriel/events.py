@@ -54,7 +54,7 @@ def make_html(self, context):
     thisdive = pd.DataFrame(df['divedata'].values.tolist())
     
     #seven dives a day
-    for i in range(1,len(xaxis)):
+    for i in range(1,thisdive.shape[1]):
         thispreassure = pd.DataFrame(thisdive[i-1].values.tolist())
         
         # Create a trace
@@ -63,11 +63,11 @@ def make_html(self, context):
             y = thispreassure[dtype],
             name = thispreassure['pressure(dBAR)'][0],
             ))
+            
+    layout = go.Layout(
+        height=500,
+    )
         
     fig = go.Figure(data=trace)
     self.plotly_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
         
-    
-    
-def plot(self, data):
-    self.plotly_html = plotly.offline.plot(trace, show_link=False, include_plotlyjs = False, output_type='div')
