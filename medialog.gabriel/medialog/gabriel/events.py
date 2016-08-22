@@ -35,13 +35,11 @@ def make_html(self, context):
     
     date = self.date.strftime("%Y%m%d")
     dtype = str(self.dtype)
+    dybder = self.dybder
+    figure_title = date + dtype
     trace=[]
-    todayframe = []
-    
-    import pdb; pdb.set_trace()
     
     day_url = 'http://146.185.167.10/resampledday/%s/' %dtype
-    
     #on its own line, in case of looping
     json_url = day_url + date + '.json'
     
@@ -51,21 +49,29 @@ def make_html(self, context):
     df = pd.DataFrame(daydata)
     xaxis = df['ts']
     df.head()
-    thisdive = pd.DataFrame(df['divedata'].values.tolist())
+    this_dive = pd.DataFrame(df['divedata'].values.tolist())
+    import pdb; pdb.set_trace()
     
     #seven dives a day
-    for i in range(1,thisdive.shape[1]):
-        thispreassure = pd.DataFrame(thisdive[i-1].values.tolist())
+    for i in range(1,this_dive.shape[1]):
+        this_preassure = pd.DataFrame(this_dive[i-1].values.tolist())
+        name=this_preassure['pressure(dBAR)'][0]
         
+        visible = True
+        if name in dybder:
+            visible = "legendonly" 
+             
         # Create a trace
         trace.append(go.Scatter(
-            x = xaxis,
-            y = thispreassure[dtype],
-            name = thispreassure['pressure(dBAR)'][0],
-            ))
+                x = xaxis,
+                y = this_preassure[dtype],
+                name = name,
+                visible = visible,
+        ))
             
     layout = go.Layout(
         height=500,
+        title = (figure_title)
     )
         
     fig = go.Figure(data=trace)
