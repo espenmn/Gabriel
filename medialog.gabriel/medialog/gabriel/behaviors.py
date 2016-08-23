@@ -22,6 +22,8 @@ def maxValue():
     return datetime.date.today()
 
 class IDate(schema.Date):
+    """ Data field for tuple. min and max are not working inside the tuple
+    they need to be set in the tuple instead"""
     date=schema.Date(
             title=_(u"Dato"),
             defaultFactory=theDefaultValue,
@@ -29,18 +31,8 @@ class IDate(schema.Date):
             max=datetime.date.today(),
     )
     
-    directives.widget(
-        'date',
-        pattern_options={
-            'date': {
-                min: [2015, 5, 12],
-                max: [2016, 8, 12]
-                }
-            }
-        )
-
 class IGabrielBehavior(form.Schema):
-    """ Fields to consgtruct the gabriel
+    """ Fields to construct the gabriel
     graphs from JSON URLs"""
     
     dates = schema.Tuple(
@@ -49,6 +41,9 @@ class IGabrielBehavior(form.Schema):
     	default = (theDefaultValue(),),
     	value_type=IDate(
             title=_(u"Dato"),
+            min=datetime.date(2015, 5, 12),
+            max=datetime.date.today(),
+            defaultFactory=theDefaultValue,
         )
     )
     
@@ -58,7 +53,6 @@ class IGabrielBehavior(form.Schema):
         default=u'Ingen relevante data ble funnet hos Gabriel',
         required=False,
     )
-    
     
     
 alsoProvides(IGabrielBehavior, IFormFieldProvider)
