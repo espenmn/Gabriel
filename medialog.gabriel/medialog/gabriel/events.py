@@ -14,6 +14,8 @@ import plotly.graph_objs as go
 import cufflinks as cf
 import json
 
+import datetime 
+
 from Products.statusmessages.interfaces import IStatusMessage
 
 _ = MessageFactory('medialog.plotly')
@@ -41,43 +43,41 @@ def make_html(self, context):
     
     for dtype in dtypes:
         for dato in dates:
-            date = dato.strftime("%Y%m%d")
-            figure_title = date + dtype
-
+            if dato > datetime.date(2015, 5, 12) and dato <  datetime.date.today():
+                date = dato.strftime("%Y%m%d")
+                day_url = 'http://146.185.167.10/resampledday/%s/' %dtype
+                #on its own line, in case of looping
+                json_url = day_url + date + '.json'
     
-            day_url = 'http://146.185.167.10/resampledday/%s/' %dtype
-            #on its own line, in case of looping
-            json_url = day_url + date + '.json'
+                f = urllib.urlopen(json_url)   
+                jsonfile=f.read()
+                daydata=json.loads(jsonfile)
+                df = pd.DataFrame(daydata)
+                xaxis = df['ts'].replace(to_replace=':00:00 GMT', value='', regex=True)
+                df.head()
+                this_dive = pd.DataFrame(df['divedata'].values.tolist())
     
-            f = urllib.urlopen(json_url)   
-            jsonfile=f.read()
-            daydata=json.loads(jsonfile)
-            df = pd.DataFrame(daydata)
-            xaxis = df['ts'].replace(to_replace=':00:00 GMT', value='', regex=True)
-            df.head()
-            this_dive = pd.DataFrame(df['divedata'].values.tolist())
-    
-            #seven dives a day
-            for i in range(1,this_dive.shape[1]):
-                this_preassure = pd.DataFrame(this_dive[i-1].values.tolist())
-                name= dtype + ' ' + dato.strftime("%d/%m/%y") + ' - ' + str(this_preassure['pressure(dBAR)'][0]) +' dBar'
-                        
-                #visible = "legendonly"
-                visible = False
-                if unicode(name) in dybder:
-                    visible = True 
+                #seven dives a day
+                for i in range(1,this_dive.shape[1]):
+                    this_preassure = pd.DataFrame(this_dive[i-1].values.tolist())
+                    name=str(this_preassure['pressure(dBAR)'][0])
+                    graphname = name + ' dBar ' + dato.strftime("%d.%m.%y")  + ': '  + dtype
+        
+                    #visible = "legendonly"
+                    visible = False
+                    if unicode(name) in dybder:
+                        visible = True 
              
-                # Create a trace
-                trace.append(go.Scatter(
-                        x = xaxis,
-                        y = this_preassure[dtype],
-                        name = name,
-                        visible = visible,
-                ))
+                    # Create a trace
+                    trace.append(go.Scatter(
+                            x = xaxis,
+                            y = this_preassure[dtype],
+                            name = graphname,
+                            visible = visible,
+                    ))
             
     layout = go.Layout(
         height=1000,
-        title = figure_title,
         xaxis=dict(
         title='Tidspunkt',
             titlefont=dict(
@@ -96,6 +96,7 @@ def make_html(self, context):
         )
     )
     
-    fig = go.Figure(data=trace)
-    self.plotly_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
+    if trace != []:
+        fig = go.Figure(data=trace)
+        self.plotly_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
     
