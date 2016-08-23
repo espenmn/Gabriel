@@ -60,8 +60,7 @@ def make_html(self, context):
             #seven dives a day
             for i in range(1,this_dive.shape[1]):
                 this_preassure = pd.DataFrame(this_dive[i-1].values.tolist())
-                import pdb; pdb.set_trace()
-                name= dtype + ' ' + dato.strftime("%d/%m/%y") + ' – ' + str(this_preassure['pressure(dBAR)'][0]) +' dBar'
+                name= dtype + ' ' + dato.strftime("%d/%m/%y") + ' - ' + str(this_preassure['pressure(dBAR)'][0]) +' dBar'
                         
                 #visible = "legendonly"
                 visible = False
