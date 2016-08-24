@@ -40,19 +40,25 @@ class PlotView(ViewletBase):
 class GraphView(ViewletBase):
     """ return graph for current day """
     
+        
+    @property
+    def yesterday(self):
+    	return datetime.date.today() - datetime.timedelta(1)
+    
     @property
     def graph(self):
         """return the html generated from plotly"""
         
         context = self.context
-        #today we will show yesterdays graph
-        today = datetime.date.today() - datetime.timedelta(1)
         
-        if context.dato != datetime.date.today():  
+        #today we will show yesterdays graph
+        yesterday = datetime.date.today() - datetime.timedelta(1)
+        
+        if context.dato != yesterday:  
             dtype = context.dtype
             trace = []
        
-            date = today.strftime("%Y%m%d")
+            date = yesterday.strftime("%Y%m%d")
             day_url = 'http://146.185.167.10/resampledday/%s/' %dtype
             #on its own line, in case of looping
             json_url = day_url + date + '.json'
@@ -68,7 +74,7 @@ class GraphView(ViewletBase):
             for i in range(1,this_dive.shape[1]):
                 this_preassure = pd.DataFrame(this_dive[i-1].values.tolist())
                 name=str(this_preassure['pressure(dBAR)'][0])
-                graphname = name + ' dBar ' + today.strftime("%d.%m.%y")  + ': '  + dtype
+                graphname = name + ' dBar '
         
                 # Create a trace
                 trace.append(go.Scatter(
@@ -99,7 +105,7 @@ class GraphView(ViewletBase):
     
             fig = go.Figure(data=trace)
             context.plotly_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
-            context.dato = datetime.date.today()
+            context.dato = yesterday
 
         return context.plotly_html
         
