@@ -38,7 +38,7 @@
         for="medialog.gabriel.behaviors.IGabrielGraphBehavior"
         layer="medialog.gabriel.interfaces.IGabriel"
         class=".viewlets.GraphView"
-        manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
         template="graphviewlet.pt"
         permission="zope2.View"
     />
