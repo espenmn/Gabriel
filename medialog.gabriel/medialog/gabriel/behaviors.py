@@ -58,3 +58,33 @@ class IGabrielBehavior(form.Schema):
 alsoProvides(IGabrielBehavior, IFormFieldProvider)
 
 
+class IGabrielGraphBehavior(form.Schema):
+    """ Fields to construct todays
+    graphs from JSON URLs"""
+    
+    dtype = schema.Choice(
+        title=u'type',
+        required=True,
+        values=(
+                "salt",
+                "fluorescens",
+                "oxygene",
+                "temp",
+                "turbidity",
+            ),
+    )
+    
+    form.mode(plotly_html='hidden')
+    plotly_html = schema.Text(
+        title=u'Plotly html',
+        default=u'Ingen relevante data ble funnet hos Gabriel',
+        required=False,
+    )
+    
+    form.mode(dato='hidden')
+    dato=schema.Date(
+            title=_(u"Dato"),
+            defaultFactory=theDefaultValue,
+    )
+    
+alsoProvides(IGabrielGraphBehavior, IFormFieldProvider)

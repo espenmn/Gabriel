@@ -24,6 +24,25 @@
         permission="zope2.View"
     />
     
+    <browser:viewlet
+        name="plotly_javascript_viewlet"
+        for="medialog.gabriel.behaviors.IGabrielGraphBehavior"
+        layer="medialog.gabriel.interfaces.IGabriel"
+        manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+        template="plotlyjavascript.pt"
+        permission="zope2.View"
+    />
+
+    <browser:viewlet
+        name="graph_viewlet"
+        for="medialog.gabriel.behaviors.IGabrielGraphBehavior"
+        layer="medialog.gabriel.interfaces.IGabriel"
+        class=".viewlets.GraphView"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+        template="graphviewlet.pt"
+        permission="zope2.View"
+    />
+    
 
 
 

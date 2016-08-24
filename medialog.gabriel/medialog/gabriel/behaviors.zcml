@@ -13,6 +13,13 @@
         for="plone.dexterity.interfaces.IDexterityContent"
         />
    
+    <plone:behavior
+        title="Gabriel Graph behavior"
+        description="Plotlify"
+        provides=".behaviors.IGabrielGraphBehavior"
+        for="plone.dexterity.interfaces.IDexterityContent"
+        />
+   
    
    
 </configure>
