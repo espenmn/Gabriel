@@ -40,14 +40,16 @@ def make_html(self, context):
                 
     trace=[]
     
+    graph_count=0
+    
     for dtype in dtypes:
+        graph_count += 1
         for dato in dates:
             if dato > datetime.date(2015, 5, 12) and dato <  datetime.date.today():
                 date = dato.strftime("%Y%m%d")
                 day_url = 'http://146.185.167.10/resampledday/%s/' %dtype
                 #on its own line, in case of looping
                 json_url = day_url + date + '.json'
-    
                 f = urllib.urlopen(json_url)   
                 jsonfile=f.read()
                 daydata=json.loads(jsonfile)
@@ -56,7 +58,6 @@ def make_html(self, context):
                 df.head()
                 this_dive = pd.DataFrame(df['divedata'].values.tolist())
     
-                #seven dives a day
                 for i in range(1,this_dive.shape[1]):
                     this_preassure = pd.DataFrame(this_dive[i-1].values.tolist())
                     name=str(this_preassure['pressure(dBAR)'][0])
@@ -68,12 +69,20 @@ def make_html(self, context):
                         visible = True 
              
                     # Create a trace
-                    trace.append(go.Scatter(
+                    if graph_count % 2 == 0:
+                        trace.append(go.Bar(
                             x = xaxis,
                             y = this_preassure[dtype],
                             name = graphname,
                             visible = visible,
-                    ))
+                        ))
+                    if graph_count % 2 == 1:
+                        trace.append(go.Scatter(
+                            x = xaxis,
+                            y = this_preassure[dtype],
+                            name = graphname,
+                            visible = visible,
+                        ))
             
     layout = go.Layout(
         height=1000,
