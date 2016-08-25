@@ -1,2 +1,3 @@
 <div tal:replace="structure  view/graph" />  
+<div><p><b>Dato: </b><span tal:content="context/Dato" /></p></div>
 
