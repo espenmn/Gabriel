@@ -4,4 +4,5 @@
   	<span tal:content="context/dato" />
   </p>
 </div>
-<div tal:replace="structure  view/graph" />  
+
+<div tal:replace="structure  view/graph3" />  

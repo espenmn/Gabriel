@@ -11,7 +11,7 @@ import urllib
 
 #plotly stuff
 import plotly 
-from plotly.graph_objs import Bar, Scatter, Figure, Layout
+from plotly.graph_objs import Bar, Scatter, Figure, Layout,  Surface
 from plotly.tools import FigureFactory as FF
 import pandas as pd
 import numpy as np
@@ -41,7 +41,7 @@ class GraphView(ViewletBase):
     """ return graph for current day """
     
     def yesterday(self):
-    	return datetime.date.today() - datetime.timedelta(1)
+        return datetime.date.today() - datetime.timedelta(1)
     
     def graph(self):
         """return the html generated from plotly"""
@@ -81,6 +81,7 @@ class GraphView(ViewletBase):
             
             layout = go.Layout(
                 height=1000,
+                width=1200,
                 xaxis=dict(
                 title='Tidspunkt',
                     titlefont=dict(
@@ -103,6 +104,75 @@ class GraphView(ViewletBase):
             context.plotly_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
             context.dato = yesterday
 
+        return context.plotly_html
+        
+
+    
+    def graph3(self):
+        """return the html generated from plotly"""
+        
+        import pdb; pdb.set_trace()
+        
+        #today we will show yesterdays graph
+        yesterday = datetime.date.today() - datetime.timedelta(1)
+        context = self.context
+        dtype = context.dtype
+        date = yesterday.strftime("%Y%m%d")
+        day_url = 'http://146.185.167.10/resampledday/%s/' %dtype
+        json_url = day_url + date + '.json'
+        f = urllib.urlopen(json_url)   
+        jsonfile=f.read()
+        daydata=json.loads(jsonfile)
+        df = pd.DataFrame(daydata)
+        df.head()
+        
+        import pdb; pdb.set_trace()
+        
+        #this_dive = pd.DataFrame(df['divedata'].values.tolist())
+        y = []
+        
+        #seven dives a day, usually
+        for i in range(1,len(df['divedata'][0])):
+            z.append(pd.DataFrame(df['divedata'][i]))
+        
+
+        z=df.values.tolist()
+        
+        data = [
+            go.Surface(
+            x = xaxis,
+            z=  f.read() ,
+            )
+        ]
+
+        layout = go.Layout(
+            title=date,
+            autosize=True,
+            scene=dict(
+                zaxis=dict(
+                    title=dtype
+                ),
+                yaxis=dict(
+                    title="Dybde"
+                ),
+                xaxis=dict(
+                    title="Tid"
+                )
+            ),
+            width=1000,
+            height=1000,
+            margin=dict(
+                l=65,
+                r=50,
+                b=65,
+                t=90
+            )
+        )
+
+        fig = go.Figure(data=data, layout=layout)
+        context.plotly_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
+        context.dato = yesterday
+        
         return context.plotly_html
         
         
