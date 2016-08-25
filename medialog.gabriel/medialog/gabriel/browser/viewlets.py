@@ -114,7 +114,7 @@ class GraphView(ViewletBase):
         import pdb; pdb.set_trace()
         
         #today we will show yesterdays graph
-        yesterday = datetime.date.today() - datetime.timedelta(1)
+        yesterday = datetime.date.today() - datetime.timedelta(3)
         context = self.context
         dtype = context.dtype
         date = yesterday.strftime("%Y%m%d")
@@ -134,8 +134,8 @@ class GraphView(ViewletBase):
         #seven dives a day, usually
         for i in range(1,len(df)):
             this_z = pd.DataFrame(df['divedata'][i-1]).sort_values('pressure(dBAR)')
-            #z.append(this_z[dtype])
-            z.append(this_z)
+            z.append(this_z[dtype])
+            #z.append(this_z)
         
         
         data = [
@@ -151,10 +151,10 @@ class GraphView(ViewletBase):
                 zaxis=dict(
                     title=dtype
                 ),
-                yaxis=dict(
+                xaxis=dict(
                     title="Dybde"
                 ),
-                xaxis=dict(
+                yaxis=dict(
                     title="Tid"
                 )
             ),
