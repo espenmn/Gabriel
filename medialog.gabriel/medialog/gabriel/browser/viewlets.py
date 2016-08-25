@@ -40,17 +40,13 @@ class PlotView(ViewletBase):
 class GraphView(ViewletBase):
     """ return graph for current day """
     
-        
-    @property
     def yesterday(self):
     	return datetime.date.today() - datetime.timedelta(1)
     
-    @property
     def graph(self):
         """return the html generated from plotly"""
         
-        context = self.context
-        
+        context = self.context        
         #today we will show yesterdays graph
         yesterday = datetime.date.today() - datetime.timedelta(1)
         

@@ -35,6 +35,7 @@ class IGabrielBehavior(form.Schema):
     """ Fields to construct the gabriel
     graphs from JSON URLs"""
     
+    #form.widget.button_label(dates='fisk')
     dates = schema.Tuple(
     	title=_(u"Datoer"),
     	required=True,
@@ -56,6 +57,7 @@ class IGabrielBehavior(form.Schema):
     
     
 alsoProvides(IGabrielBehavior, IFormFieldProvider)
+
 
 
 class IGabrielGraphBehavior(form.Schema):
@@ -84,7 +86,7 @@ class IGabrielGraphBehavior(form.Schema):
     form.mode(dato='hidden')
     dato=schema.Date(
             title=_(u"Dato"),
-            defaultFactory=theDefaultValue,
+            default=datetime.date(2015, 5, 12),
     )
     
 alsoProvides(IGabrielGraphBehavior, IFormFieldProvider)
