@@ -129,19 +129,18 @@ class GraphView(ViewletBase):
         import pdb; pdb.set_trace()
         
         #this_dive = pd.DataFrame(df['divedata'].values.tolist())
-        y = []
+        z = []
         
         #seven dives a day, usually
-        for i in range(1,len(df['divedata'][0])):
-            z.append(pd.DataFrame(df['divedata'][i]))
+        for i in range(1,len(df)):
+            this_z = pd.DataFrame(df['divedata'][i-1]).sort_values('pressure(dBAR)')
+            #z.append(this_z[dtype])
+            z.append(this_z)
         
-
-        z=df.values.tolist()
         
         data = [
             go.Surface(
-            x = xaxis,
-            z=  f.read() ,
+            z=  z,
             )
         ]
 
