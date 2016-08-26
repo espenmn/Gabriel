@@ -102,72 +102,50 @@ class GraphView(ViewletBase):
             )
     
             fig = go.Figure(data=trace)
-            context.plotly_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
-            context.dato = yesterday
+            plotly_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
 
-        return context.plotly_html
+            #and now the 3D graph
+            z = []
         
+            #construct the 3d z
+            for i in range(0,len(df)):
+                this_z = pd.DataFrame(df['divedata'][i]).sort_values('pressure(dBAR)', ascending=True)
+                z.append(this_z[dtype])
+                #.values.tolist())
 
-    
-    def graph3(self):
-        """return the html generated from plotly"""
-        
-        #today we will show yesterdays graph
-        yesterday = datetime.date.today() - datetime.timedelta(1)
-        context = self.context
-        dtype = context.dtype
-        date = yesterday.strftime("%Y%m%d")
-        day_url = 'http://146.185.167.10/resampledday/%s/' %dtype
-        json_url = day_url + date + '.json'
-        f = urllib.urlopen(json_url)   
-        jsonfile=f.read()
-        daydata=json.loads(jsonfile)
-        df = pd.DataFrame(daydata)
-        df.head()
-        
-        z = []
-
-        
-        #seven dives a day, usually
-        for i in range(1,len(df)):
-            this_z = pd.DataFrame(df['divedata'][i-1]).sort_values('pressure(dBAR)')
-            z.append(this_z[dtype])
-            #x.append('pressure(dBAR)')
-            #z.append(this_z)
-        
-        data = [
-            go.Surface(
-            z=  z,
-            x= pd.DataFrame(df['divedata'][0])['pressure(dBAR)'].sort_values(),
-            y = df['ts']
-            )
-        ]
-
-        layout = go.Layout(
-            title=date,
-            autosize=True,
-            scene=dict(
-                xaxis=dict(
-                    title="Dybde"
-                ),
-                yaxis=dict(
-                    title="Tid"
+            data = [
+                go.Surface(
+                z=  z,
+                x= pd.DataFrame(df['divedata'][0])['pressure(dBAR)'].sort_values(),
+                y = df['ts']
                 )
-            ),
-            width=1000,
-            height=1000,
-            margin=dict(
-                l=65,
-                r=50,
-                b=65,
-                t=90
-            )
-        )
+            ]
 
-        fig = go.Figure(data=data, layout=layout)
-        context.plotly_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
-        context.dato = yesterday
+            layout = go.Layout(
+                autosize=True,
+                scene=dict(
+                    xaxis=dict(
+                        title="Dybde"
+                    ),
+                    yaxis=dict(
+                        title="Tid"
+                    )
+                ),
+                width=1000,
+                height=1000,
+                margin=dict(
+                    l=65,
+                    r=50,
+                    b=65,
+                    t=90
+                )
+            )
+
+            fig = go.Figure(data=data, layout=layout)
+            plotly_html += plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
+            context.plotly_html = plotly_html
+            context.dato = yesterday
         
-        return context.plotly3_html
+        return context.plotly_html
         
         

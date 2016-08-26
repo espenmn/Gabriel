@@ -1,1 +1,1 @@
-<div tal:replace="structure  view/graph3" />  
+<div tal:replace="structure  view/graph" />  
