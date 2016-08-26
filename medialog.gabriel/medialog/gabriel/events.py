@@ -26,7 +26,6 @@ def login(self):
     plotly.tools.set_credentials_file(username=username, api_key=api_key)
     
 
-
 def make_html(self, context):
     """let plottly make the graph
     generating the html from plotly"""
@@ -35,6 +34,23 @@ def make_html(self, context):
     #self.login()
     
     dybder = self.dybder
+    
+    if len(dybder) == 0:
+        #make 3D graph
+        make_html3(self,context)
+        
+    else:
+        #make 2D graph
+        make_html2(self,context, dybder)
+        
+    
+def make_html2(self, context, dybder):
+    """let plottly make the 2D graph"""
+    
+    dybder = self.dybder
+    
+
+        
     dates =  self.dates 
     dtypes = self.dtypes
                 
@@ -108,3 +124,71 @@ def make_html(self, context):
         fig = go.Figure(data=trace)
         self.plotly_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
     
+
+
+def make_html3(self, context):
+    """let plottly make the 3D graph
+    generating the html from plotly"""
+
+    
+    dates =  self.dates 
+    dtypes = self.dtypes
+                
+    plotly_html = ''
+    
+    graph_count=0
+    
+    for dtype in dtypes:
+        graph_count += 1
+        for dato in dates:
+            if dato > datetime.date(2015, 5, 12) and dato <  datetime.date.today():
+                date = dato.strftime("%Y%m%d")
+                day_url = 'http://146.185.167.10/resampledday/%s/' %dtype
+                #on its own line, in case of looping
+                json_url = day_url + date + '.json'
+                f = urllib.urlopen(json_url)   
+                jsonfile=f.read()
+                daydata=json.loads(jsonfile)
+                df = pd.DataFrame(daydata)
+                df.head()
+                
+                #and now the 3D graph
+                z = []
+        
+                #construct the 3d z
+                for i in range(0,len(df)):
+                    this_z = pd.DataFrame(df['divedata'][i]).sort_values('pressure(dBAR)', ascending=True)
+                    z.append(this_z[dtype])
+                    
+                data = [
+                    go.Surface(
+                    z=  z,
+                    x= pd.DataFrame(df['divedata'][0])['pressure(dBAR)'].sort_values(),
+                    y = df['ts']
+                    )
+                ]
+
+                layout = go.Layout(
+                    autosize=True,
+                    scene=dict(
+                        xaxis=dict(
+                            title="Dybde"
+                        ),
+                        yaxis=dict(
+                            title="Tid"
+                        )
+                    ),
+                    width=900,
+                    height=1000,
+                    margin=dict(
+                        l=5,
+                        r=5,
+                        b=5,
+                        t=9
+                    )
+                )
+
+                fig = go.Figure(data=data, layout=layout)
+                plotly_html += plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
+                
+        self.plotly_html = plotly_html
