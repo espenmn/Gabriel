@@ -82,6 +82,7 @@ class GraphView(ViewletBase):
             layout = go.Layout(
                 height=1000,
                 width=1200,
+                autosize=True,
                 xaxis=dict(
                 title='Tidspunkt',
                     titlefont=dict(
@@ -111,10 +112,8 @@ class GraphView(ViewletBase):
     def graph3(self):
         """return the html generated from plotly"""
         
-        import pdb; pdb.set_trace()
-        
         #today we will show yesterdays graph
-        yesterday = datetime.date.today() - datetime.timedelta(3)
+        yesterday = datetime.date.today() - datetime.timedelta(1)
         context = self.context
         dtype = context.dtype
         date = yesterday.strftime("%Y%m%d")
@@ -126,21 +125,21 @@ class GraphView(ViewletBase):
         df = pd.DataFrame(daydata)
         df.head()
         
-        import pdb; pdb.set_trace()
-        
-        #this_dive = pd.DataFrame(df['divedata'].values.tolist())
         z = []
+
         
         #seven dives a day, usually
         for i in range(1,len(df)):
             this_z = pd.DataFrame(df['divedata'][i-1]).sort_values('pressure(dBAR)')
             z.append(this_z[dtype])
+            #x.append('pressure(dBAR)')
             #z.append(this_z)
-        
         
         data = [
             go.Surface(
             z=  z,
+            x= pd.DataFrame(df['divedata'][0])['pressure(dBAR)'].sort_values(),
+            y = df['ts']
             )
         ]
 
@@ -148,9 +147,6 @@ class GraphView(ViewletBase):
             title=date,
             autosize=True,
             scene=dict(
-                zaxis=dict(
-                    title=dtype
-                ),
                 xaxis=dict(
                     title="Dybde"
                 ),
@@ -172,6 +168,6 @@ class GraphView(ViewletBase):
         context.plotly_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
         context.dato = yesterday
         
-        return context.plotly_html
+        return context.plotly3_html
         
         
