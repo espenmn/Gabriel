@@ -35,16 +35,7 @@ def make_html(self, context):
     
     dybder = self.dybder
     
-    if len(dybder) == 0:
-        #make 3D graph
-        make_html3(self,context)
-        
-
-    
-        dybder = self.dybder
-    
-
-        
+    if len(dybder) != 0:
         dates =  self.dates 
         dtypes = self.dtypes
                 
