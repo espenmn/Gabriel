@@ -131,13 +131,13 @@ class GraphView(ViewletBase):
                         title="Tid"
                     )
                 ),
-                width=1000,
+                width=900,
                 height=1000,
                 margin=dict(
-                    l=65,
-                    r=50,
-                    b=65,
-                    t=90
+                    l=5,
+                    r=5,
+                    b=5,
+                    t=9
                 )
             )
 
