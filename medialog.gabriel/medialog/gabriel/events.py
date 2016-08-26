@@ -123,7 +123,7 @@ def make_html2(self, context, dybder):
     if trace != []:
         fig = go.Figure(data=trace)
         self.plotly_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
-    
+        context.plotly_html = self.plotly_html
 
 
 def make_html3(self, context):

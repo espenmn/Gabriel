@@ -38,6 +38,7 @@ class IGabrielBehavior(form.Schema):
     #form.widget.button_label(dates='fisk')
     dates = schema.Tuple(
     	title=_(u"Datoer"),
+    	description=_(u"Velg og legg til datoer du vil ha grafer av"),
     	required=True,
     	default = (theDefaultValue(),),
     	value_type=IDate(
