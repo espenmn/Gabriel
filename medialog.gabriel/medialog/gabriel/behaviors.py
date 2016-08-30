@@ -26,9 +26,6 @@ class IDate(schema.Date):
     they need to be set in the tuple instead"""
     date=schema.Date(
             title=_(u"Dato"),
-            defaultFactory=theDefaultValue,
-            min=datetime.date(2015, 5, 12),
-            max=datetime.date.today(),
     )
     
 class IGabrielBehavior(form.Schema):
