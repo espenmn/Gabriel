@@ -40,7 +40,7 @@ class IGabrielBehavior(form.Schema):
     	title=_(u"Datoer"),
     	description=_(u"Velg og legg til datoer du vil ha grafer av"),
     	required=True,
-    	default = (theDefaultValue(),),
+    	default = theDefaultValue,
     	value_type=IDate(
             title=_(u"Dato"),
             min=datetime.date(2015, 5, 12),
