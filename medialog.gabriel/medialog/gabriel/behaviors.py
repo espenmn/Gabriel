@@ -28,7 +28,6 @@ class IDate(schema.Date):
             title=_(u"Dato"),
             min=datetime.date(2015, 5, 12),
             max=datetime.date.today(),
-            defaultFactory=datetime.date.today() - datetime.timedelta(1),
     )
     
 class IGabrielBehavior(form.Schema):
