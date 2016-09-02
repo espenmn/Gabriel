@@ -122,7 +122,7 @@ def make_html(self, context):
                                     )
                                 )
                                 title3=dtype
-                                color3='#345612'
+                                color3='#456123'
 
                             if graph_count % ant_types == 3:
                                 trace.append(go.Scatter(
@@ -137,7 +137,7 @@ def make_html(self, context):
                                     )
                                 )
                                 title4=dtype
-                                color4='#456123'
+                                color4='#333333'
                                                         
                             if graph_count % ant_types == 4:
                                 trace.append(go.Scatter(
@@ -152,11 +152,12 @@ def make_html(self, context):
                                     )
                                 )
                                 title5=dtype
-                                color5='#561234'
+                                color5='#CCCCCC'
                             
         #data = trace
         layout = go.Layout(
                 title=title,
+                height=1000,
                 legend=dict(orientation= "v"),
                 xaxis=dict(
                     rangemode='tozero',
@@ -191,7 +192,7 @@ def make_html(self, context):
                         color=color3
                     ),
                     overlaying='y',
-                    side='left'
+                    side='left',
                 ),
                 yaxis4=dict(
                     title=title4,
@@ -202,7 +203,7 @@ def make_html(self, context):
                         color=color4
                     ),
                     overlaying='y',
-                    side='right'
+                    side='right',
                 ),
                 yaxis5=dict(
                     title=title5,
@@ -213,7 +214,7 @@ def make_html(self, context):
                         color=color5
                     ),
                     overlaying='y',
-                    side='left'
+                    side='left',
                 )
             )
         
