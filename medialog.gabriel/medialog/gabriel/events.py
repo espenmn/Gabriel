@@ -42,8 +42,11 @@ def make_html(self, context):
         trace=[]
     
         graph_count=0
+        
+
     
         for dtype in dtypes:
+            traces = []
             graph_count += 1
             for dato in dates:
                 if dato > datetime.date(2015, 5, 12) and dato <  datetime.date.today():
@@ -65,46 +68,24 @@ def make_html(self, context):
                         graphname = name + ' dBar ' + dato.strftime("%d.%m.%y")  + ': '  + dtype
         
                         #visible = "legendonly"
-                        visible = False
+                        #visible = False
                         if unicode(name) in dybder:
-                            visible = True 
-             
-                        # Create a trace
-                        if graph_count % 2 == 0:
-                            trace.append(go.Bar(
-                                x = xaxis,
-                                y = this_preassure[dtype],
-                                name = graphname,
-                                visible = visible,
-                            ))
-                        if graph_count % 2 == 1:
-                            trace.append(go.Scatter(
-                                x = xaxis,
-                                y = this_preassure[dtype],
-                                name = graphname,
-                                visible = visible,
-                            ))
+                            #visible = True 
+                            # Create a trace
+                            if graph_count % 2 == 0:
+                                trace.append(go.Bar(
+                                    x = xaxis,
+                                    y = this_preassure[dtype],
+                                    name = graphname,
+                                ))
+                            if graph_count % 2 == 1:
+                                trace.append(go.Scatter(
+                                    x = xaxis,
+                                    y = this_preassure[dtype],
+                                    name = graphname,
+                                ))
             
-        layout = go.Layout(
-            height=1000,
-            xaxis=dict(
-            title='Tidspunkt',
-                titlefont=dict(
-                    family='Courier New, monospace',
-                    size=18,
-                    color='#7f7f7f'
-                )
-            ),
-            yaxis=dict(
-                title='Verdi',
-                titlefont=dict(
-                    family='Courier New, monospace',
-                    size=18,
-                    color='#7f7f7f'
-                )
-            )
-        )
-    
+        import pdb; pdb.set_trace()
         if trace != []:
             fig = go.Figure(data=trace)
             self.plotly_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
