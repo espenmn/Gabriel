@@ -158,11 +158,9 @@ def make_html(self, context):
         layout = go.Layout(
                 title=title,
                 legend=dict(orientation= "v"),
-                xaxis=dict(
-                    rangemode='tozero',
-                ),
                 yaxis=dict(
                     title=title1,
+                    rangemode='tozero',
                     titlefont=dict(
                         color='rgb(248, 23, 189)'
                     ),
@@ -173,6 +171,7 @@ def make_html(self, context):
                 ),
                 yaxis2=dict(
                     title=title2,
+                    rangemode='tozero',
                     titlefont=dict(
                         color=color2
                     ),
@@ -184,6 +183,7 @@ def make_html(self, context):
                 ),
                 yaxis3=dict(
                     title=title3,
+                    rangemode='tozero',
                     titlefont=dict(
                         color=color3
                     ),
@@ -194,6 +194,7 @@ def make_html(self, context):
                     side='left',
                 ),
                 yaxis4=dict(
+                    rangemode='tozero',
                     title=title4,
                     titlefont=dict(
                         color=color4
@@ -206,6 +207,7 @@ def make_html(self, context):
                 ),
                 yaxis5=dict(
                     title=title5,
+                    rangemode='tozero',
                     titlefont=dict(
                         color=color5
                     ),
