@@ -73,7 +73,7 @@ def make_html(self, context):
                     for i in range(1,this_dive.shape[1]):
                         this_preassure = pd.DataFrame(this_dive[i-1].values.tolist())
                         name=str(this_preassure['pressure(dBAR)'][0])
-                        graphname = name + ' dBar ' + ': '  + dtype
+                        graphname = name + ' dBar: '  + dtype
         
                         #visible = "legendonly"
                         #visible = False
@@ -94,7 +94,7 @@ def make_html(self, context):
                                     y = this_preassure[dtype],
                                     name = graphname,
                                     line = dict(
-                                        width = 3,
+                                        width = 2,
                                         ),
                                     yaxis='y2'
                                     )
@@ -108,7 +108,7 @@ def make_html(self, context):
                                     name = graphname,
                                     yaxis='y3',
                                     line = dict(
-                                        width = 1,
+                                        width = 2,
                                         ),
                                     mode='lines'
                                     )
@@ -121,7 +121,7 @@ def make_html(self, context):
                                     y = this_preassure[dtype],
                                     name = graphname,
                                     line = dict(
-                                        width = 4,
+                                        width = 3,
                                         dash = 'dash',
                                         ),
                                     yaxis='y4',
@@ -136,7 +136,7 @@ def make_html(self, context):
                                     name = graphname,
                                     yaxis='y5',
                                     line = dict(
-                                        width = 4,
+                                        width = 3,
                                         dash = 'dot'
                                     ),
                                     )
