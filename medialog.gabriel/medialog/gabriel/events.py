@@ -44,17 +44,22 @@ def make_html(self, context):
         trace=[]
     
         graph_count=0
-        
+        title1 = ''
+        title2 = ''
+        title3 = ''
+        title4 = ''
+        title5 = ''
+        color1 = '#FFF'
+        color2 = '#FFF'
+        color3 = '#FFF'
+        color4 = '#FFF'
+        color5 = '#FFF'
+    
 
     
         for dtype in dtypes:
             traces = []
             graph_count += 1
-            title1 = ''
-            title2 = ''
-            title3 = ''
-            title4 = ''
-            title5 = ''
                         
             for dato in dates:
                 if dato > datetime.date(2015, 5, 12) and dato <  datetime.date.today():
@@ -88,6 +93,8 @@ def make_html(self, context):
                                     )
                                 )
                                 title1=dtype
+                                color1='#123456'
+                                
                             if graph_count % ant_types == 1:
                                 trace.append(go.Scatter(
                                     x = xaksis,
@@ -100,6 +107,7 @@ def make_html(self, context):
                                     )
                                 )
                                 title2=dtype
+                                color2='#234561'
 
                             if graph_count % ant_types == 2:
                                 trace.append(go.Scatter(
@@ -113,7 +121,8 @@ def make_html(self, context):
                                     mode='lines'
                                     )
                                 )
-                                title4=dtype
+                                title3=dtype
+                                color3='#345612'
 
                             if graph_count % ant_types == 3:
                                 trace.append(go.Scatter(
@@ -128,6 +137,7 @@ def make_html(self, context):
                                     )
                                 )
                                 title4=dtype
+                                color4='#456123'
                                                         
                             if graph_count % ant_types == 4:
                                 trace.append(go.Scatter(
@@ -142,6 +152,7 @@ def make_html(self, context):
                                     )
                                 )
                                 title5=dtype
+                                color5='#561234'
                             
         #data = trace
         layout = go.Layout(
@@ -163,10 +174,10 @@ def make_html(self, context):
                 yaxis2=dict(
                     title=title2,
                     titlefont=dict(
-                        color='rgb(48, 103, 189)'
+                        color=color2
                     ),
                     tickfont=dict(
-                        color='rgb(48, 103, 189)'
+                        color=color2
                     ),
                     overlaying='y',
                     side='left'
@@ -174,10 +185,10 @@ def make_html(self, context):
                 yaxis3=dict(
                     title=title3,
                     titlefont=dict(
-                        color='rgb(148, 103, 9)'
+                        color=color3
                     ),
                     tickfont=dict(
-                        color='rgb(148, 103, 9)'
+                        color=color3
                     ),
                     overlaying='y',
                     side='left'
@@ -185,10 +196,10 @@ def make_html(self, context):
                 yaxis4=dict(
                     title=title4,
                     titlefont=dict(
-                        color='rgb(48, 103, 19)'
+                        color=color4
                     ),
                     tickfont=dict(
-                        color='rgb(48, 103, 19)'
+                        color=color4
                     ),
                     overlaying='y',
                     side='right'
@@ -196,10 +207,10 @@ def make_html(self, context):
                 yaxis5=dict(
                     title=title5,
                     titlefont=dict(
-                        color='rgb(148, 103, 89)'
+                        color=color5
                     ),
                     tickfont=dict(
-                        color='rgb(148, 103, 89)'
+                        color=color5
                     ),
                     overlaying='y',
                     side='left'
