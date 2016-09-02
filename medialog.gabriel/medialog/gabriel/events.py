@@ -83,7 +83,8 @@ def make_html(self, context):
                                     x = xaxis,
                                     y = this_preassure[dtype],
                                     name = graphname,
-                                ))
+                                )
+                            )
             
         if trace != []:
             fig = go.Figure(data=trace)
