@@ -34,10 +34,12 @@ def make_html(self, context):
     #self.login()
     
     dybder = self.dybder
+    title = self.title
     
     if len(dybder) != 0:
         dates =  self.dates 
         dtypes = self.dtypes
+        ant_types = len(dtypes)
                 
         trace=[]
     
@@ -48,6 +50,12 @@ def make_html(self, context):
         for dtype in dtypes:
             traces = []
             graph_count += 1
+            title1 = ''
+            title2 = ''
+            title3 = ''
+            title4 = ''
+            title5 = ''
+                        
             for dato in dates:
                 if dato > datetime.date(2015, 5, 12) and dato <  datetime.date.today():
                     date = dato.strftime("%Y%m%d")
@@ -58,38 +66,146 @@ def make_html(self, context):
                     jsonfile=f.read()
                     daydata=json.loads(jsonfile)
                     df = pd.DataFrame(daydata)
-                    xaxis = df['ts'].replace(to_replace=':00:00 GMT', value='', regex=True)
+                    xaksis = df['ts'].replace(to_replace=':00:00 GMT', value='', regex=True)
                     df.head()
                     this_dive = pd.DataFrame(df['divedata'].values.tolist())
     
                     for i in range(1,this_dive.shape[1]):
                         this_preassure = pd.DataFrame(this_dive[i-1].values.tolist())
                         name=str(this_preassure['pressure(dBAR)'][0])
-                        graphname = name + ' dBar ' + dato.strftime("%d.%m.%y")  + ': '  + dtype
+                        graphname = name + ' dBar ' + ': '  + dtype
         
                         #visible = "legendonly"
                         #visible = False
                         if unicode(name) in dybder:
                             #visible = True 
                             # Create a trace
-                            if graph_count % 2 == 0:
+                            if graph_count % ant_types == 0:
                                 trace.append(go.Bar(
-                                    x = xaxis,
+                                    x = xaksis,
                                     y = this_preassure[dtype],
                                     name = graphname,
-                                ))
-                            if graph_count % 2 == 1:
-                                trace.append(go.Scatter(
-                                    x = xaxis,
-                                    y = this_preassure[dtype],
-                                    name = graphname,
+                                    )
                                 )
-                            )
-            
-        if trace != []:
-            fig = go.Figure(data=trace)
-            self.plotly_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
-            context.plotly_html = self.plotly_html
+                                title1=dtype
+                            if graph_count % ant_types == 1:
+                                trace.append(go.Scatter(
+                                    x = xaksis,
+                                    y = this_preassure[dtype],
+                                    name = graphname,
+                                    line = dict(
+                                        width = 3,
+                                        ),
+                                    yaxis='y2'
+                                    )
+                                )
+                                title2=dtype
+
+                            if graph_count % ant_types == 2:
+                                trace.append(go.Scatter(
+                                    x = xaksis,
+                                    y = this_preassure[dtype],
+                                    name = graphname,
+                                    yaxis='y3',
+                                    line = dict(
+                                        width = 1,
+                                        ),
+                                    mode='lines'
+                                    )
+                                )
+                                title4=dtype
+
+                            if graph_count % ant_types == 3:
+                                trace.append(go.Scatter(
+                                    x = xaksis,
+                                    y = this_preassure[dtype],
+                                    name = graphname,
+                                    line = dict(
+                                        width = 4,
+                                        dash = 'dash',
+                                        ),
+                                    yaxis='y4',
+                                    )
+                                )
+                                title4=dtype
+                                                        
+                            if graph_count % ant_types == 4:
+                                trace.append(go.Scatter(
+                                    x = xaksis,
+                                    y = this_preassure[dtype],
+                                    name = graphname,
+                                    yaxis='y5',
+                                    line = dict(
+                                        width = 4,
+                                        dash = 'dot'
+                                    ),
+                                    )
+                                )
+                                title5=dtype
+                            
+        data = trace
+        layout = go.Layout(
+                title=title,
+                legend=dict(orientation= "v"),
+                yaxis=dict(
+                    title=title1,
+                    titlefont=dict(
+                        color='rgb(248, 23, 189)'
+                    ),
+                    tickfont=dict(
+                        color='rgb(248, 23, 189)'
+                    ),
+                    side='right'
+                ),
+                yaxis2=dict(
+                    title=title2,
+                    titlefont=dict(
+                        color='rgb(48, 103, 189)'
+                    ),
+                    tickfont=dict(
+                        color='rgb(48, 103, 189)'
+                    ),
+                    overlaying='y',
+                    side='left'
+                ),
+                yaxis3=dict(
+                    title=title3,
+                    titlefont=dict(
+                        color='rgb(148, 103, 9)'
+                    ),
+                    tickfont=dict(
+                        color='rgb(148, 103, 9)'
+                    ),
+                    overlaying='y',
+                    side='left'
+                ),
+                yaxis4=dict(
+                    title=title4,
+                    titlefont=dict(
+                        color='rgb(48, 103, 19)'
+                    ),
+                    tickfont=dict(
+                        color='rgb(48, 103, 19)'
+                    ),
+                    overlaying='y',
+                    side='right'
+                ),
+                yaxis5=dict(
+                    title=title5,
+                    titlefont=dict(
+                        color='rgb(148, 103, 89)'
+                    ),
+                    tickfont=dict(
+                        color='rgb(148, 103, 89)'
+                    ),
+                    overlaying='y',
+                    side='left'
+                )
+            )
+        
+        fig = go.Figure(data=data, layout=layout)
+        self.plotly_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
+        context.plotly_html = self.plotly_html
 
 
     else:
