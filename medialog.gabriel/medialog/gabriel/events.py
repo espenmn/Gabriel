@@ -143,10 +143,13 @@ def make_html(self, context):
                                 )
                                 title5=dtype
                             
-        data = trace
+        #data = trace
         layout = go.Layout(
                 title=title,
                 legend=dict(orientation= "v"),
+                xaxis=dict(
+                    rangemode='tozero',
+                ),
                 yaxis=dict(
                     title=title1,
                     titlefont=dict(
@@ -203,7 +206,7 @@ def make_html(self, context):
                 )
             )
         
-        fig = go.Figure(data=data, layout=layout)
+        fig = go.Figure(data=trace, layout=layout)
         self.plotly_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
         context.plotly_html = self.plotly_html
 
