@@ -157,7 +157,6 @@ def make_html(self, context):
         #data = trace
         layout = go.Layout(
                 title=title,
-                height=1000,
                 legend=dict(orientation= "v"),
                 xaxis=dict(
                     rangemode='tozero',
