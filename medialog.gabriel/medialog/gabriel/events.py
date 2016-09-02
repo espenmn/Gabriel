@@ -85,7 +85,6 @@ def make_html(self, context):
                                     name = graphname,
                                 ))
             
-        import pdb; pdb.set_trace()
         if trace != []:
             fig = go.Figure(data=trace)
             self.plotly_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
