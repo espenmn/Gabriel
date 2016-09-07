@@ -85,7 +85,7 @@ def make_html(self, context):
                         if unicode(name) in dybder:
                             #visible = True 
                             # Create a trace
-                            if graph_count % ant_types == 0:
+                            if graph_count % ant_types == 0 and ant_types != 1:
                                 trace.append(go.Bar(
                                     x = xaksis,
                                     y = this_preassure[dtype],
@@ -95,7 +95,7 @@ def make_html(self, context):
                                 title1=dtype
                                 color1='#123456'
                                 
-                            if graph_count % ant_types == 1:
+                            if graph_count % ant_types == 1 or ant_types = 1:
                                 trace.append(go.Scatter(
                                     x = xaksis,
                                     y = this_preassure[dtype],
