@@ -95,7 +95,7 @@ def make_html(self, context):
                                 title1=dtype
                                 color1='#123456'
                                 
-                            if graph_count % ant_types == 1 or ant_types = 1:
+                            if graph_count % ant_types == 1 or ant_types == 1:
                                 trace.append(go.Scatter(
                                     x = xaksis,
                                     y = this_preassure[dtype],
