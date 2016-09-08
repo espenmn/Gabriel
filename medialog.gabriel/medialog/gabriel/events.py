@@ -54,6 +54,10 @@ def make_html(self, context):
         color3 = '#FFF'
         color4 = '#FFF'
         color5 = '#FFF'
+        color6 = '#FFF'
+        color7 = '#FFF'
+        color8 = '#FFF'
+        color9 = '#FFF'
     
 
     
@@ -82,7 +86,7 @@ def make_html(self, context):
         
                         #visible = "legendonly"
                         #visible = False
-                        if unicode(name) in dybder:
+                                              if unicode(name) in dybder:
                             #visible = True 
                             # Create a trace
                             if graph_count % ant_types == 0 and ant_types != 1:
@@ -107,7 +111,7 @@ def make_html(self, context):
                                     )
                                 )
                                 title2=dtype
-                                color2='#234561'
+                                color2='#ff4444'
 
                             if graph_count % ant_types == 2:
                                 trace.append(go.Scatter(
@@ -122,7 +126,7 @@ def make_html(self, context):
                                     )
                                 )
                                 title3=dtype
-                                color3='#456123'
+                                color3='#3399ff'
 
                             if graph_count % ant_types == 3:
                                 trace.append(go.Scatter(
@@ -148,11 +152,67 @@ def make_html(self, context):
                                     line = dict(
                                         width = 3,
                                         dash = 'dot'
-                                    ),
+                                        ),
                                     )
                                 )
                                 title5=dtype
                                 color5='#CCCCCC'
+
+                            if graph_count % ant_types == 5:
+                                trace.append(go.Scatter(
+                                    x = xaksis,
+                                    y = this_preassure[dtype],
+                                    name = graphname,
+                                    yaxis='y6',
+                                    line = dict(
+                                        width = 1,
+                                        ),
+                                    )
+                                )
+                                title6=dtype
+                                color6='#CCCCCC'
+
+                            if graph_count % ant_types == 6:
+                                trace.append(go.Scatter(
+                                    x = xaksis,
+                                    y = this_preassure[dtype],
+                                    name = graphname,
+                                    yaxis='y7',
+                                    line = dict(
+                                        width = 1,
+                                        ),
+                                    )
+                                )
+                                title7=dtype
+                                color7='#CCCCCC'
+                                
+                            if graph_count % ant_types == 7:
+                                trace.append(go.Scatter(
+                                    x = xaksis,
+                                    y = this_preassure[dtype],
+                                    name = graphname,
+                                    yaxis='y8',
+                                    line = dict(
+                                        width = 1,
+                                        ),
+                                    )
+                                )
+                                title8=dtype
+                                color8='#CCCCCC'
+                                
+                            if graph_count % ant_types == 8:
+                                trace.append(go.Scatter(
+                                    x = xaksis,
+                                    y = this_preassure[dtype],
+                                    name = graphname,
+                                    yaxis='y9',
+                                    line = dict(
+                                        width = 1,
+                                        ),
+                                    )
+                                )
+                                title9=dtype
+                                color9='#CCCCCC'
                             
         #data = trace
         layout = go.Layout(
