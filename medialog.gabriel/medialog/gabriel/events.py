@@ -86,8 +86,7 @@ def make_html(self, context):
         
                         #visible = "legendonly"
                         #visible = False
-                                              if unicode(name) in dybder:
-                            #visible = True 
+                        if unicode(name) in dybder:
                             # Create a trace
                             if graph_count % ant_types == 0 and ant_types != 1:
                                 trace.append(go.Bar(
