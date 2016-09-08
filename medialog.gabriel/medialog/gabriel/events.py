@@ -213,7 +213,9 @@ def make_html(self, context):
                                 title9=dtype
                                 color9='#CCCCCC'
                             
-        #data = trace
+        #to do: we will need some offest for the axis titles
+        #maybe this has to be done 'manually', so we hardcode
+        #the values for now
         layout = go.Layout(
                 title=title,
                 legend=dict(orientation= "v"),
@@ -275,6 +277,54 @@ def make_html(self, context):
                     ),
                     overlaying='y',
                     side='left',
+                ),
+                yaxis6=dict(
+                    title=title6,
+                    rangemode='tozero',
+                    titlefont=dict(
+                        color=color6
+                    ),
+                    tickfont=dict(
+                        color=color6
+                    ),
+                    overlaying='y',
+                    side='left',
+                ),
+                yaxis7=dict(
+                    title=title5,
+                    rangemode='tozero',
+                    titlefont=dict(
+                        color=color7
+                    ),
+                    tickfont=dict(
+                        color=color7
+                    ),
+                    overlaying='y',
+                    side='left',
+                ),
+                yaxis8=dict(
+                    title=title8,
+                    rangemode='tozero',
+                    titlefont=dict(
+                        color=color8
+                    ),
+                    tickfont=dict(
+                        color=color8
+                    ),
+                    overlaying='y',
+                    side='right',
+                ),
+                yaxis9=dict(
+                    title=title9,
+                    rangemode='tozero',
+                    titlefont=dict(
+                        color=color9
+                    ),
+                    tickfont=dict(
+                        color=color9
+                    ),
+                    overlaying='y',
+                    side='right',
                 )
             )
         
