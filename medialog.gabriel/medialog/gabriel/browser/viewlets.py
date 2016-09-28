@@ -81,9 +81,9 @@ class GraphView(ViewletBase):
                     ))
             
                 layout = go.Layout(
-                    height=1000,
+                    height=1400,
                     width=1200,
-                    autosize=True,
+                    autosize=False,
                     xaxis=dict(
                     title='Tidspunkt',
                         titlefont=dict(
