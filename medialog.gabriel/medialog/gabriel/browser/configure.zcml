@@ -49,7 +49,7 @@
         layer="medialog.gabriel.interfaces.IGabriel"
         class=".viewlets.GraphView"
         manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
-        template="graphviewlet.pt"
+        template="plotlyviewlet.pt"
         permission="zope2.View"
     />
     
