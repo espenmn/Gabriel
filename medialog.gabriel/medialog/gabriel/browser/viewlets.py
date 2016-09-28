@@ -81,7 +81,7 @@ class GraphView(ViewletBase):
                     ))
             
                 layout = go.Layout(
-                    height=1400,
+                    height=1700,
                     width=1200,
                     autosize=False,
                     xaxis=dict(
