@@ -43,6 +43,17 @@
         permission="zope2.View"
     />
     
+    <browser:viewlet
+        name="textgraph_viewlet"
+        for="medialog.gabriel.behaviors.IGraphBehavior"
+        layer="medialog.gabriel.interfaces.IGabriel"
+        class=".viewlets.GraphView"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+        template="graphviewlet.pt"
+        permission="zope2.View"
+    />
+    
+    
 	<browser:resourceDirectory
   		name="medialog.gabriel"
   		directory="static" />

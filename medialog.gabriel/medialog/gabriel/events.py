@@ -49,6 +49,10 @@ def make_html(self, context):
         title3 = ''
         title4 = ''
         title5 = ''
+        title6 = ''
+        title8 = ''
+        title8 = ''
+        title9 = ''
         color1 = '#FFF'
         color2 = '#FFF'
         color3 = '#FFF'
@@ -398,3 +402,40 @@ def make_html(self, context):
                     plotly_html += plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
                 
             self.plotly_html = plotly_html
+            
+            
+def make_text(self, context):
+    """generate text to use in graph app"""
+
+    dybder = self.dybder
+    title = self.title
+    date1 =  self.date1 
+    date2 =  self.date2 
+    dtype = self.dtype
+    
+    
+    daterange = pd.date_range(date1, date2)
+    
+    text= []
+    
+    for dato in daterange:
+        #if dato > datetime.date(2015, 5, 12) and dato <  datetime.date.today():
+        date = dato.strftime("%Y%m%d")
+        day_url = 'http://146.185.167.10/resampledday/%s/' %dtype
+        #on its own line, in case of looping
+        json_url = day_url + date + '.json'
+        f = urllib.urlopen(json_url)   
+        jsonfile=f.read()
+        daydata=json.loads(jsonfile)
+        df = pd.DataFrame(daydata)
+        xaksis = df['ts'].replace(to_replace=':00:00 GMT', value='', regex=True)
+        df.head()
+        this_dive = pd.DataFrame(df['divedata'].values.tolist())
+        
+        for i in range(1,this_dive.shape[1]):
+            this_preassure = pd.DataFrame(this_dive[i-1].values.tolist())
+            name=str(this_preassure['pressure(dBAR)'][0])
+            if unicode(name) in dybder:
+                text.append(this_preassure[dtype])
+                
+        self.plotly_html = text

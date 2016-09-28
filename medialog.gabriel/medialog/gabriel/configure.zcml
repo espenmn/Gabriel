@@ -21,6 +21,12 @@
         handler=".events.make_html"
         />
  
+ 
+     <subscriber
+        for=".behaviors.IGraphBehavior
+        zope.lifecycleevent.interfaces.IObjectAddedEvent"
+        handler=".events.make_text"
+        />
 
 </configure>
 

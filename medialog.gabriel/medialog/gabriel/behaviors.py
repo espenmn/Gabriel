@@ -29,12 +29,50 @@ class IDate(schema.Date):
             min=datetime.date(2015, 5, 12),
 			max=datetime.date.today(),
     )
+
+class IGraphBehavior(form.Schema):
+    """ Fields to construct text to use in graph application"""
+    
+    dtype = schema.Choice(
+        title=u'type',
+        required=True,
+        values=(
+                "salt",
+                "fluorescens",
+                "oxygene",
+                "temp",
+                "turbidity",
+            ),
+    )
+    
+    date1=schema.Date(
+            defaultFactory=theDefaultValue,
+            min=datetime.date(2015, 5, 12),
+			max=datetime.date.today(),
+    )
+    
+    date2=schema.Date(
+            defaultFactory=theDefaultValue,
+            min=datetime.date(2015, 5, 12),
+			max=datetime.date.today(),
+    )
+    
+    form.mode(plotly_html='hidden')
+    plotly_html = schema.Text(
+        title=u'Plotly html',
+        default=u'Ingen relevante data ble funnet hos Gabriel',
+        required=False,
+    )
+    
+alsoProvides(IGraphBehavior, IFormFieldProvider)
+
+    
+
     
 class IGabrielBehavior(form.Schema):
     """ Fields to construct the gabriel
     graphs from JSON URLs"""
     
-    #form.widget.button_label(dates='fisk')
     dates = schema.Tuple(
     	title=_(u"Datoer"),
     	description=_(u"Velg og legg til datoer du vil ha grafer av"),
