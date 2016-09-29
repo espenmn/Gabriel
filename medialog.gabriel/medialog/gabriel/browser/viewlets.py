@@ -110,7 +110,7 @@ class GraphView(ViewletBase):
                 )
                 
                 fig = go.Figure(data=trace, layout=layout)
-                context.plotly_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
+                context.plotly_html = plotly.offline.plot(fig, show_link=True, include_plotlyjs = False, output_type='div')
 
                 #graph 2
                 fig = go.Figure(data=trace2,layout=layout)
