@@ -111,7 +111,7 @@ class GraphView(ViewletBase):
                 )
                 
                 fig = go.Figure(data=trace, layout=layout)
-                context.plotly4_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
+                context.plotly_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
 
                 #graph 2
                 fig = go.Figure(data=trace2,layout=layout)
@@ -128,7 +128,7 @@ class GraphView(ViewletBase):
 
                 data = [
                     go.Surface(
-                    z=  z,
+                    z= z,
                     x= pd.DataFrame(df['divedata'][0])['pressure(dBAR)'].sort_values(),
                     y = df['ts']
                     )
@@ -165,11 +165,8 @@ class GraphView(ViewletBase):
                 context.plotly3_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
                 
                 fig = go.Figure(data=data2, layout=layout)
-                context.plotly_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
+                context.plotly4_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
                 
-                #context.plotly_html  = plotly_html
-                #context.plotly2_html = plotly2_html
-                #context.plotly3_html = plotly3_html
                 context.dato = yesterday
             
             except:
