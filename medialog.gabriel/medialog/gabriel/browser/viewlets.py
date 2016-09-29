@@ -50,8 +50,7 @@ class GraphView(ViewletBase):
         #today we will show yesterdays graph
         yesterday = datetime.date.today() - datetime.timedelta(1)
         
-        if context.dato:
-        # != yesterday:  
+        if context.dato != yesterday:  
             try: 
                 dtype = context.dtype
                 trace = []
