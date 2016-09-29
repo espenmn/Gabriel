@@ -1,1 +1,23 @@
-<div tal:replace="structure  view/graph" />  
+<div class="pat-autotoc autotabs"
+         data-pat-autotoc="section:fieldset;levels:legend;">
+       <fieldset>
+         <legend>Heatmap</legend>
+         <div tal:replace="structure  view/graph" />  
+       </fieldset>
+       <fieldset>
+         <legend>Linje</legend>
+         <div tal:replace="structure  context/plotly4_html" />  
+       </fieldset>
+       <fieldset>
+         <legend>Marker</legend>
+         <div tal:replace="structure  context/plotly2_html" />
+       </fieldset>
+       <fieldset>
+         <legend>3D</legend>
+         <div tal:replace="structure  context/plotly3_html" />  
+       </fieldset>
+</div>
+
+
+
+

@@ -63,7 +63,7 @@ class IGraphBehavior(form.Schema):
         default=u'Ingen relevante data ble funnet hos Gabriel',
         required=False,
     )
-    
+
 alsoProvides(IGraphBehavior, IFormFieldProvider)
 
     
@@ -114,6 +114,27 @@ class IGabrielGraphBehavior(form.Schema):
     form.mode(plotly_html='hidden')
     plotly_html = schema.Text(
         title=u'Plotly html',
+        default=u'Ingen relevante data ble funnet hos Gabriel',
+        required=False,
+    )
+        
+    form.mode(plotly2_html='hidden')
+    plotly2_html = schema.Text(
+        title=u'Plotly2 html',
+        default=u'Ingen relevante data ble funnet hos Gabriel',
+        required=False,
+    )
+    
+    form.mode(plotly3_html='hidden')
+    plotly3_html = schema.Text(
+        title=u'Plotly3 html',
+        default=u'Ingen relevante data ble funnet hos Gabriel',
+        required=False,
+    )
+    
+    form.mode(plotly4_html='hidden')
+    plotly4_html = schema.Text(
+        title=u'Plotly4 html',
         default=u'Ingen relevante data ble funnet hos Gabriel',
         required=False,
     )

@@ -86,7 +86,7 @@ def make_html(self, context):
                     for i in range(1,this_dive.shape[1]):
                         this_preassure = pd.DataFrame(this_dive[i-1].values.tolist())
                         name=str(this_preassure['pressure(dBAR)'][0])
-                        graphname = name + ' dBar: '  + dtype
+                        graphname = name + ' m: '  + dtype
         
                         #visible = "legendonly"
                         #visible = False

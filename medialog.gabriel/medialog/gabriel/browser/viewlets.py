@@ -50,10 +50,12 @@ class GraphView(ViewletBase):
         #today we will show yesterdays graph
         yesterday = datetime.date.today() - datetime.timedelta(1)
         
-        if context.dato != yesterday:  
+        if context.dato:
+        # != yesterday:  
             try: 
                 dtype = context.dtype
                 trace = []
+                trace2 = []
        
                 date = yesterday.strftime("%Y%m%d")
                 day_url = 'http://146.185.167.10/resampledday/%s/' %dtype
@@ -71,7 +73,7 @@ class GraphView(ViewletBase):
                 for i in range(1,this_dive.shape[1]):
                     this_preassure = pd.DataFrame(this_dive[i-1].values.tolist())
                     name=str(this_preassure['pressure(dBAR)'][0])
-                    graphname = name + ' dBar '
+                    graphname = name + ' m '
         
                     # Create a trace
                     trace.append(go.Scatter(
@@ -79,33 +81,43 @@ class GraphView(ViewletBase):
                                 y = this_preassure[dtype],
                                 name = graphname,
                     ))
+                    trace2.append(go.Scatter(
+                                x = xaxis,
+                                y = this_preassure[dtype],
+                                name = graphname,
+                                mode = 'markers'
+                    ))
             
                 layout = go.Layout(
-                    height=1700,
+                    height=700,
                     width=1200,
                     autosize=False,
                     xaxis=dict(
                     title='Tidspunkt',
                         titlefont=dict(
                             family='Courier New, monospace',
-                            size=18,
+                            size=14,
                             color='#7f7f7f'
                         )
                     ),
                     yaxis=dict(
-                        title='Verdi',
+                        title=dtype,
                         titlefont=dict(
                             family='Courier New, monospace',
-                            size=18,
+                            size=14,
                             color='#7f7f7f'
                         )
                     )
                 )
-    
-                fig = go.Figure(data=trace)
-                plotly_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
+                
+                fig = go.Figure(data=trace, layout=layout)
+                context.plotly4_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
 
-                #and now the 3D graph
+                #graph 2
+                fig = go.Figure(data=trace2,layout=layout)
+                context.plotly2_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
+
+                #and now the 3D graphs
                 z = []
         
                 #construct the 3d z
@@ -121,7 +133,14 @@ class GraphView(ViewletBase):
                     y = df['ts']
                     )
                 ]
-
+                data2 = [
+                    go.Heatmap(
+                    z=  z,
+                    x= pd.DataFrame(df['divedata'][0])['pressure(dBAR)'].sort_values(),
+                    y = df['ts']
+                    )
+                ]
+                
                 layout = go.Layout(
                     autosize=True,
                     scene=dict(
@@ -132,8 +151,8 @@ class GraphView(ViewletBase):
                             title="Tid"
                         )
                     ),
-                    width=900,
-                    height=1000,
+                    width=1200,
+                    height=700,
                     margin=dict(
                         l=5,
                         r=5,
@@ -143,8 +162,14 @@ class GraphView(ViewletBase):
                 )
 
                 fig = go.Figure(data=data, layout=layout)
-                plotly_html += plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
-                context.plotly_html = plotly_html
+                context.plotly3_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
+                
+                fig = go.Figure(data=data2, layout=layout)
+                context.plotly_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
+                
+                #context.plotly_html  = plotly_html
+                #context.plotly2_html = plotly2_html
+                #context.plotly3_html = plotly3_html
                 context.dato = yesterday
             
             except:
