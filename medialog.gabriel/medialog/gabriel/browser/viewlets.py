@@ -90,7 +90,7 @@ class GraphView(ViewletBase):
                 layout = go.Layout(
                     height=700,
                     width=1200,
-                    autosize=False,
+                    autosize=True,
                     xaxis=dict(
                     title='Tidspunkt',
                         titlefont=dict(
