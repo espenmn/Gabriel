@@ -148,6 +148,9 @@ class GraphView(ViewletBase):
                         ),
                         yaxis=dict(
                             title="Tid"
+                        ),
+                        zaxis=dict(
+                            title=dtype
                         )
                     ),
                     width=1200,
@@ -155,7 +158,7 @@ class GraphView(ViewletBase):
                     margin=dict(
                         l=5,
                         r=5,
-                        b=5,
+                        b=25,
                         t=9
                     )
                 )
