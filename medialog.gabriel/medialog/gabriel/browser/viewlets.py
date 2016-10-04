@@ -120,7 +120,7 @@ class GraphView(ViewletBase):
                 layout = go.Layout(
                     height=700,
                     width=1200,
-                    autosize=True,
+                    autosize=False,
                     xaxis=dict(
                     title='Tidspunkt',
                         titlefont=dict(
@@ -171,7 +171,7 @@ class GraphView(ViewletBase):
                 ]
                 
                 layout = go.Layout(
-                    autosize=True,
+                    autosize=False,
                     scene=dict(
                         xaxis=dict(
                             title="Dybde"
