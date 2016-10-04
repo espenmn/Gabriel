@@ -6,6 +6,26 @@
   <include package="plone.app.contentmenu" />
 
     <browser:viewlet
+        name="yeargraph_viewlet"
+        for="medialog.gabriel.behaviors.IYearGraphBehavior"
+        layer="medialog.gabriel.interfaces.IGabriel"
+        class=".viewlets.YearGraphViewlet"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+        template="yeargraphviewlet.pt"
+        permission="zope2.View"
+    />
+
+    <browser:viewlet
+        name="yeargraphjavascript_viewlet"
+        for="medialog.gabriel.behaviors.IYearGraphBehavior"
+        layer="medialog.gabriel.interfaces.IGabriel"
+        manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+        template="yeargraphjavascript.pt"
+        permission="zope2.View"
+    />
+
+
+    <browser:viewlet
         name="plotly_javascript_viewlet"
         for="medialog.gabriel.behaviors.IGabrielBehavior"
         layer="medialog.gabriel.interfaces.IGabriel"

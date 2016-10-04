@@ -7,6 +7,13 @@
 
 
    <plone:behavior
+        title="Gabriel Year graph behavior"
+        description="Shows heatmap for json URL"
+        provides=".behaviors.IYearGraphBehavior"
+        for="plone.dexterity.interfaces.IDexterityContent"
+        />
+
+   <plone:behavior
         title="Gabriel graph app behavior"
         description="Make text file to use in graph application"
         provides=".behaviors.IGraphBehavior"

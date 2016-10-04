@@ -1,0 +1,3 @@
+<div id="history-graph"></div>
+<script tal:replace="structure view/javascript">
+</script>

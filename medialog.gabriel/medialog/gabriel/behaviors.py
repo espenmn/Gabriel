@@ -30,6 +30,32 @@ class IDate(schema.Date):
 			max=datetime.date.today(),
     )
 
+
+class IYearGraphBehavior(form.Schema):
+    """ Fields to construct text to use in graph application"""
+    
+    history_graph_url = schema.URI(
+        title=u'URL to graph data',
+        required=True,
+        default="http://146.185.167.10/api/v1/heatmap/temp.json",
+    )
+    
+    graph_title = schema.TextLine(
+        title=u'Heatmap title',
+        default=u'Heatmap Tittel',
+        required=True,
+    )
+    
+    yaxis_title = schema.TextLine(
+        title=u'Y-axis title',
+        default=u'Y akse',
+        required=True,
+    )
+
+alsoProvides(IYearGraphBehavior, IFormFieldProvider)
+
+
+
 class IGraphBehavior(form.Schema):
     """ Fields to construct text to use in graph application"""
     
