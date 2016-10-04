@@ -4,6 +4,15 @@
     i18n_domain="medialog.gabriel">
           
   <include package="plone.app.contentmenu" />
+  
+      <browser:page
+        name="yeargraph_view"
+        for="medialog.gabriel.behaviors.IYearGraphBehavior"
+        layer="medialog.gabriel.interfaces.IGabriel"
+        class=".views.YearGraphView"
+        template="yeargraph.pt"
+        permission="zope2.View"
+    />
 
     <browser:viewlet
         name="yeargraph_viewlet"
@@ -23,7 +32,6 @@
         template="yeargraphjavascript.pt"
         permission="zope2.View"
     />
-
 
     <browser:viewlet
         name="plotly_javascript_viewlet"
