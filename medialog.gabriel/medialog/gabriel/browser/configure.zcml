@@ -14,7 +14,7 @@
         permission="zope2.View"
     />
 
-    <browser:viewlet
+    <!-- browser:viewlet
         name="yeargraph_viewlet"
         for="medialog.gabriel.behaviors.IYearGraphBehavior"
         layer="medialog.gabriel.interfaces.IGabriel"
@@ -22,16 +22,16 @@
         manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
         template="yeargraphviewlet.pt"
         permission="zope2.View"
-    />
+    /-->
 
-    <browser:viewlet
+    <!--browser:viewlet
         name="yeargraphjavascript_viewlet"
         for="medialog.gabriel.behaviors.IYearGraphBehavior"
         layer="medialog.gabriel.interfaces.IGabriel"
         manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
         template="yeargraphjavascript.pt"
         permission="zope2.View"
-    />
+    /-->
 
     <browser:viewlet
         name="plotly_javascript_viewlet"
