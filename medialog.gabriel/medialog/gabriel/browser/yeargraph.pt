@@ -12,7 +12,9 @@
           tal:define="templateId template/getId">
 
 
-        <div id="history-graph"></div>
+        <div tal:define="id python:'history-graph-' + context.id"
+        	tal:attributes="id id">
+        </div>
 		<script tal:replace="structure view/javascript">
 		</script>
 

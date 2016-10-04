@@ -12,6 +12,7 @@ class YearGraphView(DefaultView, BrowserView):
         """construct a javascript to show the histogram"""
 
         context = self.context
+        history_graph_id = 'history-graph-' + context.id
         
         return """<script>drawHistoryGraph();
 
@@ -25,7 +26,7 @@ function drawHistoryGraph() {
             title: '%(yaxis_title)s',
           },
         };
-        Plotly.newPlot('history-graph', fig.data, fig.layout);
+        Plotly.newPlot('%(history_graph)s', fig.data, fig.layout);
     });
 }
 </script>
@@ -33,6 +34,7 @@ function drawHistoryGraph() {
         'history_graph_url': context.history_graph_url,
         'graph_title': context.graph_title,
         'yaxis_title': context.yaxis_title,
-        }
+        'history_graph': history_graph_id,
+    }
 
         
