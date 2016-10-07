@@ -28,6 +28,14 @@
 
          </div>
        </fieldset>
+         <legend>Lenker</legend>
+         <div>
+		 <p><strong>Tekniske lenker for de spesielt interesserte:</strong></p>
+<p><a href="http://146.185.167.10/allgraphs" data-linktype="external" data-val="http://146.185.167.10/allgraphs">http://146.185.167.10/allgraphs</a><br /><a href="http://146.185.167.10/airtemp" data-linktype="external" data-val="http://146.185.167.10/airtemp">http://146.185.167.10/airtemp</a><br />http://146.185.167.10/resampled/&lt;dtype&gt;.json<br />http://146.185.167.10/resampledday/&lt;dtype&gt;/&lt;thisdate&gt;.json<br />http://146.185.167.10/raw/&lt;year&gt;.json<br /><a href="http://146.185.167.10/dives" data-linktype="external" data-val="http://146.185.167.10/dives">http://146.185.167.10/dives</a><br />http://146.185.167.10/dives/&lt;diveid&gt;<br /><a href="http://146.185.167.10/stats" data-linktype="external" data-val="http://146.185.167.10/stats">http://146.185.167.10/stats</a><br /><a href="http://146.185.167.10/count" data-linktype="external" data-val="http://146.185.167.10/count">http://146.185.167.10/count</a></p>
+<p> </p>
+
+         </div>
+       </fieldset>
        
 </div>
 
