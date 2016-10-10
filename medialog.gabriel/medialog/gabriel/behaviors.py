@@ -40,6 +40,31 @@ class IYearGraphBehavior(form.Schema):
         default="http://146.185.167.10/api/v1/heatmap/temp.json",
     )
     
+    colorscale = schema.Choice(
+        title=u'Colorscale',
+        required=True,
+        values=( "Greys", 
+        		"YlGnBu", 
+        		"Greens", 
+        		"YlOrRd", 
+        		"Bluered", 
+        		"RdBu", 
+        		"Reds", 
+        		"Blues", 
+        		"Picnic", 
+        		"Rainbow", 
+        		"Portland", 
+        		"Jet", 
+        		"Hot", 
+        		"Blackbody", 
+        		"Earth", 
+        		"Electric", 
+        		"Viridis",
+            ),
+    )
+    
+    
+    
     graph_title = schema.TextLine(
         title=u'Heatmap title',
         default=u'Heatmap Tittel',

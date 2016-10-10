@@ -29,27 +29,61 @@ class YearGraphViewlet(ViewletBase):
 
         context = self.context
         
+        if context.history_graph_url == "http://146.185.167.10/api/v1/turbidity/temp.json":
+			return """<script>drawHistoryGraph();
+				function drawHistoryGraph() {
+				var historyGraphURL = '%(history_graph_url)s';
+				console.log("Loading history graph, URL: " + historyGraphURL);
+				d3.json(historyGraphURL, function(err, fig) {
+					fig.layout = {
+					  title: '%(graph_title)s',
+					  xaxis: {
+					  	title: 'Tid', 
+					  	showline: true, 
+					  	mirror: 'allticks', 
+					  	ticks: 'inside',
+					  },
+					  yaxis: {
+						title: '%(yaxis_title)s',
+						type: 'linear',
+						showline: true,
+						autorange:true,
+						mirror: 'allticks',
+						ticks: 'inside',
+					  },
+					};
+					Plotly.newPlot('history-graph', fig.data, fig.layout);
+				});
+			}
+			</script>
+			""" % {
+					'history_graph_url': context.history_graph_url,
+					'graph_title': context.graph_title,
+					'yaxis_title': context.yaxis_title,
+					}
+		
+        
         return """<script>drawHistoryGraph();
-
-function drawHistoryGraph() {
-    var historyGraphURL = '%(history_graph_url)s';
-    console.log("Loading history graph, URL: " + historyGraphURL);
-    d3.json(historyGraphURL, function(err, fig) {
-        fig.layout = {
-          title: '%(graph_title)s',
-          yaxis: {
-            title: '%(yaxis_title)s',
-          },
-        };
-        Plotly.newPlot('history-graph', fig.data, fig.layout);
-    });
-}
-</script>
-""" % {
-        'history_graph_url': context.history_graph_url,
-        'graph_title': context.graph_title,
-        'yaxis_title': context.yaxis_title,
-        }
+			function drawHistoryGraph() {
+				var historyGraphURL = '%(history_graph_url)s';
+				console.log("Loading history graph, URL: " + historyGraphURL);
+				d3.json(historyGraphURL, function(err, fig) {
+					fig.layout = {
+					  title: '%(graph_title)s',
+					  yaxis: {
+						title: '%(yaxis_title)s',
+					  },
+					};
+					Plotly.newPlot('history-graph', fig.data, fig.layout);
+				});
+			}
+			</script>
+			""" % {
+					'history_graph_url': context.history_graph_url,
+					'graph_title': context.graph_title,
+					'yaxis_title': context.yaxis_title,
+					}
+			
 
 class PlotView(ViewletBase):
     """ plot something """
