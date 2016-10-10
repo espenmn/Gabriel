@@ -15,9 +15,8 @@
         <div tal:define="id python:'history-graph-' + context.id"
         	tal:attributes="id id">
         </div>
-		<script tal:replace="structure view/javascript">
-		</script>
-
+		<div tal:replace="structure view/plotly_html">
+		
     </metal:block>
 </metal:content-core>
 

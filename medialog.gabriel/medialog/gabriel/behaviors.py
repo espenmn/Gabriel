@@ -77,6 +77,19 @@ class IYearGraphBehavior(form.Schema):
         required=True,
     )
 
+    form.mode(plotly_html='hidden')
+    plotly_html = schema.Text(
+        title=u'Plotly html',
+        default=u'Ingen relevante data ble funnet hos Gabriel',
+        required=False,
+    )
+    
+    form.mode(dato='hidden')
+    dato=schema.Date(
+            title=_(u"Dato"),
+            default=datetime.date(2015, 5, 12),
+    )
+
 alsoProvides(IYearGraphBehavior, IFormFieldProvider)
 
 
