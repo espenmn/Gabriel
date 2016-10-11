@@ -18,8 +18,7 @@
 	</script>
 </metal:head>
 
-<metal:content-core fill-slot="content-core">
-    <metal:block define-macro="content-core"
+<metal:content-core fill-slot="content-core"
           tal:define="templateId template/getId;
                       scale_func context/@@images;
                       leadsize context/leadsize|nothing;
@@ -49,8 +48,7 @@
         	
         </div>
 
-  
-    </metal:block>
+ 
 </metal:content-core>
 
 </body>
