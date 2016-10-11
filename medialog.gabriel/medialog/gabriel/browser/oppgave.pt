@@ -44,8 +44,8 @@
               </figcaption>
 
         	</figure>
-        	<div><b>Fag:</b> <span tal:content="structure context/fag" /></div>
-        	<div><b>Oppgavetype:</b> <span tal:content="structure context/oppgavetype" /></div>
+        	<div><b>Fag:</b> <span tal:content="context/fag" /></div>
+        	<div><b>Oppgavetype:</b> <span tal:content="context/oppgavetype" /></div>
         	
         </div>
 
