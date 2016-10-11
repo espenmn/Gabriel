@@ -14,6 +14,14 @@
         permission="zope2.View"
     />
 
+      <browser:page
+        name="oppgave_view"
+        for="plone.dexterity.interfaces.IDexterityContainer"
+        layer="medialog.gabriel.interfaces.IGabriel"
+        template="oppgave.pt"
+        permission="zope2.View"
+    />
+
     <!-- browser:viewlet
         name="yeargraph_viewlet"
         for="medialog.gabriel.behaviors.IYearGraphBehavior"
