@@ -44,7 +44,7 @@
               </figcaption>
 
         	</figure>
-        	<div><b>Fag:</b> ${str(context/fag)}</div>
+        	<div><b>Fag:</b> <span tal:content="string: context/fag" /></div>
         	<div><b>Oppgavetype:</b> <span tal:content="context/oppgavetype" /></div>
         	
         </div>
