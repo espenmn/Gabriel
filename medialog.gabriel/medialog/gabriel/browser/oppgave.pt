@@ -26,7 +26,7 @@
                       scaled_image python: getattr(context.aq_explicit, 'image', False) and scale_func.scale('image', scale=leadsize)">
                       
         <div id="left-column">
-            <div id="parent-fieldname-text"
+            <div id="oppgave-text"
              tal:condition="context/text"
              tal:content="structure context/text/output" />
 
