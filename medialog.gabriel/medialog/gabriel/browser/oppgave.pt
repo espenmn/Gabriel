@@ -43,7 +43,7 @@
               </figcaption>
 
         	</figure>
-        	<div><p><b>Fag:</b> <span tal:content="string: context/fag" /></p>
+        	<div><p><b>Fag:</b> <span tal:content="context/fag" /></p>
         	<p><b>Oppgavetype:</b> <span tal:content="context/oppgavetype" /></p></div>
         	
         </div>
