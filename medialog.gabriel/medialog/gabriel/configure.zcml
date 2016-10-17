@@ -2,10 +2,12 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:zcml="http://namespaces.zope.org/zcml"
     xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="medialog.gabriel">
 
  	<include package=".browser" />
+ 	<include package="plone.app.portlets"/>
     <include file="behaviors.zcml" />
     <include file="profiles.zcml" />
  
@@ -27,6 +29,37 @@
         zope.lifecycleevent.interfaces.IObjectAddedEvent"
         handler=".events.make_text"
         />
+        
+    <permission
+       id="medialog.gabriel.portlets.oppgaveportlet.OppgavePortlet"
+       title="medialog.gabriel: Add oppgave portlet"
+       />
+
+     <permission
+       id="medialog.gabriel.portlets.getdataportlet.GetDataPortlet"
+       title="medialog.gabriel: Add Get Data portlet"
+       />
+
+     <!-- Register the portlets -->
+     <plone:portlet
+         name="medialog.gabriel.portlets.OppgavePortlet"
+         interface=".portlets.oppgaveportlet.IOppgavePortlet"
+         assignment=".portlets.oppgaveportlet.Assignment"
+         view_permission="zope2.View"
+         renderer=".portlets.oppgaveportlet.Renderer"
+         addview=".portlets.oppgaveportlet.AddForm"
+         editview=".portlets.oppgaveportlet.EditForm"
+         />
+         
+     <plone:portlet
+         name="medialog.gabriel.portlets.GetDataPortlet"
+         interface=".portlets.getdataportlet.IGetDataPortlet"
+         assignment=".portlets.getdataportlet.Assignment"
+         view_permission="zope2.View"
+         renderer=".portlets.getdataportlet.Renderer"
+         addview=".portlets.getdataportlet.AddForm"
+         editview=".portlets.getdataportlet.EditForm"
+         />
 
 </configure>
 

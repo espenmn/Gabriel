@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<portlets> 
+
+ <portlet
+   addview="medialog.gabriel.portlets.OppgavePortlet"
+   title="Oppgave Portlet"
+   description="Portlet for Oppgave"
+   />
+
+ <portlet
+   addview="medialog.gabriel.portlets.GetDataPortlet"
+   title="Get Data Portlet"
+   description="Portlet to get data from gabriel"
+   />
+   
+</portlets>
+
+ 
