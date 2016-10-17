@@ -26,6 +26,7 @@ class IOppgavePortlet(IPortletDataProvider):
 
     text = schema.Text(
             title=_(u"SLome text"),
+            required=False,
     )
 
 class Assignment(base.Assignment):
