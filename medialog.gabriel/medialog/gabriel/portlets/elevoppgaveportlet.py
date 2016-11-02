@@ -57,7 +57,7 @@ class Renderer(base.Renderer):
 
 
 class AddForm(formhelper.AddForm):
-    schema = IOppgavePortlet
+    schema = IElevoppgavePortlet
     label = _(u"Add Elevoppgave Portlet")
     description = _(u"This portlet displays forfatterinfo etc.")
 
@@ -66,6 +66,6 @@ class AddForm(formhelper.AddForm):
 
 
 class EditForm(formhelper.EditForm):
-    schema = IOppgavePortlet
+    schema = IElevoppgavePortlet
     label = _(u"Edit OppgavePortlet")
     description = _(u"This portlet displays forfatterinfo etc..")
