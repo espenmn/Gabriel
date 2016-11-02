@@ -8,6 +8,13 @@
    />
 
  <portlet
+   addview="medialog.gabriel.portlets.ElevoppgavePortlet"
+   title="Elevoppgave Portlet"
+   description="Portlet for Oppgave"
+   />
+
+
+ <portlet
    addview="medialog.gabriel.portlets.GetDataPortlet"
    title="Get Data Portlet"
    description="Portlet to get data from gabriel"
