@@ -23,13 +23,16 @@
               </figcaption>
 
        </figure>
-       <div><p><b>Fag</b><br/> 
+       <div><p><b>Fag</b></p> 
        		  <tal:fag tal:repeat="fagg context/fag">
-       			<span tal:content="fagg" />
+       			<p tal:content="fagg" />
        		  </tal:fag>
-       		</p>
+       		
             <p> </p>
-        	<p><b>Oppgavetype:</b> <span tal:content="context/oppgavetype|None" /></p>
+        	<p><b>Oppgavetype</b></p>
+        	<tal:otype tal:repeat="otype context/oppgavetype">
+       			<p tal:content="otype" />
+       		  </tal:otype>
        </div> 	
     </div>
 </aside>
