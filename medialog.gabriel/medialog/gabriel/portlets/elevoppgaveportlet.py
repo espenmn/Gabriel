@@ -14,7 +14,7 @@ _ = MessageFactory('medialog.gabriel')
 
 # TODO: If you require i18n translation for any of your schema fields below,
 
-class IOppgavePortlet(IPortletDataProvider):
+class IElevoppgavePortlet(IPortletDataProvider):
     """A portlet which renders elevoppgave 'metadata'.
     """
 
@@ -31,7 +31,7 @@ class Assignment(base.Assignment):
     This is what is actually managed through the portlets UI and associated
     with columns.
     """
-    implements(IOppgavePortlet)
+    implements(IElevoppgavePortlet)
     
     header = u""
    

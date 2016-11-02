@@ -50,6 +50,16 @@
          addview=".portlets.oppgaveportlet.AddForm"
          editview=".portlets.oppgaveportlet.EditForm"
          />
+    
+     <plone:portlet
+         name="medialog.gabriel.portlets.ElevoppgavePortlet"
+         interface=".portlets.oppgaveportlet.IOppgavePortlet"
+         assignment=".portlets.oppgaveportlet.Assignment"
+         view_permission="zope2.View"
+         renderer=".portlets.oppgaveportlet.Renderer"
+         addview=".portlets.oppgaveportlet.AddForm"
+         editview=".portlets.oppgaveportlet.EditForm"
+         />
          
      <plone:portlet
          name="medialog.gabriel.portlets.GetDataPortlet"
@@ -60,6 +70,9 @@
          addview=".portlets.getdataportlet.AddForm"
          editview=".portlets.getdataportlet.EditForm"
          />
+
+
+
 
 </configure>
 
