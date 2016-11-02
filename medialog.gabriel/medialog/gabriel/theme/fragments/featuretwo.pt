@@ -1,0 +1,31 @@
+<section id="featuretwo"  
+		 tal:define="folder_is nocall:context/innhold|nothing">
+   
+          
+
+			<div class="features" >
+				<div tal:repeat="item 
+					context/innhold/@@contentlisting"
+					class="feature  wow fadeInDown animated" 
+					data-wow-delay="600ms" data-wow-duration="1000ms" 
+					style="visibility: visible; animation-duration: 1000ms; 
+					animation-delay: 600ms; animation-name: fadeInDown;">
+					<div class="center" 
+						 tal:define="item_url item/getURL|item/absolute_url"
+						 tal:condition="exists:item/iconfield">
+					  <a href="#" tal:attributes="href item_url">
+						<i>
+						<span  tal:replace="structure item/iconfield/@@iconload"  />
+						</i>
+						 
+						<h2 tal:content="item/Title" />
+					  </a>
+					</div>            
+
+				</div>
+
+            </div>
+ 
+ 
+    <tal:css tal:replace="structure context/@@fontload"/>
+</section>

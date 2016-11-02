@@ -71,7 +71,7 @@
          editview=".portlets.getdataportlet.EditForm"
          />
 
-
+    <plone:static directory="theme" name="gabriel_theme" type="theme"/>
 
 
 </configure>
