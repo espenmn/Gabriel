@@ -1,0 +1,27 @@
+<aside class="portlet portletOppgavePortlet"
+    tal:define="portal_url context/@@plone_portal_state/portal_url;
+    scale_func context/@@images;
+    leadsize context/leadsize|nothing;
+    scaled_image python: getattr(context.aq_explicit, 'image', False) and scale_func.scale('image', scale=leadsize)"
+    i18n:domain="medialog.gabriel">
+
+    <header class="portletHeader">
+        <span tal:content="view/data/title" />
+    </header>
+    
+    <div class="portletItem elevoppgaveportlet">  
+      <p tal:content"="title obj/title"/>
+      
+       <div><p><b>Forfattere:</b><span tal:content="context/forfattere|None" /></p>
+       		<p><b>Skole:</b> <span tal:content="context/skole|None" /></p>
+      		<p><b>Dato:</b> <span tal:content="context/dato|None" /></p>
+       		<p><b>Fag:</b> <br/>
+       		<tal:fag tal:define="fag context/fag|None">
+       			<tal:repeat tal:repeat="fagg fag">
+       				<span tal:content="fagg" />
+       			</tal:repeat>
+       		</tal:fag></p>
+        	<p><b>Oppgavetype:</b> <span tal:content="context/oppgavetype|None" /></p>
+       </div> 	
+    </div>
+</aside>
