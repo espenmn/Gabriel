@@ -24,10 +24,6 @@ class IOppgavePortlet(IPortletDataProvider):
         required=True)
         
 
-    text = schema.Text(
-            title=_(u"SLome text"),
-            required=False,
-    )
 
 class Assignment(base.Assignment):
     """
@@ -62,8 +58,8 @@ class Renderer(base.Renderer):
 
 class AddForm(formhelper.AddForm):
     schema = IOppgavePortlet
-    label = _(u"Add Oppgave Portlet")
-    description = _(u"This portlet displays elevoppgave and text.")
+    label = _(u"Add Elevoppgave Portlet")
+    description = _(u"This portlet displays forfatterinfo etc.")
 
     def create(self, data):
         return Assignment(**data)
