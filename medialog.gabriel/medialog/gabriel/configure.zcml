@@ -53,12 +53,12 @@
     
      <plone:portlet
          name="medialog.gabriel.portlets.ElevoppgavePortlet"
-         interface=".portlets.oppgaveportlet.IOppgavePortlet"
-         assignment=".portlets.oppgaveportlet.Assignment"
+         interface=".portlets.elevoppgaveportlet.IElevoppgavePortlet"
+         assignment=".portlets.elevoppgaveportlet.Assignment"
          view_permission="zope2.View"
-         renderer=".portlets.oppgaveportlet.Renderer"
-         addview=".portlets.oppgaveportlet.AddForm"
-         editview=".portlets.oppgaveportlet.EditForm"
+         renderer=".portlets.elevoppgaveportlet.Renderer"
+         addview=".portlets.elevoppgaveportlet.AddForm"
+         editview=".portlets.elevoppgaveportlet.EditForm"
          />
          
      <plone:portlet
