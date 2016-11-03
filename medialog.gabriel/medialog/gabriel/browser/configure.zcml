@@ -93,7 +93,7 @@
         name="facebook_viewlet"
         for="medialog.gabriel.behaviors.IShareBehavior"
         layer="medialog.gabriel.interfaces.IGabriel"
-        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+        manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
         template="facebookshare.pt"
         permission="zope2.View"
     />
