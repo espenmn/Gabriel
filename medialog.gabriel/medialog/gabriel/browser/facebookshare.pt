@@ -1,3 +1,4 @@
+</tal:show>
 <html xmlns:tal="http://xml.zope.org/namespaces/tal"
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n">
@@ -16,7 +17,7 @@
 	<div class="fb-share-button" 
 		data-href="http://www.your-domain.com/your-page.html" 
 		data-layout="button_count"
-		tal:attributes="data-href context/getURL">
+		tal:attributes="data-href context/absolute_url">
 	</div>	
 </tal:show>
 </html>
