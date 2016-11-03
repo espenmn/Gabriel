@@ -14,7 +14,7 @@
 
 	<!-- Your share button code -->
 	<div class="fb-share-button" 
-		tal:define="item_url item/getURL|item/absolute_url"
+		tal:define="item_url context/getURL|context/absolute_url"
 		data-href="http://www.your-domain.com/your-page.html" 
 		data-layout="button_count"
 		tal:attributes="data-href item_url">
