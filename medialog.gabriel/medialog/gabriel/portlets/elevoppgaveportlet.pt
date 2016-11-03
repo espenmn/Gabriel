@@ -19,6 +19,7 @@
        		</tal:author>	
        		<p><b>Skole:</b> <span tal:content="context/skole|None" /></p>
       		<p><b>Dato:</b> <span tal:content="context/dato|None" /></p>
+      		<p> <br/></p>
       		<p><b>Fag</b></p> 
        		  <tal:fag tal:repeat="fagg context/fag">
        			<p tal:content="fagg" />
