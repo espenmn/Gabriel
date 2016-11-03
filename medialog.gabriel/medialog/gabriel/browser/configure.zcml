@@ -89,6 +89,14 @@
         permission="zope2.View"
     />
     
+    <browser:viewlet
+        name="facebook_viewlet"
+        for="medialog.gabriel.behaviors.IGraphBehavior"
+        layer="medialog.gabriel.interfaces.IGabriel"
+        manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+        template="facebookshare.pt"
+        permission="zope2.View"
+    />
     
 	<browser:resourceDirectory
   		name="medialog.gabriel"
