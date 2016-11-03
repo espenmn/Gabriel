@@ -30,7 +30,7 @@
   			<a href="#"  class="close-icon">
 						<i class="fa fa-times"></i></a>
         	<ul id="mobile-sitemap"  
-        		class="navTreeLevel1 wow  slideInRight"
+        		class="navTreeLevel0 wow  slideInRight"
         		 data-wow-delay="10ms" data-wow-duration="140ms" 
                  style="visibility: visible; animation-duration: 700ms; 
                  animation-delay: 30ms; animation-name: slideInRight">
