@@ -215,7 +215,7 @@ alsoProvides(IGabrielGraphBehavior, IFormFieldProvider)
 class IShareBehavior(form.Schema):
     """ Share this on facebook"""
     
-    disable = schema.Bool(
+    fb_disable = schema.Bool(
     	title=_(u"Disable sharing"),
     	description=_(u"Disable sharing"),
     	required=False,

@@ -2,7 +2,7 @@
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
-
+<tal:show tal:condition="not:context/fb_disable">
 <div id="fb-root"></div>
 	<script>(function(d, s, id) {
 	  var js, fjs = d.getElementsByTagName(s)[0];
@@ -20,3 +20,4 @@
 	</div>
 	
 </html>
+</tal:show>
