@@ -20,7 +20,7 @@ class SitemapView(BrowserView):
         data = view.siteMap()
         return self._renderLevel(children=data.get('children', []))
 
-    def _renderLevel(self, children=[], level=1):
+    def _renderLevel(self, children=[], level=2):
         output = ''
         for node in children:
             children = node.get('children', [])
