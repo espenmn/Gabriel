@@ -20,5 +20,5 @@
 		tal:attributes="data-href item_url">
 	</div>
 	
-</html>
 </tal:show>
+</html>
