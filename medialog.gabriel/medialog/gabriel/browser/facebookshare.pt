@@ -1,3 +1,8 @@
+<html xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n">
+
+
 <div id="fb-root"></div>
 	<script>(function(d, s, id) {
 	  var js, fjs = d.getElementsByTagName(s)[0];
@@ -13,3 +18,5 @@
 		data-layout="button_count"
 		tal:attributes="data-href context/url">
 	</div>
+	
+</html>

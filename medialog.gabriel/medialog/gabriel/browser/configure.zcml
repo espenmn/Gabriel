@@ -91,7 +91,7 @@
     
     <browser:viewlet
         name="facebook_viewlet"
-        for="medialog.gabriel.behaviors.IGraphBehavior"
+        for="medialog.gabriel.behaviors.IGabrielGraphBehavior"
         layer="medialog.gabriel.interfaces.IGabriel"
         manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
         template="facebookshare.pt"
