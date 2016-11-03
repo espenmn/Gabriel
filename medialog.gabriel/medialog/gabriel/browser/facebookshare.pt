@@ -17,7 +17,7 @@
 		tal:define="item_url context/getURL|context/absolute_url"
 		data-href="http://www.your-domain.com/your-page.html" 
 		data-layout="button_count"
-		tal:attributes="data-href item_url">
+		tal:attributes="data-href item_url">Share
 	</div>
 	
 </tal:show>
