@@ -94,44 +94,15 @@
   		name="medialog.gabriel"
   		directory="static" />
   		
-  		
-  		  <browser:page
-  	for="*"
-  	name="visual_sitemap"
-  	class=".visual_sitemap.VisualSitemapView"
-  	template="visual_sitemap.pt"
-  	permission="zope.Public"
-  	allowed_interface="Products.CMFPlone.browser.interfaces.ISitemapView"
-  	/>
-
-
   <browser:page
   	for="*"
-  	name="menu_sitemap"
-  	class=".menu_sitemap.SitemapView"
-  	template="menu_sitemap.pt"
-  	permission="zope.Public"
-  	allowed_interface="Products.CMFPlone.browser.interfaces.ISitemapView"
-  	/>
-
-
-  <browser:page
-  	for="*"
-  	name="mobile_sitemap"
+  	name="mob_sitemap"
   	class=".menu_sitemap.SitemapView"
   	template="mobile_sitemap.pt"
   	permission="zope.Public"
   	allowed_interface="Products.CMFPlone.browser.interfaces.ISitemapView"
   	/>
 
-  <browser:page
-  	for="*"
-  	name="left_sitemap"
-  	class=".left_sitemap.SitemapView"
-  	template="left_sitemap.pt"
-  	permission="zope.Public"
-  	allowed_interface="Products.CMFPlone.browser.interfaces.ISitemapView"
-  	/>
 
 
 </configure>

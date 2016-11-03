@@ -36,7 +36,7 @@
   		<!-- sitemap for navigation -->
 		<!-- replace css:theme-children="#visual-sitemap"      css:content="#portal-menu-sitemap"     href="/@@menu_sitemap" /--> 
       	<!--replace css:theme="#mainnavigation"   css:content="#visual-sitemap"     href="/@@visual_sitemap" /--> 
-      	<replace css:theme="#visual-sitemap"   css:content="#portal-mobile-sitemap"     href="/@@mobile_sitemap" />       		
+      	<replace css:theme="#visual-sitemap"   css:content="#portal-mobile-sitemap"     href="/@@mob_sitemap" />       		
 		
 		
 	
