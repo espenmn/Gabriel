@@ -2,7 +2,7 @@
       xmlns:metal="http://xml.zope.org/namespaces/metal"
       xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
-<tal:show tal:condition="not:context/fb_disable">
+<tal:show tal:condition="context/fb_disable">
 <div id="fb-root"></div>
 	<script>(function(d, s, id) {
 	  var js, fjs = d.getElementsByTagName(s)[0];
@@ -15,7 +15,8 @@
 	<!-- Your share button code -->
 	<div class="fb-share-button" 
 		data-href="http://www.your-domain.com/your-page.html" 
-		data-layout="button_count">
+		data-layout="button_count"
+		tal:attributes="data-href context/getURL">
 	</div>
 	
 </html>
