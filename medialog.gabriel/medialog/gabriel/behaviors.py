@@ -215,9 +215,16 @@ alsoProvides(IGabrielGraphBehavior, IFormFieldProvider)
 class IShareBehavior(form.Schema):
     """ Share this on facebook"""
     
+    form.fieldset(
+		'Settings',
+		fields=[
+			'fb_enable',
+		],
+	)
+
     fb_enable = schema.Bool(
-    	title=_(u"Disable sharing"),
-    	description=_(u"Disable sharing"),
+    	title=_(u"Enable FB sharing"),
+    	description=_(u"Enabler facebook sharing"),
     	required=False,
     	default=True,
     )
