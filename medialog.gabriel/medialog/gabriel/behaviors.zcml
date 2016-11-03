@@ -35,5 +35,11 @@
         />
    
    
+    <plone:behavior
+        title="FB Share behavior"
+        description="Share on facebook"
+        provides=".behaviors.IShareBehavior"
+        for="plone.dexterity.interfaces.IDexterityContent"
+        />
    
 </configure>
