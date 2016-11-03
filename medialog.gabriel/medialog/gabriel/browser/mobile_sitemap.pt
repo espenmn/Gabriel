@@ -64,7 +64,7 @@
         			$(this).find('i').toggleClass('fa-arrow-circle-down');
     			});
     			
-    			$('ul#mobile-sitemap.navTreeLevel0 > li > a.nextlevel').click();
+    			$('ul#mobile-sitemap > li:nth-child(2) a.nextlevel').click();
     			
 			});
 			</script>
