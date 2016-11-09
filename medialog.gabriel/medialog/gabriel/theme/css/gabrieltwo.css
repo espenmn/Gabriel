@@ -183,6 +183,9 @@ div#infolink,
     div#infolink {
 	display: none;
 }
+#portal-mobile-sitemap {
+	margin:  1em 0 0 0 ;
+}
 }
 
 
