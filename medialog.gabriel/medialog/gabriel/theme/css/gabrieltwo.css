@@ -1,3 +1,5 @@
+/* @override http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css */
+
 
 .xpull-right.visible-xs {
 	display: none;
@@ -170,11 +172,13 @@ body.section-referanser div.outer-wrapper {
     margin-bottom: 1em;
 }
 
+div#info,
 #portal-mobile-sitemap {
 	float: right;
 	font-size: 160%;
 	margin:  1.4em 1.4em 0 0 ;
 }
+
 
 a.toggler i {
 	padding-right: 0.3em;
