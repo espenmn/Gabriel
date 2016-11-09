@@ -1,5 +1,9 @@
 /* @override http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css */
 
+iframe {
+	max-width: 100%;
+ 
+}
 
 .xpull-right.visible-xs {
 	display: none;
