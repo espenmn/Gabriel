@@ -172,11 +172,17 @@ body.section-referanser div.outer-wrapper {
     margin-bottom: 1em;
 }
 
-div#info,
+div#infolink,
 #portal-mobile-sitemap {
 	float: right;
 	font-size: 160%;
 	margin:  1.4em 1.4em 0 0 ;
+}
+
+@media (max-width: 768px) {
+    div#infolink {
+	display: none;
+}
 }
 
 
