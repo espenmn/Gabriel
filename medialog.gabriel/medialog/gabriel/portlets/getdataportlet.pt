@@ -5,8 +5,16 @@
         <span tal:content="view/data/title" />
     </header>
     
-  	<div class="container">
+     <a href="#modal_get_data" class="btn btn-lg btn-primary pat-plone-modal"
+      data-pat-plone-modal="height: 600px;
+                      width: 80%">
+      Trykk for å hente data</a>
+   <div id="modal_get_data" style="display:none">
+ 
   		<iframe src="http://ektedata.herokuapp.com/queries" height="700"></iframe> 
-  	</div>
+ 
+   </div>
+
+  	
 </aside>
 <!--div class="clearboth" /-->
