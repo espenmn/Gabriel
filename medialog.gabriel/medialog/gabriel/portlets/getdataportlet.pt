@@ -11,7 +11,7 @@
       Trykk for å hente data</a>
    <div id="modal_get_data" style="display:none">
  
-  		<iframe src="http://ektedata.herokuapp.com/queries" height="700"></iframe> 
+  		<iframe src="http://ektedata.herokuapp.com/queries"></iframe> 
  
    </div>
 
