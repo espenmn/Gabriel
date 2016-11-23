@@ -5,8 +5,8 @@
         <span tal:content="view/data/title" />
     </header>
     
-  <div class="container">
-  <iframe src="http://ektedata.herokuapp.com/queries" height="700"></iframe> 
-  </div>
+  	<div class="container">
+  		<iframe src="http://ektedata.herokuapp.com/queries" height="700"></iframe> 
+  	</div>
 </aside>
 <!--div class="clearboth" /-->
