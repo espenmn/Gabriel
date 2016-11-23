@@ -1,5 +1,7 @@
 /* @override http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css */
 
+/* @override http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css */
+
 iframe {
 	max-width: 100%;
  
@@ -6698,4 +6700,8 @@ figure.newsImageContainer.image-large {
 
 img.image-inline {
 	opacity
+}
+
+#oppgave-text {
+	font-size: 115%;
 }

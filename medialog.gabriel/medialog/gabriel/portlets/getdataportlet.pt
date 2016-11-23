@@ -6,76 +6,7 @@
     </header>
     
   <div class="container">
-    <select id="parameterDropDown" name="parameter">
-      <option value="" disabled="disabled">Parameter</option>
-      <option value="timeseries.temp" selected="selected">Temperatur</option>
-      <option value="timeseries.oxygene">Oksygen</option>
-      <option value="timeseries.salt">Salt</option>
-      <option value="timeseries.turbidity">Turbiditet</option>
-      <option value="timeseries.fluorescent">Fluorescens</option>
-      <option value="airtemp">Lufttemperatur</option>
-    </select>
-    <select id="howMuchDataDropDown" name="howMuchDataDropDown">
-      <option value="" disabled="disabled">How much data</option>
-      <option value="allData" selected="selected">All data</option>
-      <option value="24hourAverage">Gjennomsnitt døgn</option>
-      <option value="weeklyAverage">Gjennomsnitt uke</option>
-      <option value="monthlyAverage">Gennomsnitt måned</option>
-      <option value="yearlyAverage">Gjennomsnitt år</option>
-    </select>
-    <input id="fromDate" type="text" placeholder="Dato fra" value="12/11/10/15"/>
-    <input id="toDate" type="text" placeholder="Dato til" value="12/12/10/15"/>
-    <select id="depthDropDown" name="depthDropDown" onchange="changedBox('depthFrom','depthTo',id);">
-      <option value="" disabled="disabled">Dybdetype</option>
-      <option value="allDepths" selected="selected">Alle dybder</option>
-      <option value="oneDepth">En dybde</option>
-      <option value="depthBetween">Dybde mellom</option>
-    </select>
-    <select id="depthFrom" name="depthFrom" disabled="disabled">
-      <option value="" disabled="disabled" selected="selected">Dybde fra</option>
-      <option value="0.5">0.5</option>
-      <option value="1.5">1.5</option>
-      <option value="2.5">2.5</option>
-      <option value="3.5">3.5</option>
-      <option value="4.5">4.5</option>
-      <option value="5.5">5.5</option>
-      <option value="6.5">6.5</option>
-      <option value="7.5">7.5</option>
-      <option value="8.5">8.5</option>
-      <option value="9.5">9.5</option>
-      <option value="10.5">10.5</option>
-      <option value="11.5">11.5</option>
-      <option value="12.5">12.5</option>
-      <option value="13.5">13.5</option>
-      <option value="14.5">14.5</option>
-      <option value="15.5">15.5</option>
-      <option value="16.5">16.5</option>
-      <option value="17.5">17.5</option>
-      <option value="18.5">18.5</option>
-    </select>
-    <select id="depthTo" name="depthTo" disabled="disabled">
-      <option value="" disabled="disabled" selected="selected">Dybde til</option>
-      <option value="0.5">0.5</option>
-      <option value="1.5">1.5</option>
-      <option value="2.5">2.5</option>
-      <option value="3.5">3.5</option>
-      <option value="4.5">4.5</option>
-      <option value="5.5">5.5</option>
-      <option value="6.5">6.5</option>
-      <option value="7.5">7.5</option>
-      <option value="8.5">8.5</option>
-      <option value="9.5">9.5</option>
-      <option value="10.5">10.5</option>
-      <option value="11.5">11.5</option>
-      <option value="12.5">12.5</option>
-      <option value="13.5">13.5</option>
-      <option value="14.5">14.5</option>
-      <option value="15.5">15.5</option>
-      <option value="16.5">16.5</option>
-      <option value="17.5">17.5</option>
-      <option value="18.5">18.5</option>
-    </select>
-    <input id="acceptButton" type="button" value="Hent Data" onclick="acceptButtonHit();"/>
+  <iframe src="http://ektedata.herokuapp.com/queries"></iframe> 
   </div>
 </aside>
 <!--div class="clearboth" /-->
