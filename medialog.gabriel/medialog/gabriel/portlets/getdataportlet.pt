@@ -8,12 +8,15 @@
     </header>
     
     <div class="container">
-     	<p>
+        <p> </p>
+     	<p><br/>
      	<a href="#modal_get_data" class="btn btn-lg btn-primary pat-plone-modal"
       		data-pat-plone-modal="height: 800px;
                       width: 80%">
       		Trykk for å hente data</a>
+      		<br>
       	</p>
+      	<p> </p>
    	</div>
    	<div id="modal_get_data" style="display:none">
   		<iframe src="http://ektedata.herokuapp.com/queries" height="900px" width="100%"></iframe> 
