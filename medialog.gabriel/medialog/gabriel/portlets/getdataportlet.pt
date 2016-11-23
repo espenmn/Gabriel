@@ -6,7 +6,7 @@
     </header>
     
   <div class="container">
-  <iframe src="http://ektedata.herokuapp.com/queries"></iframe> 
+  <iframe src="http://ektedata.herokuapp.com/queries" height="700"></iframe> 
   </div>
 </aside>
 <!--div class="clearboth" /-->
