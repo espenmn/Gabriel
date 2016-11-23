@@ -1,3 +1,5 @@
+
+
 <aside class="portlet portletGetDataPortlet"
     i18n:domain="medialog.gabriel">
 
@@ -5,16 +7,17 @@
         <span tal:content="view/data/title" />
     </header>
     
-     <a href="#modal_get_data" class="btn btn-lg btn-primary pat-plone-modal"
-      data-pat-plone-modal="height: 600px;
+    <div class="container">
+     	<a href="#modal_get_data" class="btn btn-lg btn-primary pat-plone-modal"
+      		data-pat-plone-modal="height: 1000px;
                       width: 80%">
-      Trykk for å hente data</a>
-   <div id="modal_get_data" style="display:none">
- 
-  		<iframe src="http://ektedata.herokuapp.com/queries"></iframe> 
- 
+      		Trykk for å hente data
+      	</a>
+   	</div>
+   	<div id="modal_get_data" style="display:none">
+  		<iframe src="http://ektedata.herokuapp.com/queries" width="400px"></iframe> 
    </div>
 
-  	
+  	<div class="clearboth" />
 </aside>
 <!--div class="clearboth" /-->
