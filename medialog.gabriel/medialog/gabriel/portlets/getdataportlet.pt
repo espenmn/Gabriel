@@ -9,8 +9,7 @@
     
     <div class="container">
      	<a href="#modal_get_data" class="btn btn-lg btn-primary pat-plone-modal"
-      		data-pat-plone-modal="height: 1000px;
-                      width: 80%">
+      		data-pat-plone-modal="height: 1000;   width: 80%">
       		Trykk for å hente data
       	</a>
    	</div>
