@@ -29,7 +29,7 @@ class YearGraphViewlet(ViewletBase):
 
         context = self.context
         
-        if context.history_graph_url == "http://146.185.167.10/api/v1/turbidity/temp.json":
+        if context.history_graph_url == "https://ektedata.uib.no/skramdykk/api/v1/turbidity/temp.json":
 			return """<script>drawHistoryGraph();
 				function drawHistoryGraph() {
 				var historyGraphURL = '%(history_graph_url)s';
@@ -121,7 +121,7 @@ class GraphView(ViewletBase):
                 trace2 = []
        
                 date = yesterday.strftime("%Y%m%d")
-                day_url = 'http://146.185.167.10/resampledday/%s/' %dtype
+                day_url = 'https://ektedata.uib.no/skramdykk/resampledday/%s/' %dtype
                 #on its own line, in case of looping
                 json_url = day_url + date + '.json'
                 f = urllib.urlopen(json_url)   

@@ -37,7 +37,7 @@ class IYearGraphBehavior(form.Schema):
     history_graph_url = schema.URI(
         title=u'URL to graph data',
         required=True,
-        default="http://146.185.167.10/api/v1/heatmap/temp.json",
+        default="https://ektedata.uib.no/skramdykk/api/v1/heatmap/temp.json",
     )
     
     colorscale = schema.Choice(
