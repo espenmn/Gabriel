@@ -72,7 +72,7 @@ def make_html(self, context):
             for dato in dates:
                 if dato > datetime.date(2015, 5, 12) and dato <  datetime.date.today():
                     date = dato.strftime("%Y%m%d")
-                    day_url = 'https://ektedata.uib.no/skramdykk/resampledday/%s/' %dtype
+                    day_url = 'https://ektedata.uib.no/gabrieldata/resampledday/%s/' %dtype
                     #on its own line, in case of looping
                     json_url = day_url + date + '.json'
                     f = urllib.urlopen(json_url)   
@@ -358,7 +358,7 @@ def make_html(self, context):
             for dato in dates:
                 if dato > datetime.date(2015, 5, 12) and dato <  datetime.date.today():
                     date = dato.strftime("%Y%m%d")
-                    day_url = 'https://ektedata.uib.no/skramdykk/resampledday/%s/' %dtype
+                    day_url = 'https://ektedata.uib.no/gabrieldata/resampledday/%s/' %dtype
                     #on its own line, in case of looping
                     json_url = day_url + date + '.json'
                     f = urllib.urlopen(json_url)   
@@ -429,7 +429,7 @@ def make_text(self, context):
     for dato in daterange:
         #if dato > datetime.date(2015, 5, 12) and dato <  datetime.date.today():
         date = dato.strftime("%Y%m%d")
-        day_url = 'https://ektedata.uib.no/skramdykk/resampledday/%s/' %dtype
+        day_url = 'https://ektedata.uib.no/gabrieldata/resampledday/%s/' %dtype
         #on its own line, in case of looping
         json_url = day_url + date + '.json'
         f = urllib.urlopen(json_url)   
