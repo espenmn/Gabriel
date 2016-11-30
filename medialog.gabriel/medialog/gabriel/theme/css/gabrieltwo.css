@@ -5108,170 +5108,140 @@ body#visual-portal-wrapper.pat-plone #edit-zone .contenttype-news-item:after {
     color: #696969;
 }
 
-.plone-modal {
-    display: none;
-    overflow: auto;
-    overflow-y: scroll;
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: 1050;
-    -webkit-overflow-scrolling: touch;
-    outline: 0;
-    z-index: 1040;
-    background: rgba(255, 255, 255, 0.5);
+.modal {
+  display: none;
+  overflow: auto;
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1050;
+  -webkit-overflow-scrolling: touch;
+  outline: 0;
+  z-index: 1040;
+  background: rgba(255, 255, 255, 0.9);
 }
-
-.plone-modal .plone-modal-dialog {
-    width: 100%;
-    position: relative;
+.modal .modal-dialog {
+  width: 100%;
+  position: relative;
 }
-
-.plone-modal .plone-modal-dialog .plone-modal-header {
-    min-height: 25px;
-    padding: 12px;
+.modal .modal-dialog .modal-header {
+  min-height: 25px;
+  padding: 12px;
 }
-
-.plone-modal .plone-modal-dialog .plone-modal-header h3 {
-    font-size: 19px;
-    margin: 0;
+.modal .modal-dialog .modal-header h3 {
+  font-size: 18px;
+  margin: 0;
 }
-
-.plone-modal .plone-modal-dialog .plone-modal-header .plone-modal-close {
-    margin-top: -12px;
-    float: right;
-    font-size: 38px;
-    font-weight: 100;
-    line-height: 1;
-    color: #000;
-    text-shadow: 0 1px 0 #fff;
-    opacity: .2;
+.modal .modal-dialog .modal-header .close {
+  margin-top: -12px;
+  float: right;
+  font-size: 36px;
+  font-weight: 100;
+  line-height: 1;
+  color: #000;
+  text-shadow: 0 1px 0 #fff;
+  opacity: .2;
 }
-
-.plone-modal .plone-modal-dialog .plone-modal-header .plone-modal-close:hover,
-.plone-modal .plone-modal-dialog .plone-modal-header .plone-modal-close:focus {
-    text-decoration: none;
-    cursor: pointer;
-    opacity: .5;
+.modal .modal-dialog .modal-header .close:hover,
+.modal .modal-dialog .modal-header .close:focus {
+  text-decoration: none;
+  cursor: pointer;
+  opacity: .5;
 }
-
-.plone-modal .plone-modal-dialog .plone-modal-body {
-    padding: 12px;
+.modal .modal-dialog .modal-body {
+  padding: 12px;
 }
-
-.plone-modal .plone-modal-dialog .plone-modal-footer {
-    border-top: 1px solid #cccccc;
-    background: #fcfcfd;
-    box-shadow: inset 0 10px 10px -10px rgba(0, 0, 0, 0.05);
-    padding: 12px;
-    text-align: right;
+.modal .modal-dialog .modal-footer {
+  border-top: 1px solid #cccccc;
+  background: #fcfcfd;
+  box-shadow: inset 0 10px 10px -10px rgba(0, 0, 0, 0.05);
+  padding: 12px;
+  text-align: right;
 }
-
-.plone-modal .plone-modal-dialog .plone-modal-footer .pattern-modal-buttons input + input {
-    margin-left: 12px;
+.modal .modal-dialog .modal-footer .pattern-modal-buttons input + input {
+  margin-left: 12px;
 }
-
-.plone-modal .plone-modal-content {
-    position: relative;
-    background: rgba(255, 255, 255, 0.9);
-    border: 0;
-    border-radius: 4px;
-    outline: none;
-    background-clip: padding-box;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
-    padding-right: 15px;
-    padding-left: 15px;
-    margin-right: auto;
-    margin-left: auto;
-    padding-left: 0;
-    padding-right: 0;
+.modal .modal-content {
+  position: relative;
+  background: rgba(255, 255, 255, 0.9);
+  border: 0;
+  border-radius: 4px;
+  outline: none;
+  background-clip: padding-box;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
 }
-
 @media (min-width: 768px) {
-    .plone-modal .plone-modal-content {
-        width: 750px;
-    }
+  .modal .modal-content {
+    width: 750px;
+  }
 }
-
 @media (min-width: 992px) {
-    .plone-modal .plone-modal-content {
-        width: 970px;
-    }
+  .modal .modal-content {
+    width: 970px;
+  }
 }
-
 @media (min-width: 1200px) {
-    .plone-modal .plone-modal-content {
-        width: 1170px;
-    }
+  .modal .modal-content {
+    width: 1170px;
+  }
 }
-
-.plone-modal.fade {
-    opacity: 0;
-    -webkit-transition: opacity .25s ease;
-    transition: opacity .25s ease;
+.modal.fade {
+  opacity: 0;
+  -webkit-transition: opacity .33s ease;
+  transition: opacity .33s ease;
 }
-
-.plone-modal.fade.in {
-    opacity: 1;
-    -webkit-transition: opacity .25s ease;
-    transition: opacity .25 ease;
+.modal.fade.in {
+  opacity: 1;
+  -webkit-transition: opacity .33s ease;
+  transition: opacity .33s ease;
 }
-
-.plone-modal.fade .plone-modal-dialog {
-    -webkit-transform: translate(0, -25%);
-    -ms-transform: translate(0, -25%);
-    transform: translate(0, -25%);
-    -webkit-transition: -webkit-transform 0.25s ease-out;
-    -moz-transition: -moz-transform 0.25s ease-out;
-    -o-transition: -o-transform 0.25s ease-out;
-    transition: transform 0.25s ease-out;
+.modal.fade .modal-dialog {
+  -webkit-transform: translate(0, -25%);
+  -ms-transform: translate(0, -25%);
+  transform: translate(0, -25%);
+  -webkit-transition: -webkit-transform 0.3s ease-out;
+  -moz-transition: -moz-transform 0.3s ease-out;
+  -o-transition: -o-transform 0.3s ease-out;
+  transition: transform 0.3s ease-out;
 }
-
-.plone-modal.fade.in .plone-modal-dialog {
-    -webkit-transform: translate(0, 0);
-    -ms-transform: translate(0, 0);
-    transform: translate(0, 0);
+.modal.fade.in .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  transform: translate(0, 0);
 }
-
-.plone-modal.in {
-    display: block !important;
+.modal.in {
+  display: block !important;
 }
-
-.plone-modal-loading {
-    float: left;
-    width: 0%;
-    height: 100%;
-    font-size: 12px;
-    line-height: 20px;
-    color: #fff;
-    text-align: center;
-    background-color: #428bca;
-    -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
-    -webkit-transition: width .6s ease;
-    transition: width .6s ease;
-    -webkit-animation: progress-bar-stripes 2s linear infinite;
-    animation: progress-bar-stripes 2s linear infinite;
-    background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
-    background-size: 40px 40px;
-    border-radius: 0.5em;
-    width: 40em;
-    height: 40px;
-}
-
-.plone-modal-open {
-    padding-right: 0;
-}
-
-.plone-modal-open > * :not(.plone-modal-wrapper, .select2-drop, .mce-floatpanel) {
-    -webkit-filter: blur(1px);
-    -moz-filter: blur(1px);
-    -o-filter: blur(1px);
-    -ms-filter: blur(1px);
-    filter: blur(1px);
+.modal-loading {
+  float: left;
+  width: 0%;
+  height: 100%;
+  font-size: 12px;
+  line-height: 20px;
+  color: #fff;
+  text-align: center;
+  background-color: #428bca;
+  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+  -webkit-transition: width .6s ease;
+  transition: width .6s ease;
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+  animation: progress-bar-stripes 2s linear infinite;
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+  border-radius: 0.5em;
+  width: 40em;
+  height: 40px;
 }
 
 .pattern-pickadate-wrapper .pattern-pickadate-time-wrapper {
