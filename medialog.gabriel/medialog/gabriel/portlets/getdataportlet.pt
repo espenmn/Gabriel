@@ -19,7 +19,7 @@
       	<p> </p>
    	</div>
    	<div id="modal_get_data" style="display:none">
-  		<iframe src="https://ektedata.uib.no/gabrieldata/download/iframe" height="900px" width="100%"></iframe> 
+  		<iframe src="https://ektedata.uib.no/gabrieldata/hent/iframe" height="900px" width="100%"></iframe> 
    </div>
 
   	<div class="clearboth" />
