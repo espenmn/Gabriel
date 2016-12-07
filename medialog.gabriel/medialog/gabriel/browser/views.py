@@ -32,6 +32,23 @@ class YearGraphView(DefaultView, BrowserView):
             graph_url = context.history_graph_url
         
             colorscale= context.colorscale
+            
+            if colorscale == 'Egen1':
+                colorscale = [[0, 'rgb(166,206,227)'], 
+                              [0.25, 'rgb(31,120,180)'], 
+                              [0.45, 'rgb(178,223,138)'], 
+                              [0.65, 'rgb(51,160,44)'], 
+                              [0.85, 'rgb(251,154,153)'], 
+                              [1, 'rgb(227,26,28)']]
+            
+            if colorscale == 'Egen2':
+                colorscale = [[0, 'rgb(255,204,255)'], 
+                              [0.20, 'rgb(255,102,255)'], 
+                              [0.35, 'rgb(102,02,255)'], 
+                              [0.55, 'rgb(153,255,153)'], 
+                              [0.75, 'rgb(255,255,102)'], 
+                              [0.85, 'rgb(255,51,51)'], 
+                              [1, 'rgb(227,26,28)']]
         
             f = urllib.urlopen(graph_url)   
             jsonfile=f.read()
@@ -43,6 +60,7 @@ class YearGraphView(DefaultView, BrowserView):
                     x=  df['x'][0],
                     y = df['y'][0],
                     colorscale = colorscale,
+                    autocolorscale=True, 
                     )
                 ]
             layout = go.Layout(
