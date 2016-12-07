@@ -60,7 +60,6 @@ class YearGraphView(DefaultView, BrowserView):
                     x=  df['x'][0],
                     y = df['y'][0],
                     colorscale = colorscale,
-                    autocolorscale=True, 
                     )
                 ]
             layout = go.Layout(
