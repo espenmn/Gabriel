@@ -43,11 +43,11 @@ class YearGraphView(DefaultView, BrowserView):
                     x=  df['x'][0],
                     y = df['y'][0],
                     colorscale = colorscale,
-                    autocolorscale=False, 
                     )
                 ]
             layout = go.Layout(
                     autosize=True,
+                    showlegend=True,
                     title= context.graph_title,
                     yaxis=dict(
                             title=context.yaxis_title

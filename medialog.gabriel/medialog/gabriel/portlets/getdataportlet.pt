@@ -19,9 +19,11 @@
       	<p> </p>
    	</div>
    	<div id="modal_get_data" style="display:none">
-  		<iframe src="https://ektedata.uib.no/gabrieldata/hent/iframe" height="900px" width="100%"></iframe> 
-   </div>
-
+  		<iframe src="https://ektedata.uib.no/gabrieldata/hent/iframe" height="900px" width="100%" frameborder="0"></iframe> 
+    </div>
+      <div><p> </p>
+     	<p><br/>
+     </div>
   	<div class="clearboth" />
 </aside>
 <!--div class="clearboth" /-->

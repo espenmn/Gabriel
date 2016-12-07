@@ -32,6 +32,7 @@ setup(name='medialog.gabriel',
           'plotly',
           'pandas',
            'numpy',
+           'medialog.bergensiana',
           # -*- Extra requirements: -*-
       ],
       entry_points="""

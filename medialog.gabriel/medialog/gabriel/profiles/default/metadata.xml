@@ -2,6 +2,7 @@
   <description>Plotly for Plone and Gabriel</description>
     <dependencies>
       <dependency>profile-medialog.controlpanel:default</dependency>
+      <dependency>profile-medialog.bergensiana:only_settings</dependency>
     </dependencies>
   <version>1000</version>
 </metadata>
