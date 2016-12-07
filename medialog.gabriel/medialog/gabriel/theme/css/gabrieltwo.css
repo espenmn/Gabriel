@@ -2,6 +2,8 @@
 
 /* @override http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css */
 
+/* @override http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css */
+
 iframe {
 	max-width: 100%;
  
@@ -1340,7 +1342,15 @@ legend {
 	width: 240px;
 }
 
+@media all and (max-width: 700px) {
 
+#center-and-left-area,
+#right-area {
+	clear:  both;
+	width: 100%;
+}
+
+}
 
 .faceted-checkbox-widget {
 	margin-bottom: 2em ;
