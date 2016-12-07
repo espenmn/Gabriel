@@ -62,6 +62,7 @@ class IYearGraphBehavior(form.Schema):
         		"Viridis",
         		"Egen1",
         		"Egen2",
+        		"Egen3",
             ),
     )
     

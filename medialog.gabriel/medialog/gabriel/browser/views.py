@@ -49,6 +49,16 @@ class YearGraphView(DefaultView, BrowserView):
                               [0.75, 'rgb(255,255,102)'], 
                               [0.85, 'rgb(255,51,51)'], 
                               [1, 'rgb(227,26,28)']]
+                              
+            if colorscale == 'Egen3':
+                colorscale = [[0, 'rgb(255,204,255)'], 
+                              [0.05, 'rgb(255,102,255)'], 
+                              [0.10, 'rgb(102,02,255)'], 
+                              [0.15, 'rgb(153,255,153)'], 
+                              [0.25, 'rgb(255,255,102)'], 
+                              [0.50, 'rgb(255,51,51)'], 
+                              [1, 'rgb(227,26,28)']]
+        
         
             f = urllib.urlopen(graph_url)   
             jsonfile=f.read()
