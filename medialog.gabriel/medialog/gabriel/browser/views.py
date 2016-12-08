@@ -27,7 +27,7 @@ class YearGraphView(DefaultView, BrowserView):
         #today we will show yesterdays graph
         yesterday = datetime.date.today() - datetime.timedelta(1)
         
-        if context.dato != yesterday:  
+        if context.dato != yesterday or context.debug_mode:  
             #history_graph_id = 'history-graph-' + context.id
             graph_url = context.history_graph_url
         
@@ -70,6 +70,9 @@ class YearGraphView(DefaultView, BrowserView):
                     x=  df['x'][0],
                     y = df['y'][0],
                     colorscale = colorscale,
+                    colorbar=dict(
+                            title=context.colorbar_title
+                        ),
                     )
                 ]
             layout = go.Layout(

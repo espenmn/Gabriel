@@ -79,6 +79,16 @@ class IYearGraphBehavior(form.Schema):
         required=True,
     )
 
+    colorbar_title = schema.TextLine(
+        title=u'Colorbar title',
+        default=u'Colorbar title',
+        required=True,
+    )
+    
+    debug_mode = schema.Bool(
+        title=u'Debug mode: When enabled the graph is not cached',
+    )
+
     form.mode(plotly_html='hidden')
     plotly_html = schema.Text(
         title=u'Plotly html',
