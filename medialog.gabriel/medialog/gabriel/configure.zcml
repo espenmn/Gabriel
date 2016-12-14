@@ -3,6 +3,7 @@
     xmlns:zcml="http://namespaces.zope.org/zcml"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:plone="http://namespaces.plone.org/plone"
+    xmlns:pp="http://namespaces.zopyx.com/pp"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="medialog.gabriel">
 
@@ -73,6 +74,10 @@
 
     <plone:static directory="theme" name="gabriel_theme" type="theme"/>
 
+    <pp:resourceDirectory
+          name="resources_ebok"
+          directory="resources_ebok"
+     />
 
 </configure>
 

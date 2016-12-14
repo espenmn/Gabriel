@@ -111,6 +111,22 @@
   	allowed_interface="Products.CMFPlone.browser.interfaces.ISitemapView"
   	/>
 
-
+    
+  <!--pp client templates -->
+  <browser:page
+      name="asHTML"
+      for="dexterity.interfaces.IDexterityContainer"
+      permission="zope2.View"
+      class=".oppgaver.OppgaveView"
+   />
+   
+  <browser:page
+        name="oppgave_chapter"
+        for="plone.dexterity.interfaces.IDexterityContent"
+        layer="medialog.gabriel.interfaces.IGabriel"
+        template="oppgave_chapter.pt"
+        permission="zope2.View"
+    />
+    
 
 </configure>

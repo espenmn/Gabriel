@@ -1,0 +1,262 @@
+import url("fonts.css");
+
+* {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+}
+ 
+@page {
+  size: A4;
+  orphans:4; 
+  widows:2;
+  margin: 5cm;
+  mso-header-margin:5in; 
+   mso-footer-margin:5in; 
+       -webkit-margin-before: 2cm;
+    -webkit-margin-end: 2cm;
+    -webkit-margin-after: 2cm;
+    -webkit-margin-start: 2cm;
+    -webkit-padding-before: 2cm;
+    -webkit-padding-end: 2cm;
+    -webkit-padding-after: 2cm;
+    -webkit-padding-start: 2cm;
+     box-sizing: content-box;
+    
+}
+
+
+html {
+  margin-left: 15mm;
+  margin-right: 15mm;
+  font-family:  "DejaVu Sans", "Times", "Times New Roman"  Georgia, serif;
+    font-size: 80%;
+    line-height: 130%;
+} 
+
+
+html, body, p {
+  orphans:4; 
+  widows:2;
+    font-family:  "DejaVu Sans", "Times", "Times New Roman"  Georgia, serif;
+}
+
+
+
+/* @group markdown */
+
+div.admonition {
+	page-break-inside:avoid;
+	font-family: "DeJaVu", "Helvetica Neue", Arial, Helvetica, Geneva, sans-serif
+}
+
+ p.admonition-title {
+	background: #319ea9;
+	color: white;
+	padding: 10pt 1em 0.5em;
+	margin-top:  -0.7em;
+	margin-left:  -1em;
+	margin-bottom: 15px;
+	float:  left;
+	page-break-after:avoid;
+	font-weight: normal;
+	font-style: normal;
+	font-size: 150%;
+	text-transform: uppercase;
+	border-radius: 0 0 6px 0;
+}
+ div.admonition p  {
+    xcontent: "";
+    clear: both;	
+
+}
+
+
+div.admonition.viktig {
+	border:  1px solid #f7c242;
+	background-color: #ffe5b4;
+	padding: 1em 1.5em 0.5em;
+	margin: 1em 0;
+
+}
+
+div.admonition.viktig:before  {
+	content: "!";
+	margin-left: -2.4em;
+	margin-top: -0.4em;
+	font-size:  2.4em;;
+	background-color: #f7c242;
+	padding: 3px 10px;
+	display: none;
+	width: 1.3em;
+	float: left;
+	text-align: center;
+	border-radius: 6px;
+	top:  0;
+}
+
+ 
+    
+div.admonition.note {
+	background-color: #f7c242;
+	padding: 1.5em 1.5em 1em;
+	margin: 1em 0 2em;
+	border-radius: 6px;
+}
+
+div.admonition.merk:before ,
+div.admonition.oppgave:before  {
+	content: "!";
+	margin-left: -2em;
+	font-size:  2.4em;;
+	background-color: #f7c242;
+	line-height: 1.7em;
+	width: 1.4em;
+	float: left;
+	text-align: center;
+	border-radius: 6px;
+	top:  0;
+	color:  white;;
+}
+
+div.admonition.oppgave:before {
+	background-color:#c64352;
+	content:  "?";
+	
+}
+
+div.admonition.eksempel {
+	background-color: #aab8c2;
+	padding: 1em 1.5em 0.5em;
+	margin: 2em 0 3em;
+	border:  1px solid  #319ea9;
+}
+
+div.admonition.aktivitet {
+	border: 1px solid #c64352;
+	padding: 4mm;
+	background-color: #d4aebb;	
+}
+
+div.admonition.maal {
+	border: 2px solid background: #319ea9;
+	padding: 4mm;
+	margin:  10mm 0;	
+	border-radius: 6pt;
+	
+}
+	
+div.admonition.maal p.admonition-title {
+	border-radius: 6pt 6pt 0 0 ;
+	display: block;
+	color:  white;
+	background: #319ea9;
+	padding: 5pt 4mm;
+;
+	}
+
+/* @end */
+
+
+
+.page-break
+    {
+    page-break-before:always;
+    } 
+
+hr, .chapter-break {
+    page-break-after:always;
+   }     
+	
+.chapter_frontpage {
+	text-align: center;
+}
+  
+
+  
+h1, h2, h3, h4, h5, h6 {
+	margin-top: 1.6em;
+    page-break-after: avoid;
+	color: #006298;
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+h1 {
+	  font-size: 250%;
+}
+
+div.chapter_frontpage h1 {
+	  page-break-before: never;
+	  font-size: 250%;
+	  line-height: 34pt;
+	  padding: 1cm;
+	  border-bottom:  1mm solid #006298;
+	  margin-bottom: 1cm;
+}
+
+p.chapterDescription {
+	font-size: 115%;
+	line-height: 18pt;
+	margin-bottom: 3cm;
+}
+
+h2 {
+	font-size: 200%;
+}
+
+h3 {
+	  font-size: 175%;
+}
+h4 {
+	  font-size: 150%;
+}
+
+h5, h6 {
+	 xcolor: #c64352;
+	 font-size: 120%;
+	 margin-bottom: 2px;
+	font-weight: bold;
+}
+
+
+
+table, figure {
+  page-break-inside: avoid;
+}
+
+
+p {
+	margin-bottom: 4pt;
+}
+
+img {
+  max-width: 100%;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    page-break-inside: avoid;
+    width: 100%;
+}
+#content table {
+	margin-bottom:15pt;
+	width: auto;
+}
+
+tr, td {
+    margin: 0;
+    padding: 0;
+}
+
+#content td,
+#content th  {
+	padding: 7px 15px;
+}
+td {
+    border: 1px solid #ccc;
+    margin: 0;
+    padding: 4px 8px;
+}
+
