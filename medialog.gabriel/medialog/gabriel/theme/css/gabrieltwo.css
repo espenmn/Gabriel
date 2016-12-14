@@ -5,6 +5,10 @@ iframe {
  
 }
 
+.plone-toolbar-short-title {
+	display: none;
+}
+
 .xpull-right.visible-xs {
 	display: none;
 }
