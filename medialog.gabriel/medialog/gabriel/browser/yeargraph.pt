@@ -16,6 +16,9 @@
         	tal:attributes="id id">
         </div>
 		<div tal:replace="structure view/plotly_html">
+		<div class="yeargraph-text"
+             tal:condition="context/text"
+             tal:content="structure context/text/output" />
 		
     </metal:block>
 </metal:content-core>
