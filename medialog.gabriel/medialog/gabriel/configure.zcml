@@ -76,7 +76,7 @@
 
     <pp:resourceDirectory
           name="resources_gabriel"
-          directory="resources_ebok"
+          directory="resources_gabriel"
      />
 
 </configure>
