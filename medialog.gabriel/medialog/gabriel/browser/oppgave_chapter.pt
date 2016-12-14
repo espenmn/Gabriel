@@ -4,6 +4,6 @@
 </div>
 <div tal:condition="context/text"
      tal:content="structure context/text/output" />
-
+    <h1 class="chapterTitle" tal:content="context/Title" />
 <div class="chapter-break">  </div>
 
