@@ -6,6 +6,8 @@
 
 /* @override http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css */
 
+/* @override http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css */
+
 iframe {
 	max-width: 100%;
  
@@ -193,6 +195,12 @@ div#infolink,
     div#infolink {
 	display: none;
 }
+
+article#content {
+ padding: 5px;
+ margin: 0;	
+}
+
 #portal-mobile-sitemap {
 	margin:  1em 0 0 0 ;
 }
@@ -1232,6 +1240,7 @@ svg-container,
 .js-plotly-plot,
 .plot-container.plotly {
     max-width: 100%;
+    margin: auto;
 }
 
 figure {
@@ -1506,6 +1515,7 @@ html {
 #visual-portal-wrapper div.outer-wrapper > div.container {
     width: 95%;
     max-width: 1400px;
+    min-width: 500px;
     margin: auto;
 }
 
@@ -3031,11 +3041,46 @@ fieldset[disabled] input[type="checkbox"] {
 body.userrole-anonymous #formfield-form-widgets-IGabrielGraphBehavior-dtype {
 	display: none;
 }
+.portaltype-visual_folder div.item.visualIEFloatFix  {
+	max-width: 100%;
+	border:  1px solid silver;
+	padding: 1emm;
+	margin-bottom: 4em;
 
-.js-plotly-plot {
-	margin-bottom: 6em;
 }
 
+div.plot-container.plotly {
+	max-width: 100%;
+
+}
+
+.portaltype-visual_folder div.item.visualIEFloatFix  {
+	max-width: 100%;
+	border:  1px solid silver;
+	padding: 1emm;
+	margin-bottom: 4em;
+}
+
+svg.main-svg,
+div.svg-container {
+	max-width: 100% !important;
+}
+
+svg.main-svg {
+	
+}
+
+.portaltype-visual_folder h2 {
+	text-align: center;
+	margin-top: 2em;
+	margin-bottom: 0;
+}
+
+div.yeargraph-text {
+	padding: 1em 1.5em 0.5em;
+	background: whitesmoke;
+	xmargin-bottom: 6em;
+}
 
 
 .field {
