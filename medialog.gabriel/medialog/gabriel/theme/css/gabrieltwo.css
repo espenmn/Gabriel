@@ -3061,14 +3061,12 @@ div.plot-container.plotly {
 	margin-bottom: 4em;
 }
 
-svg.main-svg,
+
 div.svg-container {
 	max-width: 100% !important;
+	overflow: scroll;
 }
 
-svg.main-svg {
-	
-}
 
 .portaltype-visual_folder h2 {
 	text-align: center;
