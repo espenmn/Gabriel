@@ -118,13 +118,13 @@
       for="plone.dexterity.interfaces.IDexterityContainer"
       permission="zope2.View"
       class=".oppgaver.OppgaveView"
-      template="oppgaver.pt"
    />
    
   <browser:page
         name="oppgave_chapter"
         for="plone.dexterity.interfaces.IDexterityContent"
         layer="medialog.gabriel.interfaces.IGabriel"
+        template="oppgave_chapter.pt"
         permission="zope2.View"
     />
     
