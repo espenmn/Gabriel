@@ -75,7 +75,7 @@
     <plone:static directory="theme" name="gabriel_theme" type="theme"/>
 
     <pp:resourceDirectory
-          name="resources_ebok"
+          name="resources_gabriel"
           directory="resources_ebok"
      />
 
