@@ -1,6 +1,6 @@
 <div class="chapter_frontpage">
     <h1 class="chapterTitle" tal:content="context/Title" />
-    <p class="chapterDescription" tal:content="context/Description" />
+    <p class="chapterDescription" tal:content="context/Description" />sss
 </div>
 <figure class="oppgaveImageContainer">
 	<img tal:replace="structure python: scaled_image.tag(css_class='newsImage')" />
