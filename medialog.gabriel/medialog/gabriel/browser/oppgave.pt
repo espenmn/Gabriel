@@ -16,17 +16,14 @@
 	});
 	</script>
 	<script type="text/javascript" async
-	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js>
 	</script>
 </metal:head>
-
 <metal:content-core fill-slot="content-core"
           tal:define="templateId template/getId">
-                      
             <div id="oppgave-text"
              tal:condition="context/text"
              tal:content="structure context/text/output" />
-
 </metal:content-core>
 
 </body>
