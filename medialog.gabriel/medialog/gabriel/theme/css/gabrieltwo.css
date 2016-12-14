@@ -3538,7 +3538,7 @@ fieldset[disabled] .destructive.active {
     background-color: #ffffff;
 }
 
-i.glyphicon {
+#content i.glyphicon {
 	display: none;
 }
 .link-parent {
