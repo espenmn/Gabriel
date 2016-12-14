@@ -1515,7 +1515,6 @@ html {
 #visual-portal-wrapper div.outer-wrapper > div.container {
     width: 95%;
     max-width: 1400px;
-    min-width: 500px;
     margin: auto;
 }
 
