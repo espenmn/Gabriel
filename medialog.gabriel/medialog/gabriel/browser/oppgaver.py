@@ -6,7 +6,7 @@ class OppgaveView(BrowserView):
     """ Converter view for Oppgave.
     """
 
-    template = ViewPageTemplateFile('oppgave.pt')
+    template = ViewPageTemplateFile('oppgaver.pt')
 
     def __call__(self, *args, **kw):
         return self.template(self.context)
