@@ -118,6 +118,7 @@
       for="dexterity.interfaces.IDexterityContainer"
       permission="zope2.View"
       class=".oppgaver.OppgaveView"
+      template="oppgaver.pt"
    />
    
   <browser:page
