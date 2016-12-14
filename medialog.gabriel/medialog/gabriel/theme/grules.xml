@@ -83,7 +83,7 @@
 	  <!-- Left column -->
 	  <rules if-content="//*[@id='portal-column-one']">
 		<replace css:theme="#column1-container">
-			<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar">
+			<div class="col-xs-6 col-sm-3 sidebar-offcanvas" >
 			  <aside id="portal-column-one">
 				 <xsl:copy-of select="//*[@id='portal-column-one']/*"/>
 			  </aside>
@@ -94,7 +94,7 @@
 	  <!-- Right column -->
 	  <rules if-content="//*[@id='portal-column-two']">
 		<replace css:theme="#column2-container">
-			<div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="complementary">
+			<div class="col-xs-6 col-sm-3 sidebar-offcanvas" role="complementary">
 			  <aside id="portal-column-two">
 				 <xsl:copy-of select="//*[@id='portal-column-two']/*"/>
 			  </aside>
