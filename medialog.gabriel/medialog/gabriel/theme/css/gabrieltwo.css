@@ -1,12 +1,3 @@
-/* @override http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css */
-
-/* @override http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css */
-
-/* @override http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css */
-
-/* @override http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css */
-
-/* @override http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css */
 
 iframe {
 	max-width: 100%;
@@ -3545,6 +3536,9 @@ fieldset[disabled] .destructive.active {
     background-color: #ffffff;
 }
 
+i.glyphicon {
+	display: none;
+}
 .link-parent {
     display: inline-block;
     margin-bottom: 0;
