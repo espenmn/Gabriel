@@ -1,3 +1,4 @@
+/* @override http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css */
 
 iframe {
 	max-width: 100%;
@@ -1109,6 +1110,7 @@ summary {
 
 figure.oppgaveImageContainer {
 	margin-bottom: 1em;
+	text-align: center;
 }
 
 .visualClear {
