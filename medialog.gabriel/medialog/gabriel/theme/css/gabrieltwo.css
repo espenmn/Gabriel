@@ -2,10 +2,9 @@
 
 iframe {
 	max-width: 100%;
- 
 }
 
-.plone-toolbar-short-title {
+#edit-zone .plone-toolbar-short-title {
 	display: none;
 }
 
