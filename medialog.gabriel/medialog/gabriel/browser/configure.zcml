@@ -125,7 +125,6 @@
         name="oppgave_chapter"
         for="plone.dexterity.interfaces.IDexterityContent"
         layer="medialog.gabriel.interfaces.IGabriel"
-        template="oppgave_chapter.pt"
         permission="zope2.View"
     />
     
