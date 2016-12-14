@@ -115,7 +115,7 @@
   <!--pp client templates -->
   <browser:page
       name="asHTML"
-      for="plone.dexterity.interfaces.IDexterityContainer"
+      for="plone.app.contenttypes.interfaces.IFolder"
       permission="zope2.View"
       class=".oppgaver.OppgaveView"
    />
