@@ -7,6 +7,6 @@
        
     <xi:include href="++theme++gabriel_theme/grules.xml"/>
     <after theme-children="/html/head" >     
-		   <!--link href="++theme++gabriel_theme/css/gabrieltwo.css" rel="stylesheet"/-->
+		   <link href="http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css" rel="stylesheet"/>
 	</after>
 </rules>
