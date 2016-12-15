@@ -129,14 +129,14 @@
    
    <browser:page
       name="asHTML"
-      for="plone.app.contenttypes.interfaces.IItem"
+      for="plone.app.contenttypes.interfaces.Item"
       permission="zope2.View"
       class=".oppgave.OppgaveChapterView"
    />
    
   <browser:page
         name="oppgave_chapter"
-        for="plone.app.contenttypes.interfaces.IItem"
+        for="plone.app.contenttypes.interfaces.Item"
         layer="medialog.gabriel.interfaces.IGabriel"
         template="oppgave_chapter.pt"
         permission="zope2.View"
