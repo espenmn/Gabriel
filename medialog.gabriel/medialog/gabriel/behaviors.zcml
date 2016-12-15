@@ -41,5 +41,20 @@
         provides=".behaviors.IShareBehavior"
         for="plone.dexterity.interfaces.IDexterityContent"
         />
+        
+    
+    <plone:behavior
+        title="oppgaveexport behavior"
+        description="oppgaveexport"
+        provides=".behavior.IOppgaveEksportBehavior"
+        for="plone.dexterity.interfaces.IDexterityContent"
+        />
+
+  <include package="pp.client.plone" />
+
+    <class class="medialog.gabriel.behavior.IOppgaveEksportBehavior">
+        <implements interface="pp.client.plone.interfaces.IPPContent" />
+    </class>
+    
    
 </configure>

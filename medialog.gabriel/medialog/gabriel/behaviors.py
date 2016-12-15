@@ -245,3 +245,8 @@ class IShareBehavior(form.Schema):
 alsoProvides(IShareBehavior, IFormFieldProvider)
 
 
+
+class IOppgaveEksportBehavior(Interface):
+    """Mark item for pdf-template"""
+    pass
+    

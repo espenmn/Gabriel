@@ -129,7 +129,14 @@
    
    <browser:page
       name="asHTML"
-      for="plone.dexterity.interfaces.IDexterityContent"
+      for="medialog.gabriel.behaviors.IOppgaveEksportBehavior"
+      permission="zope2.View"
+      class=".oppgave.OppgaveChapterView"
+   />
+   
+  <browser:page
+      name="asHTML"
+      for="plone.dexterity.interfaces.IDexterityItem"
       permission="zope2.View"
       class=".oppgave.OppgaveChapterView"
    />
