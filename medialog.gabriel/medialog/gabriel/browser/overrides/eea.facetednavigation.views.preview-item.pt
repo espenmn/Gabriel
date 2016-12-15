@@ -29,7 +29,7 @@
 </tal:block>
 
 <tal:block tal:condition="not:is_namedimage">
-    <span class="photoAlbumEntryWrapper" tal:condition="image_thumb">
+    <span class="photoAlbumEntryWrapper" tal:condition="image_oversikt">
       <img style="border: none" tal:attributes="
         title desc_or_title;
         alt title;
@@ -39,7 +39,7 @@
     <span class="photoAlbumEntryWrapper" tal:condition="python:not image_thumb and image_tag">
       <img tal:replace="structure python:image_tag(scale='oversikt', title=description)" />
     </span>
-
+----
     <span class="photoAlbumEntryTitle" tal:content="context/pretty_title_or_id|string:">Title</span>
     <span class="photoAlbumEntryDescription" tal:content="description">Description</span>
 </tal:block>
