@@ -37,7 +37,7 @@
     </span>
 
     <span class="photoAlbumEntryWrapper" tal:condition="python:not image_thumb and image_tag">
-      <img tal:replace="structure python:image_tag(scale='oversikt', title=description)" />
+      <img tal:replace="structure python:image_tag(scale='thumb', title=description)" />
     </span>
 
     <span class="photoAlbumEntryTitle" tal:content="context/pretty_title_or_id|string:">Title</span>
