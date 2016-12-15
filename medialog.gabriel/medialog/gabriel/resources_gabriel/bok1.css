@@ -233,7 +233,8 @@ table, figure {
 
 p {
 	margin-bottom: 4pt;
-}
+	line-height: 160%;
+	font-family: "DejaVu", Georgia, "Times New Roman", Times, serif}
 
 img {
   max-width: 100%;
@@ -245,6 +246,8 @@ img {
 div.oppgave_info {
 	background: #f2f2f2;
 	float: right;
+	margin-left: 2em;
+	margin-bottom: 1.6em;
 	}
 
 div.oppgave_info ul {
