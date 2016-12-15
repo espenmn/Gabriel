@@ -129,7 +129,7 @@
    
    <browser:page
       name="asHTML"
-      for="plone.dexterity.interfaces.IDexterityContainer"
+      for="medialog.ebok.behavior.IBokBehavior"
       permission="zope2.View"
       class=".oppgave.OppgaveChapterView"
    />
