@@ -46,7 +46,7 @@
     <plone:behavior
         title="oppgaveexport behavior"
         description="oppgaveexport"
-        provides=".behavior.IOppgaveEksportBehavior"
+        provides=".behaviors.IOppgaveEksportBehavior"
         for="plone.dexterity.interfaces.IDexterityContent"
         />
 
