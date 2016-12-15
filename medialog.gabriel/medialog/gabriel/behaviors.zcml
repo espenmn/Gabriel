@@ -52,7 +52,7 @@
 
   <include package="pp.client.plone" />
 
-    <class class="medialog.gabriel.behavior.IOppgaveEksportBehavior">
+    <class class="medialog.gabriel.behaviors.IOppgaveEksportBehavior">
         <implements interface="pp.client.plone.interfaces.IPPContent" />
     </class>
     
