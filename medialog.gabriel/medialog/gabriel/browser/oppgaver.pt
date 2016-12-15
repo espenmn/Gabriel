@@ -3,6 +3,7 @@
              	<div class="chapter" tal:condition="python: item.Type=='Oppgave'"
              		tal:define="obj item/getObject">
              		<div tal:replace="structure obj/@@oppgave_chapter | nothing" />
+             		<div class="chapter-break"></div>
              	</div>
    </tal:kapitler>  
 </div>
