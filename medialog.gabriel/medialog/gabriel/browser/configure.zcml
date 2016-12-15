@@ -129,7 +129,7 @@
    
    <browser:page
       name="asHTML"
-      for="plone.dexterity.interfaces.IDexterityItem"
+      for="plone.dexterity.interfaces.IDexterityContent"
       permission="zope2.View"
       class=".oppgave.OppgaveChapterView"
    />
