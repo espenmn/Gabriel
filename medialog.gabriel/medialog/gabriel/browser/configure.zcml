@@ -127,6 +127,13 @@
       class=".oppgaver.OppgaveView"
    />
    
+   <browser:page
+      name="asHTML"
+      for="plone.dexterity.interfaces.IDexterityContainer"
+      permission="zope2.View"
+      class=".oppgave.OppgaveChapterView"
+   />
+   
   <browser:page
         name="oppgave_chapter"
         for="plone.dexterity.interfaces.IDexterityContent"
