@@ -1,7 +1,7 @@
 <div class="chapter_oppgave">
     <h1 class="chapterTitle" tal:content="context/Title" />
     <p class="chapterDescription" tal:content="context/Description" />
---
+ 
    <div class="oppgave_info">
 	  <p><b>Fag</b></p> 
 	  <ul tal:repeat="fagg context/fag">

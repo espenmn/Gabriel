@@ -4,7 +4,8 @@
     i18n_domain="medialog.gabriel">
           
   <include package="plone.app.contentmenu" />
-   <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
+  <include package="pp.client-plone" />
+  <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
   <include package="z3c.jbot" file="meta.zcml" />
   <browser:jbot
       directory="overrides"
@@ -129,6 +130,7 @@
    
    <browser:page
       name="asHTML"
+      for="plone.dexterity.interfaces.IDexterityContainer"
       for="plone.dexterity.interfaces.IDexterityContainer"
       permission="zope2.View"
       class=".oppgave.OppgaveChapterView"
