@@ -17,5 +17,5 @@
     	 tal:content="structure context/text/output" />
 </div>
 
-<div class="chapter-break">  </div>
+<div class="chapter-break"></div>
 
