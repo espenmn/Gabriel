@@ -1,20 +1,21 @@
-<div class="chapter_frontpage">
+<div class="chapter_oppgave">
     <h1 class="chapterTitle" tal:content="context/Title" />
     <p class="chapterDescription" tal:content="context/Description" />
-</div>
-   <div>
+
+   <div class="oppgave_info">
 	  <p><b>Fag</b></p> 
-	  <tal:fag tal:repeat="fagg context/fag">
-		  <p tal:content="fagg" />
-	   </tal:fag>
+	  <ul tal:repeat="fagg context/fag">
+		  <li tal:content="fagg" />
+	   </ul>
 	   <p> </p>
 	   <p><b>Oppgavetype</b></p>
-	   <tal:otype tal:repeat="otype context/oppgavetype">
+	   <ul tal:repeat="otype context/oppgavetype">
 			<p tal:content="otype" />
-		</tal:otype>
-</div> 	
-<div tal:condition="context/text"
-     tal:content="structure context/text/output" />
+		<//ul>
+    </div> 	
+	<div tal:condition="context/text"
+    	 tal:content="structure context/text/output" />
+</div>
 
 <div class="chapter-break">  </div>
 
