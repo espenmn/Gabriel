@@ -238,7 +238,7 @@ p {
 
 img {
   max-width: 100%;
-  margin: 1em 1em 1em 0;
+  margin: 1em 0 1em 0;
   padding: 5px;
   border:  1px solid silver;
 }
@@ -247,6 +247,7 @@ div.oppgave_info {
 	background: #f2f2f2;
 	float: right;
 	margin-left: 2em;
+	margin-right: 1em;
 	margin-bottom: 1.6em;
 	}
 
