@@ -11,7 +11,7 @@
 	   <p><b>Oppgavetype</b></p>
 	   <ul tal:repeat="otype context/oppgavetype">
 			<p tal:content="otype" />
-		<//ul>
+		</ul>
     </div> 	
 	<div tal:condition="context/text"
     	 tal:content="structure context/text/output" />
