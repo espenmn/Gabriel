@@ -23,7 +23,7 @@
 
       <browser:page
         name="oppgave_view"
-        for="plone.dexterity.interfaces.IDexterityItem"
+        for="*"
         layer="medialog.gabriel.interfaces.IGabriel"
         template="oppgave.pt"
         permission="zope2.View"
