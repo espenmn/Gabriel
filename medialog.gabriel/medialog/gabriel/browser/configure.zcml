@@ -127,12 +127,6 @@
       class=".oppgaver.OppgaveView"
    />
    
-   <browser:page
-      name="asHTML"
-      for="medialog.ebok.behavior.IBokBehavior"
-      permission="zope2.View"
-      class=".oppgave.OppgaveChapterView"
-   />
    
   <browser:page
         name="oppgave_chapter"
