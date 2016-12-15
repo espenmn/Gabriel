@@ -33,6 +33,7 @@ setup(name='medialog.gabriel',
           'pandas',
            'numpy',
            'medialog.bergensiana',
+           'z3c.jbot',
           # -*- Extra requirements: -*-
       ],
       entry_points="""
