@@ -1,5 +1,7 @@
 /* @override http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css */
 
+/* @override http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css */
+
 iframe {
 	max-width: 100%;
 }
@@ -4082,20 +4084,28 @@ div#sidebar.col-xs-6.col-sm-3.sidebar-offcanvas {
 
 .photoAlbumEntry a {
     text-align: center;
-    vertical-align: middle;
     display: table-cell;
-    font-weight: 300;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     border: 1px solid #e5e5e5;
     border-radius: 4px;
     background: #fcfcfd;
-    width: 220px;
-    height: 240px;
+    width: 315px;
+    height: 320px;
+    font-size: 1.5em;
+}
+
+#center-content-area {
+	margin-right: 290px;
+}
+
+span.photoAlbumEntryTitle {
+	padding: 0 1em;
 }
 
 .photoAlbumEntry img {
-    max-width: 200px;
-    max-height: 200px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 0.7em;
 }
 
 .portalMessage {
