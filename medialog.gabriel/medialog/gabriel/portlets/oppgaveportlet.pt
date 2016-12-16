@@ -41,7 +41,7 @@
  
        		
        		 <tal:check tal:condition="python: context.nedlasting">
-       	    <h3><b><a href="/asPDF?converter=wkhtmltopdf&resource=resources_gabriel&template=template1.pt">
+       	    <h3><b><a href="asPDF?converter=wkhtmltopdf&resource=resources_gabriel&template=template1.pt">
        	    <i class="fa fa-file-pdf-o" aria-hidden="true"></i> Last ned pdf</a></b></h3>
        		</tal:check>
        </div> 	
