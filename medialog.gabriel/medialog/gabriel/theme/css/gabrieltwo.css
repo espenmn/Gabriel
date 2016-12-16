@@ -1200,6 +1200,17 @@ img {
     height: auto;
 }
 
+dt.wp-caption-dt {
+	max-width: 100%;
+}
+.wp-caption,
+.wp-caption-dt,
+#attachment_2732 {
+	max-width: 100%;
+}
+
+
+
 .not-ready  {
 	opacity: 0.3;
 }
@@ -1366,6 +1377,12 @@ legend {
 	width: 100%;
 
 }
+
+div.col-xs-6.col-sm-3.sidebar-offcanvas {
+	width: 100%;
+}
+
+
 
 body #center-content-area,
 body div#center-and-left-area ,
