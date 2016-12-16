@@ -24,17 +24,17 @@
 
        </figure>
        <div>
-            <h6>Fag</h6> 
+            <h4>Fag</h4> 
        		<tal:fag tal:repeat="fagg context/fag">
        			<p tal:content="fagg" />
        		</tal:fag>
        		
-            <h6>Oppgavetype</h6>
+            <h5>Oppgavetype</h5>
         	<tal:otype tal:repeat="otype context/oppgavetype">
        			<p tal:content="otype" />
        		</tal:otype>
        	    
-       	    <h6>Oppgaveskriver</h6>
+       	    <h3>Oppgaveskriver</h3>
         	<tal:oskr tal:repeat="oskr context/oppgaveskriver">
        			<p tal:content="oskr" />
        		</tal:oskr>
