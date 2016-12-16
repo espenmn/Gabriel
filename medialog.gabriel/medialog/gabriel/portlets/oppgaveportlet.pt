@@ -24,12 +24,12 @@
 
        </figure>
        <div>
-            <h4>Fag</h4> 
+            <h3>Fag</h3> 
        		<tal:fag tal:repeat="fagg context/fag">
        			<p tal:content="fagg" />
        		</tal:fag>
        		
-            <h5>Oppgavetype</h5>
+            <h3>Oppgavetype</h3>
         	<tal:otype tal:repeat="otype context/oppgavetype">
        			<p tal:content="otype" />
        		</tal:otype>
