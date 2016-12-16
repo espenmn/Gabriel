@@ -33,12 +33,12 @@
        			<p tal:content="otype" />
        		</tal:otype>
        	    
-       	    <tal:check tal:condition="python: context.oppggaveskriver">
+ 
        	    <h3><b>Oppgaveskriver</b></h3>
         	<tal:oskr tal:repeat="oskr context/oppgaveskriver">
        			<p tal:content="oskr" />
        		</tal:oskr>
-       		</tal:check>
+ 
        		
        		 <tal:check tal:condition="python: context.nedlasting">
        	    <h3><b><a href="/asPDF?converter=wkhtmltopdf&resource=resources_gabriel&template=template1.pt">
