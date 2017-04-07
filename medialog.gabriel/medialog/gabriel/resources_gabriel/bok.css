@@ -180,7 +180,7 @@ hr, .chapter-break {
 }
  
 h1 {
-	page-break-after: always;
+	page-break-before: always;
 }
 
   
