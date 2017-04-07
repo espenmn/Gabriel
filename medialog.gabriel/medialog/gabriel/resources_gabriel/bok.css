@@ -178,7 +178,10 @@ hr, .chapter-break {
 .chapter_frontpage {
 	text-align: center;
 }
-  
+ 
+h1 {
+	page-break-after: always;
+}
 
   
 h1, h2, h3, h4, h5, h6 {
