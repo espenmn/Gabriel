@@ -198,7 +198,7 @@ h1 {
 div.chapter_frontpage h1 {
 	  page-break-before: never;
 	  font-size: 250%;
-	  line-height: 300%;
+	  line-height: 250%;
 	  padding: 1cm;
 	  border-bottom:  1mm solid #006298;
 	  margin-bottom: 1cm;
