@@ -1,3 +1,5 @@
+/* @override http://www.ektedata.no/++theme++gabriel_theme/css/gabrieltwo.css */
+
 /* @override http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css */
 
 /* @override http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css */
@@ -183,6 +185,7 @@ body.section-referanser div.outer-wrapper {
     margin-bottom: 1em;
 }
 
+ 
 div#infolink,
 #portal-mobile-sitemap {
 	float: right;
@@ -190,11 +193,54 @@ div#infolink,
 	margin:  1.4em 1.4em 0 0 ;
 }
 
+div#languages {
+	float: right;
+	margin:  2.4em 0 0 0 ;
+}
+
+div#languages ul {
+	list-style-image: none;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+div#languages li {
+	display: inline-block;
+	margin: 0.3em;
+}
+
 @media (max-width: 768px) {
     div#infolink {
 	display: none;
 }
 
+div#languages  {
+    padding: 0;	
+	margin: 0.3em;
+}
+div#languages li {
+	display: inherit;
+	margin: 0 0 0.2em 0;
+}
+
+div#languages li img {
+	width:  23px;
+	height: auto;
+}
+
+
+a.toggler  {
+	font-size: 0.1em;
+	margin-right: 0.6em;
+}
+a.toggler i {
+	font-size: 25pt;
+}
+
+div#portal-mobile-sitemap {
+	margin-top: 0.5em;
+}
 article#content {
  padding: 5px;
  margin: 0;	
@@ -207,7 +253,7 @@ article#content {
 
 
 a.toggler i {
-	padding-right: 0.3em;
+	padding-right: 0.4em;
 }
 
 
@@ -1200,6 +1246,17 @@ img {
     height: auto;
 }
 
+dt.wp-caption-dt {
+	max-width: 100%;
+}
+.wp-caption,
+.wp-caption-dt,
+#attachment_2732 {
+	max-width: 100%;
+}
+
+
+
 .not-ready  {
 	opacity: 0.3;
 }
@@ -1366,6 +1423,12 @@ legend {
 	width: 100%;
 
 }
+
+div.col-xs-6.col-sm-3.sidebar-offcanvas {
+	width: 100%;
+}
+
+
 
 body #center-content-area,
 body div#center-and-left-area ,

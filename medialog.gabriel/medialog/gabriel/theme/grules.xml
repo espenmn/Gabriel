@@ -38,6 +38,8 @@
       	<!--replace css:theme="#mainnavigation"   css:content="#visual-sitemap"     href="/@@visual_sitemap" /--> 
       	<replace css:theme="#visual-sitemap"   css:content="#portal-mobile-sitemap"     href="/@@mob_sitemap" />       		
 		
+  		<!-- language selector -->	
+  		<replace css:theme="#portal-languageselector" css:content="#portal-languageselector"/>	
 		
 	
 		<!-- move search box -->
