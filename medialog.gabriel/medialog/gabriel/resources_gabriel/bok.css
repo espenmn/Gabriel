@@ -6,7 +6,7 @@ import url("fonts.css");
 }
  
 @page {
-  xxsize: A4;
+  size: A4;
   orphans:4; 
   widows:2;
   margin: 5cm;
@@ -43,6 +43,9 @@ html, body, p {
 }
 
 
+body {
+	zoom: 0.71;
+}
 
 /* @group markdown */
 
