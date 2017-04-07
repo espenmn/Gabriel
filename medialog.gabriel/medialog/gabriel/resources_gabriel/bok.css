@@ -213,6 +213,8 @@ p.chapterDescription {
 	font-size: 170%;
 	line-height: 18pt;
 	margin-bottom: 2cm;
+	mnargin-top: 0;
+	padding-top:  0;;
 }
 
 h2 {
