@@ -1,10 +1,3 @@
-/* @override http://www.ektedata.no/++theme++gabriel_theme/css/gabrieltwo.css */
-
-/* @override http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css */
-
-/* @override http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css */
-
-/* @override http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css */
 
 iframe {
 	max-width: 100%;
@@ -1866,7 +1859,7 @@ pre code {
 
 #main-slider {
 	height: 290px;
-	background-image: url(http://xweb14f.plana.dk:8050/ektedata/slider/topbilde2.jpg/@@images/image);
+	background-image: url(topbilde2.jpg);
 	background-size: cover;
 	background-position: center;
 }
