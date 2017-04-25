@@ -1,6 +1,6 @@
 <section id="featuretwo"  
 		 tal:define="folder_is nocall:context/daygraphs|nothing">
-			<h1>Dagsgrafer</h1>
+			<h1>Daygraphs</h1>
 			<div class="features" >
 
 				<div tal:repeat="item 
