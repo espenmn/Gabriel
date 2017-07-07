@@ -13,6 +13,10 @@ from plone.autoform import directives
 
 _ = MessageFactory('medialog.gabriel')
 
+
+class ILazyableBehaviorLayer(Interface):
+    """ mark items so they can be lazyloaded"""
+
 def theDefaultValue():
     return datetime.date.today() - datetime.timedelta(1)
 
