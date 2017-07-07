@@ -1,11 +1,11 @@
 <section id="services"
-		 tal:define="folder_is nocall:context/en/content-e|nothing">
+		 tal:define="folder_is nocall:context/innhold|nothing">
  
      
             
             <div class="service-items">
 				<div tal:repeat="item  
-				        context/en/content-e/@@contentlisting"
+				        context/innhold/@@contentlisting"
                     	class="wow fadeInDown animated service-item" 
                         data-wow-delay="600ms" data-wow-duration="1000ms" 
                         style="visibility: visible; animation-duration: 1000ms; 
