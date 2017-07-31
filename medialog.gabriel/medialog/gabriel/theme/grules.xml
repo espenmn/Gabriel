@@ -112,8 +112,13 @@
     <replace css:theme="#main-slider"  css:content="#main-slider"   href="/@@theme-fragment/mainslider" /> 
     <drop css:content="#portal-breadcrumbs" />
   </rules>
+
+  <rules css:if-content="body.section-frontpage">
+    <replace css:theme="#main-slider"  css:content="#main-slider"   href="/@@theme-fragment/mainslider" /> 
+    <drop css:content="#portal-breadcrumbs" />
+  </rules>
       
-  <rules css:if-not-content=".section-forside">
+  <rules css:if-not-content=".section-forside .section-frontpage">
     <drop css:theme="#main-slider" />
   </rules>
   
