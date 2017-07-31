@@ -118,7 +118,7 @@
     <drop css:content="#portal-breadcrumbs" />
   </rules>
       
-  <rules css:if-not-content=".section-forside .section-frontpage">
+  <rules css:if-not-content=".section-forside, .section-frontpage">
     <drop css:theme="#main-slider" />
   </rules>
   
