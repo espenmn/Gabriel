@@ -1859,9 +1859,13 @@ pre code {
 
 #main-slider {
 	height: 290px;
-	background-image: url(http://ny.medialog.no/no/media/topbilde2.jpg/@@images/image);
+	background-image: url(no/media/topbilde2.jpg/@@images/image);
 	background-size: cover;
 	background-position: center;
+}
+
+.site-en #main-slider {
+	background-image: url(no/media/topbilde2en.jpg/@@images/image);
 }
 
 @media (min-width: 768px) {
@@ -6814,14 +6818,7 @@ img.image-inline {
 	font-size: 115%;
 }
 
-
-
-/* @override 
-	http://localhost:8080/x/++theme++bergensiana/css/rightmobile.css
-	http://localhost:8080/++theme++bergensiana/css/rightmenu.css
-	http://localhost:8080/NAV2/++theme++bergensiana/css/rightmenu.css
-	http://gabriel.medialog.no/++plone++production/++unique++2016-12-14T22:31:59.589119/default.css
-*/
+/* @override http://ny.medialog.no//++theme++gabriel_theme/css/gabrieltwo.css */
 
 #sitemap-container::-webkit-scrollbar {
 	display: none
