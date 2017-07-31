@@ -1866,10 +1866,18 @@ pre code {
 
 #main-slider {
 	height: 290px;
-	background-image: url(http://xweb14f.plana.dk:8050/ektedata/slider/topbilde2.jpg/@@images/image);
 	background-size: cover;
 	background-position: center;
 }
+
+body.site-no #main-slider {
+	background-image: url(/no/media/topbilde2.jpg/@@images/image);
+}
+
+body.site-en #main-slider {
+	background-image: url(/en/media/topbilde2en.jpg/@@images/image);
+}
+
 
 @media (min-width: 768px) {
 
