@@ -1859,13 +1859,16 @@ pre code {
 
 #main-slider {
 	height: 290px;
-	background-image: url(no/media/topbilde2.jpg/@@images/image);
 	background-size: cover;
 	background-position: center;
 }
 
+.site-no #main-slider {
+	background-image: url(/no/media/topbilde2.jpg/@@images/image);
+}
+
 .site-en #main-slider {
-	background-image: url(no/media/topbilde2en.jpg/@@images/image);
+	background-image: url(/media/topbilde2en.jpg/@@images/image);
 }
 
 @media (min-width: 768px) {
