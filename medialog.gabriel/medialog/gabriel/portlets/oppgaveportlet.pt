@@ -1,3 +1,12 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="medialog.gabriel">
+<body>
+ 
 <aside class="portlet portletOppgavePortlet"
     tal:define="portal_url context/@@plone_portal_state/portal_url;
     scale_func context/@@images;
@@ -10,7 +19,7 @@
     </header>
     
     <div class="portletItem oppgaveportlet">  
-      <p tal:content"="title obj/title"/>
+      <p tal:content="title obj/title"/>
       
       <figure class="oppgaveImageContainer" 
         	tal:attributes="class python:'oppgaveImageContainer image-' + str(leadsize)" 
@@ -23,18 +32,18 @@
               </figcaption>
        </figure>
        <div>
-            <h3><b>Fag</b></h3> 
+            <h3><b i18n:translate="">Fag</b></h3> 
        		<tal:fag tal:repeat="fagg context/fag">
        			<p tal:content="fagg" />
        		</tal:fag>
        		
-            <h3><b>Oppgavetype</b></h3>
+            <h3><b i18n:translate="">Oppgavetype</b></h3>
         	<tal:otype tal:repeat="otype context/oppgavetype">
        			<p tal:content="otype" />
        		</tal:otype>
        	    
  
-       	    <h3><b>Oppgaveskriver</b></h3>
+       	    <h3><b i18n:translate="">Oppgaveskriver</b></h3>
         	<tal:oskr tal:repeat="oskr context/oppgaveskriver">
        			<p tal:content="oskr" />
        		</tal:oskr>
@@ -42,8 +51,10 @@
        		
        		 <tal:check tal:condition="python: context.nedlasting">
        	    <h3><b><a href="${context/absolute_url}/asPDF?converter=phantomjs&resource=resources_gabriel&template=template.pt">
-       	    <i class="fa fa-file-pdf-o" aria-hidden="true"></i> Last ned pdf</a></b></h3>
+       	    <i class="fa fa-file-pdf-o" aria-hidden="true"></i> <span i18n:translate="">Last ned pdf</span></a></b></h3>
        		</tal:check>
        </div> 	
     </div>
 </aside>
+</body>
+</html>

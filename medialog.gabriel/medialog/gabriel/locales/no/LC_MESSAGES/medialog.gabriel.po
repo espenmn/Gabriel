@@ -1,0 +1,209 @@
+# #############################################################################
+#
+# Copyright (c) 2003-2004 Zope Foundation and Contributors.
+# All Rights Reserved.
+#
+# This software is subject to the provisions of the Zope Public License,
+# Version 2.1 (ZPL).  A copy of the ZPL should accompany this distribution.
+# THIS SOFTWARE IS PROVIDED "AS IS" AND ANY AND ALL EXPRESS OR IMPLIED
+# WARRANTIES ARE DISCLAIMED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+# WARRANTIES OF TITLE, MERCHANTABILITY, AGAINST INFRINGEMENT, AND FITNESS
+# FOR A PARTICULAR PURPOSE.
+#
+# #############################################################################
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"POT-Creation-Date: Wed Aug  2 12:16:55 2017\n"
+"PO-Revision-Date: 2017-08-02 12:26+0100\n"
+"Last-Translator: Espen Moe-Nilssen <espen@medialog.no>\n"
+"Language-Team: Zope 3 Developers <zope-dev@zope.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: zope/app/locales/extract.py\n"
+"X-Generator: Poedit 1.5.7\n"
+
+#: medialog.gabriel:/behaviors.py:106 medialog.gabriel:/behaviors.py:163
+#: medialog.gabriel:/behaviors.py:225
+msgid "Dato"
+msgstr "Dato"
+
+#: medialog.gabriel:/behaviors.py:158
+msgid "Datoer"
+msgstr "Datoer"
+
+#: medialog.gabriel:/behaviors.py:159
+msgid "Velg og legg til datoer du vil ha grafer av"
+msgstr "Velg og legg til datoer du vil ha grafer av"
+
+#: medialog.gabriel:/behaviors.py:243
+msgid "Enable FB sharing"
+msgstr "Enable FB sharing"
+
+#: medialog.gabriel:/behaviors.py:244
+msgid "Enabler facebook sharing"
+msgstr "Slå på facebook deling"
+
+#: medialog.gabriel:/browser/graphviewlet.pt:13
+msgid "Linje"
+msgstr "Linje"
+
+#: medialog.gabriel:/browser/graphviewlet.pt:17
+msgid "Heatmap"
+msgstr "Heatmap"
+
+#: medialog.gabriel:/browser/graphviewlet.pt:21
+msgid "Mark&oslash;r"
+msgstr "Marakør"
+
+#: medialog.gabriel:/browser/graphviewlet.pt:25
+msgid "3D"
+msgstr "3D"
+
+#: medialog.gabriel:/browser/graphviewlet.pt:29
+msgid "Om Gabriel"
+msgstr "Om Gabriel"
+
+#: medialog.gabriel:/browser/graphviewlet.pt:32
+msgid "B&oslash;yen Gabriel"
+msgstr "Bøyen Gabriel"
+
+#: medialog.gabriel:/browser/graphviewlet.pt:34
+msgid ""
+"B&oslash;yen Gabriel er en m&aring;lestasjon i Store Lungeg&aring;rdsvann i "
+"Bergen som m&aring;ler vannets egenskaper nedover i vanns&oslash;ylen hver "
+"tredje time, &aring;ret gjennom.<br />I tillegg er det montert en v&oslash;"
+"rstasjon p&aring; toppen av b&oslash;yen.<br />M&aring;ledata kobles bla. "
+"til oppgaver i matematikk og fysikk i videreg&aring;ende skole, slik at en "
+"kan bruke matematikk og fysikk og statistikk til &aring; l&oslash;re mere om "
+"hvordan ting i 'v&aring;r virkelige verden' henger sammen."
+msgstr ""
+"B&oslash;yen Gabriel er en m&aring;lestasjon i Store Lungeg&aring;rdsvann i "
+"Bergen som m&aring;ler vannets egenskaper nedover i vanns&oslash;ylen hver "
+"tredje time, &aring;ret gjennom.<br />I tillegg er det montert en v&oslash;"
+"rstasjon p&aring; toppen av b&oslash;yen.<br />M&aring;ledata kobles bla. "
+"til oppgaver i matematikk og fysikk i videreg&aring;ende skole, slik at en "
+"kan bruke matematikk og fysikk og statistikk til &aring; l&oslash;re mere om "
+"hvordan ting i 'v&aring;r virkelige verden' henger sammen."
+
+#: medialog.gabriel:/browser/graphviewlet.pt:37
+msgid "Lenker"
+msgstr "Lenker"
+
+#: medialog.gabriel:/browser/graphviewlet.pt:39
+msgid "Tekniske lenker for de spesielt interesserte:"
+msgstr "Tekniske lenker for de spesielt interesserte:"
+
+#: medialog.gabriel:/interfaces.py:23
+msgid "Plotly"
+msgstr "Plotly"
+
+#. Default: "Plotly Username"
+#: medialog.gabriel:/interfaces.py:31
+msgid "label_plotly_username"
+msgstr ""
+
+#. Default: "Your Plotly ID"
+#: medialog.gabriel:/interfaces.py:32
+msgid "help_plotly"
+msgstr ""
+
+#. Default: "Plotly API key"
+#: medialog.gabriel:/interfaces.py:38
+msgid "label_plotly_api_key"
+msgstr ""
+
+#. Default: "Your Plotly API key"
+#: medialog.gabriel:/interfaces.py:39
+msgid "help_plotly_api"
+msgstr ""
+
+#: medialog.gabriel:/portlets/elevoppgaveportlet.pt:25
+msgid "Forfattere"
+msgstr "Forfattere"
+
+#: medialog.gabriel:/portlets/elevoppgaveportlet.pt:29
+msgid "Skole:"
+msgstr "Skole:"
+
+#: medialog.gabriel:/portlets/elevoppgaveportlet.pt:30
+msgid "Dato:"
+msgstr "Dato:"
+
+#: medialog.gabriel:/portlets/elevoppgaveportlet.pt:32
+#: medialog.gabriel:/portlets/oppgaveportlet.pt:35
+msgid "Fag"
+msgstr "Fag"
+
+#: medialog.gabriel:/portlets/elevoppgaveportlet.pt:38
+#: medialog.gabriel:/portlets/oppgaveportlet.pt:40
+msgid "Oppgavetype"
+msgstr "Oppgavetype"
+
+#: medialog.gabriel:/portlets/elevoppgaveportlet.py:22
+#: medialog.gabriel:/portlets/getdataportlet.py:22
+#: medialog.gabriel:/portlets/oppgaveportlet.py:22
+msgid "Portlet header"
+msgstr "Portlet header"
+
+#: medialog.gabriel:/portlets/elevoppgaveportlet.py:23
+#: medialog.gabriel:/portlets/getdataportlet.py:23
+#: medialog.gabriel:/portlets/oppgaveportlet.py:23
+msgid "Title of the rendered portlet"
+msgstr ""
+
+#: medialog.gabriel:/portlets/elevoppgaveportlet.py:61
+msgid "Add Elevoppgave Portlet"
+msgstr "Legg til Elevoppgave Portlet"
+
+#: medialog.gabriel:/portlets/elevoppgaveportlet.py:62
+msgid "This portlet displays forfatterinfo etc."
+msgstr ""
+
+#: medialog.gabriel:/portlets/elevoppgaveportlet.py:70
+#: medialog.gabriel:/portlets/oppgaveportlet.py:74
+msgid "Edit OppgavePortlet"
+msgstr "Rediger OppgavePortlet"
+
+#: medialog.gabriel:/portlets/elevoppgaveportlet.py:71
+msgid "This portlet displays forfatterinfo etc.."
+msgstr "Denne  portleten viser forfatterinfo etc.."
+
+#: medialog.gabriel:/portlets/getdataportlet.pt:21
+msgid "Trykk for &aring; hente data"
+msgstr "Trykk for å hente data"
+
+#: medialog.gabriel:/portlets/getdataportlet.py:61
+msgid "Add GetData Portlet"
+msgstr ""
+
+#: medialog.gabriel:/portlets/getdataportlet.py:62
+#: medialog.gabriel:/portlets/getdataportlet.py:71
+msgid "This portlet displays getdata links."
+msgstr ""
+
+#: medialog.gabriel:/portlets/getdataportlet.py:70
+msgid "Edit GetDataPortlet"
+msgstr ""
+
+#: medialog.gabriel:/portlets/oppgaveportlet.pt:46
+msgid "Oppgaveskriver"
+msgstr "Oppgaveskriver"
+
+#: medialog.gabriel:/portlets/oppgaveportlet.pt:54
+msgid "Last ned pdf"
+msgstr "Last ned pdf"
+
+#: medialog.gabriel:/portlets/oppgaveportlet.py:28
+msgid "Text"
+msgstr "Text"
+
+#: medialog.gabriel:/portlets/oppgaveportlet.py:65
+msgid "Add Oppgave Portlet"
+msgstr ""
+
+#: medialog.gabriel:/portlets/oppgaveportlet.py:66
+#: medialog.gabriel:/portlets/oppgaveportlet.py:75
+msgid "This portlet displays oppgave image and text."
+msgstr ""

@@ -1,19 +1,27 @@
-
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="medialog.gabriel">
+<body>
+ 
 
 <aside class="portlet portletGetDataPortlet"
     i18n:domain="medialog.gabriel">
 
     <header class="portletHeader">
-        <span tal:content="view/data/title" />
+        <span>${view/data/title}</span>
     </header>
     
     <div class="container">
         <p> </p>
      	<p><br/>
      	<a href="#modal_get_data" class="btn btn-lg btn-primary pat-plone-modal"
-      		data-pat-plone-modal="height: 800px;
-                      width: 80%">
-      		Trykk for å hente data</a>
+      		data-pat-plone-modal="height: 800px; width: 80%"
+      		 i18n:translate="">
+      		Trykk for &aring; hente data</a>
       		<br>
       	</p>
       	<p> </p>
@@ -27,3 +35,5 @@
   	<div class="clearboth" />
 </aside>
 <!--div class="clearboth" /-->
+</body>
+</html>

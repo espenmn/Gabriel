@@ -5,7 +5,10 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     xmlns:pp="http://namespaces.zopyx.com/pp"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
     i18n_domain="medialog.gabriel">
+    
+    <i18n:registerTranslations directory="locales" />
 
  	<include package=".browser" />
  	<include package="plone.app.portlets"/>

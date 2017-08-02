@@ -37,6 +37,7 @@
             		class="navbread" href="/" 
             		tal:content="context/Title"
             		tal:attributes="href context/absolute_url">
+            	</a>
   				<a class="close-icon toggler">
   					<i class="fa fa-times-circle"></i>
   				</a>

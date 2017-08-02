@@ -1,3 +1,12 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="medialog.gabriel">
+<body>
+ 
 <aside class="portlet portletOppgavePortlet"
     tal:define="portal_url context/@@plone_portal_state/portal_url;
     scale_func context/@@images;
@@ -10,26 +19,28 @@
     </header>
     
     <div class="portletItem elevoppgaveportlet">  
-      <p tal:content"="title obj/title"/>
+      <p tal:content="title obj/title"/>
       
        <div>
-       		<p><b>Forfattere</b></p>
+       		<p><b i18n:translate="">Forfattere</b></p>
        		<tal:author tal:repeat="forfatter context/forfattere">
        			<p tal:content="forfatter" />
        		</tal:author>	
-       		<p><b>Skole:</b> <span tal:content="context/skole|None" /></p>
-      		<p><b>Dato:</b> <span tal:content="context/dato|None" /></p>
+       		<p><b i18n:translate="">Skole:</b> <span tal:content="context/skole|None" /></p>
+      		<p><b i18n:translate="">Dato:</b> <span tal:content="context/dato|None" /></p>
       		<p> <br/></p>
-      		<p><b>Fag</b></p> 
+      		<p><b i18n:translate="">Fag</b></p> 
        		  <tal:fag tal:repeat="fagg context/fag">
        			<p tal:content="fagg" />
        		  </tal:fag>
        		
             <p> </p>
-        	<p><b>Oppgavetype</b></p>
+        	<p><b i18n:translate="">Oppgavetype</b></p>
         	<tal:otype tal:repeat="otype context/oppgavetype">
        			<p tal:content="otype" />
        		</tal:otype>	
        </div> 	
     </div>
 </aside>
+</body>
+</html>

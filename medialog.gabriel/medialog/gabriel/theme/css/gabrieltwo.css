@@ -6,6 +6,11 @@
 
 /* @override http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css */
 
+
+p a.external {
+	color:  #123456 !important;
+} 
+
 iframe {
 	max-width: 100%;
 }

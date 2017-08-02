@@ -6,8 +6,7 @@
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="plone">
 <body>
- 
-<metal:head fill-slot="javascript_head_slot">
+
 <metal:head fill-slot="javascript_head_slot">
 	<script type="text/x-mathjax-config">
 	MathJax.Hub.Config({
@@ -20,7 +19,7 @@
 	  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 	</script>
 </metal:head>
-</metal:head>
+
 <metal:content-core fill-slot="content-core"
           tal:define="templateId template/getId">
             <div id="oppgave-text"

@@ -1,37 +1,42 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="medialog.gabriel">
+<body>
+ 
 <div class="pat-autotoc autotabs"
          data-pat-autotoc="section:fieldset;levels:legend;">
        <fieldset>
-         <legend>Linje</legend>
+         <legend i18n:translate="">Linje</legend>
          <div tal:replace="structure  view/graph" />  
        </fieldset>
        <fieldset>
-         <legend>Heatmap</legend>
+         <legend i18n:translate="">Heatmap</legend>
          <div tal:replace="structure  context/plotly4_html" />  
        </fieldset>
        <fieldset>
-         <legend>Markør</legend>
+         <legend i18n:translate="">Mark&oslash;r</legend>
          <div tal:replace="structure  context/plotly2_html" />
        </fieldset>
        <fieldset>
-         <legend>3D</legend>
+         <legend i18n:translate="">3D</legend>
          <div tal:replace="structure  context/plotly3_html" />  
        </fieldset>
        <fieldset>
-         <legend>Om Gabriel</legend>
+         <legend i18n:translate="">Om Gabriel</legend>
          <div>
-			<p><img class="image-left" title="Gabriel i Store Lungegårdsvann" src="resolveuid/d3f63c3654ff426a9b0bf67481fa52e4/@@images/image/preview" alt="" data-linktype="image" data-scale="preview" data-val="d3f63c3654ff426a9b0bf67481fa52e4" /></p>
-			<h1>B&oslash;yen Gabriel</h1>
+			<p><img class="image-left" title="Gabriel i Store Lungeg&aring;rdsvann" src="resolveuid/d3f63c3654ff426a9b0bf67481fa52e4/@@images/image/preview" alt="" data-linktype="image" data-scale="preview" data-val="d3f63c3654ff426a9b0bf67481fa52e4" /></p>
+			<h1 i18n:translate="">B&oslash;yen Gabriel</h1>
 			<p> </p>
-			<p>Bøyen Gabriel er en målestasjon i Store Lungegårdsvann i Bergen som måler vannets egenskaper nedover i vannsøylen hver tredje time, året gjennom.</p>
-			<p>I tillegg er det montert en værstasjon på toppen av bøyen.</p>
-			<p>Måledata kobles bla. til oppgaver i matematikk og fysikk i videregående skole, slik at en kan bruke matematikk og fysikk og statistikk til å lære mere om hvordan ting i «vår virkelige verden» henger sammen.</p>
-
-         </div>
-       </fieldset>
+			<p i18n:translate="">B&oslash;yen Gabriel er en m&aring;lestasjon i Store Lungeg&aring;rdsvann i Bergen som m&aring;ler vannets egenskaper nedover i vanns&oslash;ylen hver tredje time, &aring;ret gjennom.<br/>I tillegg er det montert en v&oslash;rstasjon p&aring; toppen av b&oslash;yen.<br/>M&aring;ledata kobles bla. til oppgaver i matematikk og fysikk i videreg&aring;ende skole, slik at en kan bruke matematikk og fysikk og statistikk til &aring; l&oslash;re mere om hvordan ting i 'v&aring;r virkelige verden' henger sammen.</p>
+		</fieldset>
 	<fieldset>
-         <legend>Lenker</legend>
+         <legend i18n:translate="">Lenker</legend>
          <div>
-		 <p><strong>Tekniske lenker for de spesielt interesserte:</strong></p>
+		 <p><strong i18n:translate="">Tekniske lenker for de spesielt interesserte:</strong></p>
 <p><a href="https://ektedata.uib.no/gabrieldata/allgraphs" data-linktype="external" data-val="https://ektedata.uib.no/gabrieldata/allgraphs">https://ektedata.uib.no/gabrieldata/allgraphs</a><br /><a href="https://ektedata.uib.no/gabrieldata/airtemp" data-linktype="external" data-val="https://ektedata.uib.no/gabrieldata/airtemp">https://ektedata.uib.no/gabrieldata/airtemp</a><br />https://ektedata.uib.no/gabrieldata/resampled/&lt;dtype&gt;.json<br />https://ektedata.uib.no/gabrieldata/resampledday/&lt;dtype&gt;/&lt;thisdate&gt;.json<br />https://ektedata.uib.no/gabrieldata/raw/&lt;year&gt;.json<br /><a href="https://ektedata.uib.no/gabrieldata/dives" data-linktype="external" data-val="https://ektedata.uib.no/gabrieldata/dives">https://ektedata.uib.no/gabrieldata/dives</a><br />https://ektedata.uib.no/gabrieldata/dives/&lt;diveid&gt;<br /><a href="https://ektedata.uib.no/gabrieldata/stats" data-linktype="external" data-val="https://ektedata.uib.no/gabrieldata/stats">https://ektedata.uib.no/gabrieldata/stats</a><br /><a href="https://ektedata.uib.no/gabrieldata/count" data-linktype="external" data-val="https://ektedata.uib.no/gabrieldata/count">https://ektedata.uib.no/gabrieldata/count</a></p>
 <p> </p>
 
@@ -39,7 +44,8 @@
        </fieldset>
        
 </div>
-
+</body>
+</html>
 
 
 

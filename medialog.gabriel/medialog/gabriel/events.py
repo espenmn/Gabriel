@@ -390,10 +390,10 @@ def make_html(self, context):
                             autosize=True,
                             scene=dict(
                                 xaxis=dict(
-                                    title="Dybde"
+                                    title="Dybde/Depth"
                                 ),
                                 yaxis=dict(
-                                    title="Tid"
+                                    title="Tid/Time"
                                 )
                             ),
                             width=900,
