@@ -14,6 +14,11 @@ p a.external {
 	color:  #123456 !important;
 }
 
+body.site-en .norsk,
+body.site-no .engelsk{
+	display: none;
+}
+
 div.graphviewlet.pat-autotoc.autotabs {
 	border-bottom: 1px solid #CCC;
 	padding-bottom: 1.2em;
