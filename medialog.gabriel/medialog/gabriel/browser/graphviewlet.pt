@@ -39,6 +39,8 @@
          <legend i18n:translate="">Lenker</legend>
          <div>
 		 <p><strong i18n:translate="">Tekniske lenker for de spesielt interesserte:</strong></p>
+		 <p><img class="image-left" title="Gabriel i Store Lungeg&aring;rdsvann" src="resolveuid/d3f63c3654ff426a9b0bf67481fa52e4/@@images/image/preview" alt="" data-linktype="image" data-scale="preview" data-val="d3f63c3654ff426a9b0bf67481fa52e4" />
+			</p>
 <p><a href="https://ektedata.uib.no/gabrieldata/allgraphs" data-linktype="external" data-val="https://ektedata.uib.no/gabrieldata/allgraphs">https://ektedata.uib.no/gabrieldata/allgraphs</a><br /><a href="https://ektedata.uib.no/gabrieldata/airtemp" data-linktype="external" data-val="https://ektedata.uib.no/gabrieldata/airtemp">https://ektedata.uib.no/gabrieldata/airtemp</a><br />https://ektedata.uib.no/gabrieldata/resampled/&lt;dtype&gt;.json<br />https://ektedata.uib.no/gabrieldata/resampledday/&lt;dtype&gt;/&lt;thisdate&gt;.json<br />https://ektedata.uib.no/gabrieldata/raw/&lt;year&gt;.json<br /><a href="https://ektedata.uib.no/gabrieldata/dives" data-linktype="external" data-val="https://ektedata.uib.no/gabrieldata/dives">https://ektedata.uib.no/gabrieldata/dives</a><br />https://ektedata.uib.no/gabrieldata/dives/&lt;diveid&gt;<br /><a href="https://ektedata.uib.no/gabrieldata/stats" data-linktype="external" data-val="https://ektedata.uib.no/gabrieldata/stats">https://ektedata.uib.no/gabrieldata/stats</a><br /><a href="https://ektedata.uib.no/gabrieldata/count" data-linktype="external" data-val="https://ektedata.uib.no/gabrieldata/count">https://ektedata.uib.no/gabrieldata/count</a></p>
 <p> </p>
 
