@@ -1,14 +1,4 @@
-/* @override 
-	http://www.ektedata.no/++theme++gabriel_theme/css/gabrieltwo.css
-	http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css
-	http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css
-	http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css
-	http://localhost:8080/x/++theme++bergensiana/css/rightmobile.css
-	http://localhost:8080/++theme++bergensiana/css/rightmenu.css
-	http://localhost:8080/NAV2/++theme++bergensiana/css/rightmenu.css
-	http://gabriel.medialog.no/++plone++production/++unique++2016-12-14T22:31:59.589119/default.css
-	http://ny.medialog.no//++theme++gabriel_theme/css/gabrieltwo.css
-*/
+/* @override http://ny.medialog.no//++theme++gabriel_theme/css/gabrieltwo.css */
 
 p a.external {
 	color:  #123456 !important;
@@ -208,12 +198,18 @@ div#infolink,
 #portal-mobile-sitemap {
 	float: right;
 	font-size: 160%;
-	margin:  1.4em 1.4em 0 0 ;
+	margin:  0; /*1.4em 1.4em 0 0 ; */
+}
+
+
+div#infolink {
+	clear: right;
+	margin-left: 1.4em;
 }
 
 div#languages {
 	float: right;
-	margin:  2.4em 0 0 0 ;
+	margin:  0; /*2.4em 0 0 0 ; */
 }
 
 div#languages ul {
