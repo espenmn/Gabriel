@@ -1,5 +1,3 @@
-/* @override http://ny.medialog.no//++theme++gabriel_theme/css/gabrieltwo.css */
-
 p a.external {
 	color:  #123456 !important;
 }
@@ -198,18 +196,12 @@ div#infolink,
 #portal-mobile-sitemap {
 	float: right;
 	font-size: 160%;
-	margin:  0; /*1.4em 1.4em 0 0 ; */
-}
-
-
-div#infolink {
-	clear: right;
-	margin-left: 1.4em;
+	margin:  1.4em 1.4em 0 0 ;
 }
 
 div#languages {
 	float: right;
-	margin:  0; /*2.4em 0 0 0 ; */
+	margin:  2.4em 0 0 0 ;
 }
 
 div#languages ul {
@@ -6963,18 +6955,6 @@ a.close-icon {
 a.close-icon:hover {
 	color: red;
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
