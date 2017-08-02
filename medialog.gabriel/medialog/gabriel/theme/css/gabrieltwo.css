@@ -1,14 +1,22 @@
-/* @override http://www.ektedata.no/++theme++gabriel_theme/css/gabrieltwo.css */
-
-/* @override http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css */
-
-/* @override http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css */
-
-/* @override http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css */
-
+/* @override 
+	http://www.ektedata.no/++theme++gabriel_theme/css/gabrieltwo.css
+	http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css
+	http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css
+	http://gabriel.medialog.no/++theme++gabriel_theme/css/gabrieltwo.css
+	http://localhost:8080/x/++theme++bergensiana/css/rightmobile.css
+	http://localhost:8080/++theme++bergensiana/css/rightmenu.css
+	http://localhost:8080/NAV2/++theme++bergensiana/css/rightmenu.css
+	http://gabriel.medialog.no/++plone++production/++unique++2016-12-14T22:31:59.589119/default.css
+	http://ny.medialog.no//++theme++gabriel_theme/css/gabrieltwo.css
+*/
 
 p a.external {
 	color:  #123456 !important;
+}
+
+div.graphviewlet.pat-autotoc.autotabs {
+	border-bottom: 1px solid #CCC;
+	padding-bottom: 1.2em;
 } 
 
 iframe {
@@ -6833,15 +6841,6 @@ img.image-inline {
 #oppgave-text {
 	font-size: 115%;
 }
-
-
-
-/* @override 
-	http://localhost:8080/x/++theme++bergensiana/css/rightmobile.css
-	http://localhost:8080/++theme++bergensiana/css/rightmenu.css
-	http://localhost:8080/NAV2/++theme++bergensiana/css/rightmenu.css
-	http://gabriel.medialog.no/++plone++production/++unique++2016-12-14T22:31:59.589119/default.css
-*/
 
 #sitemap-container::-webkit-scrollbar {
 	display: none
