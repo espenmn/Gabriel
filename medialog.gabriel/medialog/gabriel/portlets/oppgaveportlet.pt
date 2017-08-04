@@ -18,7 +18,6 @@
     </header>
     
     <div class="portletItem oppgaveportlet">  
-      <p tal:content="context/Title"/>    
       <figure class="oppgaveImageContainer" 
         	tal:attributes="class python:'oppgaveImageContainer image-' + str(leadsize)" 
             tal:condition="python: scaled_image  and leadsize != 'none'" >
