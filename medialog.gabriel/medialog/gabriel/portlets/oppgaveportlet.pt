@@ -18,7 +18,7 @@
     </header>
     
     <div class="portletItem oppgaveportlet">  
-      <p tal:content="title context/title"/>
+      <p tal:content="title context/Title"/>
       
       <figure class="oppgaveImageContainer" 
         	tal:attributes="class python:'oppgaveImageContainer image-' + str(leadsize)" 
