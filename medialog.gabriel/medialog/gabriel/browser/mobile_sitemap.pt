@@ -36,7 +36,7 @@
                  animation-delay: 30ms; animation-name: slideInRight">
             	 
             	<li>
-				<form id="searchform" data-action="/@@search" action="../@@search">
+				<form id="search-form" data-action="/@@search" action="../@@search">
  
 					<input class="searchField" type="text" placeholder="Search Site" title="Search Site" size="15" name="SearchableText">
 					 <button class="searchButton" type="submit">

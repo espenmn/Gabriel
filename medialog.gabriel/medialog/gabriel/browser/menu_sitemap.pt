@@ -36,7 +36,7 @@
                  animation-delay: 300ms; animation-name: zoomIn">
             	 
             	<li>
-					 <form id="searchform" class="stogglerchild" data-action="/@@search" action="@@search">
+					 <form id="search-form" class="stogglerchild" data-action="/@@search" action="@@search">
 
  							<input class="searchField" type="text" placeholder="Search Site" title="Search Site" size="15" name="SearchableText">
  							<button class="iconButton" type="submit">
