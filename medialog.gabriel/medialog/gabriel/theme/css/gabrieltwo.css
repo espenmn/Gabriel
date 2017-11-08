@@ -4,7 +4,7 @@ p a.external {
 
 body.site-en .norsk,
 body.site-no .engelsk{
-	display: none;
+	display: none !important;
 }
 
 div.graphviewlet.pat-autotoc.autotabs {
