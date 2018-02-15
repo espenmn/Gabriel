@@ -4,7 +4,7 @@ from zope.i18nmessageid import MessageFactory
 import urllib
 
 #plotly stuff
-import plotly 
+import plotly
 from plotly.graph_objs import Bar, Scatter, Figure, Layout
 from plotly.tools import FigureFactory as FF
 import pandas as pd
@@ -13,36 +13,36 @@ import plotly.plotly as py
 import plotly.graph_objs as go
 import json
 
-import datetime 
+import datetime
 
 from Products.statusmessages.interfaces import IStatusMessage
 
 _ = MessageFactory('medialog.plotly')
- 
+
 
 def login(self):
     username = self.portal_registry['medialog.plotly.interfaces.IPlotlySettings.plotly_username']
     api_key  = self.portal_registry['medialog.plotly.interfaces.IPlotlySettings.plotly_api_key']
     plotly.tools.set_credentials_file(username=username, api_key=api_key)
-    
+
 
 def make_html(self, context):
     """let plottly make the graph
     generating the html from plotly"""
-    
+
     #dont need login for offline
     #self.login()
-    
+
     dybder = self.dybder
     title = self.title
-    
+
     if len(dybder) != 0:
-        dates =  self.dates 
+        dates =  self.dates
         dtypes = self.dtypes
         ant_types = len(dtypes)
-                
+
         trace=[]
-    
+
         graph_count=0
         title1 = ''
         title2 = ''
@@ -62,35 +62,35 @@ def make_html(self, context):
         color7 = '#FFF'
         color8 = '#FFF'
         color9 = '#FFF'
-    
 
-    
+
+
         for dtype in dtypes:
             traces = []
             graph_count += 1
-                        
+
             for dato in dates:
                 if dato > datetime.date(2015, 5, 12) and dato <  datetime.date.today():
                     date = dato.strftime("%Y%m%d")
                     day_url = 'https://ektedata.uib.no/gabrieldata/resampledday/%s/' %dtype
                     #on its own line, in case of looping
                     json_url = day_url + date + '.json'
-                    f = urllib.urlopen(json_url)   
+                    f = urllib.urlopen(json_url)
                     jsonfile=f.read()
                     daydata=json.loads(jsonfile)
                     df = pd.DataFrame(daydata)
-                    
+
                     # if not df.empty:
                     if  df.empty == False:
                         xaksis = df['ts'].replace(to_replace=':00:00 GMT', value='', regex=True)
                         df.head()
                         this_dive = pd.DataFrame(df['divedata'].values.tolist())
-    
+
                         for i in range(1,this_dive.shape[1]):
                             this_preassure = pd.DataFrame(this_dive[i-1].values.tolist())
                             name=str(this_preassure['pressure(dBAR)'][0])
                             graphname = name + ' m: '  + dtype
-        
+
                             #visible = "legendonly"
                             #visible = False
                             if unicode(name) in dybder:
@@ -104,7 +104,7 @@ def make_html(self, context):
                                     )
                                     title1=dtype
                                     color1='#123456'
-                                
+
                                 if graph_count % ant_types == 1 or ant_types == 1:
                                     trace.append(go.Scatter(
                                         x = xaksis,
@@ -148,7 +148,7 @@ def make_html(self, context):
                                     )
                                     title4=dtype
                                     color4='#333333'
-                                                        
+
                                 if graph_count % ant_types == 4:
                                     trace.append(go.Scatter(
                                         x = xaksis,
@@ -191,7 +191,7 @@ def make_html(self, context):
                                     )
                                     title7=dtype
                                     color7='#CCCCCC'
-                                
+
                                 if graph_count % ant_types == 7:
                                     trace.append(go.Scatter(
                                         x = xaksis,
@@ -205,7 +205,7 @@ def make_html(self, context):
                                     )
                                     title8=dtype
                                     color8='#CCCCCC'
-                                
+
                                 if graph_count % ant_types == 8:
                                     trace.append(go.Scatter(
                                         x = xaksis,
@@ -219,7 +219,7 @@ def make_html(self, context):
                                     )
                                     title9=dtype
                                     color9='#CCCCCC'
-                            
+
         #to do: we will need some offest for the axis titles
         #maybe this has to be done 'manually', so we hardcode
         #the values for now
@@ -334,8 +334,8 @@ def make_html(self, context):
                     side='right',
                 )
             )
-        
-        
+
+
         if trace:
             fig = go.Figure(data=trace, layout=layout)
             self.plotly_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
@@ -345,14 +345,14 @@ def make_html(self, context):
     else:
         """let plottly make the 3D graph """
 
-    
-        dates =  self.dates 
+
+        dates =  self.dates
         dtypes = self.dtypes
-                
+
         plotly_html = ''
-    
+
         graph_count=0
-    
+
         for dtype in dtypes:
             graph_count += 1
             for dato in dates:
@@ -361,23 +361,23 @@ def make_html(self, context):
                     day_url = 'https://ektedata.uib.no/gabrieldata/resampledday/%s/' %dtype
                     #on its own line, in case of looping
                     json_url = day_url + date + '.json'
-                    f = urllib.urlopen(json_url)   
+                    f = urllib.urlopen(json_url)
                     jsonfile=f.read()
                     daydata=json.loads(jsonfile)
                     df = pd.DataFrame(daydata)
-                    
+
                     # if not df.empty:
                     if  df.empty == False:
                         df.head()
-                
+
                         #and now the 3D graph
                         z = []
-        
+
                         #construct the 3d z
                         for i in range(0,len(df)):
                             this_z = pd.DataFrame(df['divedata'][i]).sort_values('pressure(dBAR)', ascending=True)
                             z.append(this_z[dtype])
-                    
+
                         data = [
                             go.Surface(
                             z=  z,
@@ -408,42 +408,42 @@ def make_html(self, context):
 
                         fig = go.Figure(data=data, layout=layout)
                         plotly_html += plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
-                
+
             self.plotly_html = plotly_html
-            
-            
+
+
 def make_text(self, context):
     """generate text to use in graph app"""
 
     dybder = self.dybder
     title = self.title
-    date1 =  self.date1 
-    date2 =  self.date2 
+    date1 =  self.date1
+    date2 =  self.date2
     dtype = self.dtype
-    
-    
+
+
     daterange = pd.date_range(date1, date2)
-    
+
     text= []
-    
+
     for dato in daterange:
         #if dato > datetime.date(2015, 5, 12) and dato <  datetime.date.today():
         date = dato.strftime("%Y%m%d")
         day_url = 'https://ektedata.uib.no/gabrieldata/resampledday/%s/' %dtype
         #on its own line, in case of looping
         json_url = day_url + date + '.json'
-        f = urllib.urlopen(json_url)   
+        f = urllib.urlopen(json_url)
         jsonfile=f.read()
         daydata=json.loads(jsonfile)
         df = pd.DataFrame(daydata)
         xaksis = df['ts'].replace(to_replace=':00:00 GMT', value='', regex=True)
         df.head()
         this_dive = pd.DataFrame(df['divedata'].values.tolist())
-        
+
         for i in range(1,this_dive.shape[1]):
             this_preassure = pd.DataFrame(this_dive[i-1].values.tolist())
             name=str(this_preassure['pressure(dBAR)'][0])
             if unicode(name) in dybder:
                 text.append(this_preassure[dtype])
-                
+
         self.plotly_html = text

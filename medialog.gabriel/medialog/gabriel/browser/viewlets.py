@@ -10,7 +10,7 @@ from zope.i18nmessageid import MessageFactory
 import urllib
 
 #plotly stuff
-import plotly 
+import plotly
 from plotly.graph_objs import Bar, Scatter, Figure, Layout,  Surface
 from plotly.tools import FigureFactory as FF
 import pandas as pd
@@ -19,7 +19,7 @@ import plotly.plotly as py
 import plotly.graph_objs as go
 
 import json
-import datetime 
+import datetime
 
 class YearGraphViewlet(ViewletBase):
     """ javascript for histogram """
@@ -28,7 +28,7 @@ class YearGraphViewlet(ViewletBase):
         """construct a javascript to show the histogram"""
 
         context = self.context
-        
+
         if context.history_graph_url == "https://ektedata.uib.no/gabrieldata/api/v1/turbidity/temp.json":
 			return """<script>drawHistoryGraph();
 				function drawHistoryGraph() {
@@ -38,9 +38,9 @@ class YearGraphViewlet(ViewletBase):
 					fig.layout = {
 					  title: '%(graph_title)s',
 					  xaxis: {
-					  	title: 'Tid', 
-					  	showline: true, 
-					  	mirror: 'allticks', 
+					  	title: 'Tid',
+					  	showline: true,
+					  	mirror: 'allticks',
 					  	ticks: 'inside',
 					  },
 					  yaxis: {
@@ -61,8 +61,8 @@ class YearGraphViewlet(ViewletBase):
 					'graph_title': context.graph_title,
 					'yaxis_title': context.yaxis_title,
 					}
-		
-        
+
+
         return """<script>drawHistoryGraph();
 			function drawHistoryGraph() {
 				var historyGraphURL = '%(history_graph_url)s';
@@ -83,7 +83,7 @@ class YearGraphViewlet(ViewletBase):
 					'graph_title': context.graph_title,
 					'yaxis_title': context.yaxis_title,
 					}
-			
+
 
 class PlotView(ViewletBase):
     """ plot something """
@@ -93,64 +93,75 @@ class PlotView(ViewletBase):
         """return the html generated from plotly"""
 
         context = self.context
-        
+
         if not context.plotly_html:
             self.make_plot()
-        
+
         return context.plotly_html
-        
-        
-        
+
+
+
 class GraphView(ViewletBase):
     """ return graph for current day """
-    
+
     def yesterday(self):
         return datetime.date.today() - datetime.timedelta(1)
-    
+
     def graph(self):
         """return the html generated from plotly"""
-        
-        context = self.context        
+
+        context = self.context
         #today we will show yesterdays graph
         yesterday = datetime.date.today() - datetime.timedelta(1)
-        
-        if context.dato != yesterday:  
-            try: 
+
+        if context.dato != yesterday:
+            try:
                 dtype = context.dtype
                 trace = []
                 trace2 = []
-       
+
                 date = yesterday.strftime("%Y%m%d")
                 day_url = 'https://ektedata.uib.no/gabrieldata/resampledday/%s/' %dtype
                 #on its own line, in case of looping
-                json_url = day_url + date + '.json'
-                f = urllib.urlopen(json_url)   
+                json_url = day_url +  date + '.json'
+                f = urllib.urlopen(json_url)
                 jsonfile=f.read()
                 daydata=json.loads(jsonfile)
                 df = pd.DataFrame(daydata)
                 xaxis = df['ts'].replace(to_replace=':00:00 GMT', value='', regex=True)
                 df.head()
                 this_dive = pd.DataFrame(df['divedata'].values.tolist())
-    
+                lowest = context.minimum
+                highest = context.maximum
+
                 #seven dives a day, usually
                 for i in range(1,this_dive.shape[1]):
                     this_preassure = pd.DataFrame(this_dive[i-1].values.tolist())
                     name=str(this_preassure['pressure(dBAR)'][0])
+
+                    these_values = this_preassure[dtype]
+
+                    if lowest:
+                        these_values = these_values.where(these_values > lowest)
+
+                    if highest:
+                        these_values = these_values.where(these_values < highest)
+
                     graphname = name + ' m '
-        
+
                     # Create a trace
                     trace.append(go.Scatter(
                                 x = xaxis,
-                                y = this_preassure[dtype],
+                                y = these_values,
                                 name = graphname,
                     ))
                     trace2.append(go.Scatter(
                                 x = xaxis,
-                                y = this_preassure[dtype],
+                                y = these_values,
                                 name = graphname,
                                 mode = 'markers'
                     ))
-            
+
                 layout = go.Layout(
                     height=700,
                     width=1200,
@@ -172,7 +183,7 @@ class GraphView(ViewletBase):
                         )
                     )
                 )
-                
+
                 fig = go.Figure(data=trace, layout=layout)
                 context.plotly_html = plotly.offline.plot(fig, show_link=True, include_plotlyjs = False, output_type='div')
 
@@ -182,7 +193,7 @@ class GraphView(ViewletBase):
 
                 #and now the 3D graphs
                 z = []
-        
+
                 #construct the 3d z
                 for i in range(0,len(df)):
                     this_z = pd.DataFrame(df['divedata'][i]).sort_values('pressure(dBAR)', ascending=True)
@@ -203,7 +214,7 @@ class GraphView(ViewletBase):
                     y = df['ts']
                     )
                 ]
-                
+
                 layout = go.Layout(
                     autosize=False,
                     scene=dict(
@@ -229,15 +240,13 @@ class GraphView(ViewletBase):
 
                 fig = go.Figure(data=data, layout=layout)
                 context.plotly3_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
-                
+
                 fig = go.Figure(data=data2, layout=layout)
                 context.plotly4_html = plotly.offline.plot(fig, show_link=False, include_plotlyjs = False, output_type='div')
-                
+
                 context.dato = yesterday
-            
+
             except:
                 "Gabriel data ble ikke funnet"
-                
+
         return context.plotly_html
-        
-        
