@@ -123,7 +123,7 @@ class GraphView(ViewletBase):
                 date = yesterday.strftime("%Y%m%d")
                 day_url = 'https://ektedata.uib.no/gabrieldata/resampledday/%s/' %dtype
                 #on its own line, in case of looping
-                json_url = day_url +  '20180125' + '.json'
+                json_url = day_url +  date + '.json'
                 f = urllib.urlopen(json_url)
                 jsonfile=f.read()
                 daydata=json.loads(jsonfile)
